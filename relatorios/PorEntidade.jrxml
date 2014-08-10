@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PorEntidade" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.8150000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="imagem" class="java.io.InputStream"/>
+	<parameter name="periodo" class="java.lang.String"/>
+	<parameter name="nomeEntidade" class="java.lang.String"/>
+	<parameter name="periodoInicial" class="java.util.Date"/>
+	<parameter name="periodoFinal" class="java.util.Date"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="tipo" class="java.lang.String"/>
+	<parameter name="concluida" class="java.lang.String"/>
+	<parameter name="isPesagem" class="java.lang.Boolean"/>
+	<parameter name="isCompra" class="java.lang.Boolean"/>
+	<parameter name="isVenda" class="java.lang.Boolean"/>
+	<parameter name="periodoAlteracao" class="java.lang.String"/>
+	<parameter name="periodoAlteracaoInicial" class="java.util.Date"/>
+	<parameter name="periodoAlteracaoFinal" class="java.util.Date"/>
+	<parameter name="quitada" class="java.lang.String"/>
+	<parameter name="nome" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     *
+FROM
+entidade e
+
+WHERE
+
+If($P{nomeEntidade} like 'Todos', true, e.nome like $P{nomeEntidade})
+
+AND
+
+(EXISTS
+(SELECT * FROM pesagem p WHERE
+if($P{isPesagem}=true,
+IF($P{periodo} like 'Todos', true, (p.dataCriacao>=$P{periodoInicial} AND p.dataCriacao<=$P{periodoFinal}))
+AND IF($P{periodoAlteracao} like 'Todos', true, (p.dataAlteracao>=$P{periodoAlteracaoInicial} AND p.dataAlteracao<=$P{periodoAlteracaoFinal}))
+AND IF($P{tipo} like 'Todos', true, e.tipo like $P{tipo})
+AND IF($P{concluida} like 'Concluídas', p.concluida=true, p.idEntidade=e.identidade)
+AND IF($P{concluida} like 'Não Concluídas', p.concluida=false, p.idEntidade=e.identidade)
+AND IF($P{quitada} like 'Todos', true, IF($P{quitada} like 'Quitada', p.quitada=true, p.quitada=false))
+,false))
+
+OR
+
+EXISTS
+(SELECT * FROM venda v WHERE
+if($P{isVenda}=true,
+IF($P{periodo} like 'Todos', true, (v.dataCriacao>=$P{periodoInicial} AND v.dataCriacao<=$P{periodoFinal}))
+AND IF($P{periodoAlteracao} like 'Todos', true, (v.dataAlteracao>=$P{periodoAlteracaoInicial} AND v.dataAlteracao<=$P{periodoAlteracaoFinal}))
+AND IF($P{tipo} like 'Todos', true, e.tipo like $P{tipo})
+AND IF($P{concluida} like 'Concluídas', v.concluida=true, v.idEntidade=e.identidade)
+AND IF($P{concluida} like 'Não Concluídas', v.concluida=false, v.idEntidade=e.identidade)
+AND IF($P{quitada} like 'Todos', true, IF($P{quitada} like 'Quitada', v.quitada=true, v.quitada=false))
+,false))
+
+OR
+
+EXISTS
+(SELECT * FROM compra c WHERE
+if($P{isCompra}=true,
+IF($P{periodo} like 'Todos', true, (c.dataCriacao>=$P{periodoInicial} AND c.dataCriacao<=$P{periodoFinal}))
+AND IF($P{periodoAlteracao} like 'Todos', true, (c.dataAlteracao>=$P{periodoAlteracaoInicial} AND c.dataAlteracao<=$P{periodoAlteracaoFinal}))
+AND IF($P{tipo} like 'Todos', true, e.tipo like $P{tipo})
+AND IF($P{concluida} like 'Concluídas', c.concluida=true, c.idEntidade=e.identidade)
+AND IF($P{concluida} like 'Não Concluídas', c.concluida=false, c.idEntidade=e.identidade)
+AND IF($P{quitada} like 'Todos', true, IF($P{quitada} like 'Quitada', c.quitada=true, c.quitada=false))
+,false))
+)
+
+
+GROUP BY e.idEntidade
+ORDER BY e.idEntidade]]>
+	</queryString>
+	<field name="idEntidade" class="java.lang.Integer"/>
+	<field name="nome" class="java.lang.String"/>
+	<field name="fantasia" class="java.lang.String"/>
+	<field name="cidade" class="java.lang.String"/>
+	<field name="estado" class="java.lang.String"/>
+	<field name="logradouro" class="java.lang.String"/>
+	<field name="numero" class="java.lang.String"/>
+	<field name="bairro" class="java.lang.String"/>
+	<field name="cep" class="java.lang.String"/>
+	<field name="cpfCnpj" class="java.lang.String"/>
+	<field name="telefone" class="java.lang.String"/>
+	<field name="celular" class="java.lang.String"/>
+	<field name="fax" class="java.lang.String"/>
+	<field name="inscricaoEstadual" class="java.lang.String"/>
+	<field name="tipo" class="java.lang.String"/>
+	<field name="pesJuridica" class="java.lang.Boolean"/>
+	<variable name="valorTotal" class="java.math.BigDecimal">
+		<variableExpression><![CDATA[$V{valorTotal}]]></variableExpression>
+		<initialValueExpression><![CDATA[new BigDecimal(BigInteger.ZERO)]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="40">
+			<rectangle radius="10">
+				<reportElement x="97" y="0" width="459" height="40" forecolor="#FFFFFF" backcolor="#C0C0C0"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="97" y="0" width="459" height="24"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relatório por Entidade]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="97" height="40"/>
+				<imageExpression><![CDATA[$P{imagem}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="97" y="23" width="457" height="17"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nome}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="46" splitType="Stretch">
+			<textField>
+				<reportElement x="343" y="1" width="146" height="17"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{periodo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="133" y="1" width="28" height="17"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Tipo:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="161" y="1" width="124" height="17"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="0" width="31" height="17"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Data:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="32" y="0" width="88" height="17"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.text.SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="34" width="555" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="296" y="1" width="47" height="17"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Período:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="0" width="555" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="499" y="1" width="24" height="17"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[pag.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="528" y="1" width="28" height="17"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="18" width="132" height="17"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Estado das transações:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="133" y="18" width="105" height="17"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{concluida}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<subreport>
+				<reportElement x="1" y="0" width="555" height="27"/>
+				<subreportParameter name="isCompra">
+					<subreportParameterExpression><![CDATA[$P{isCompra}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="periodoAlteracao">
+					<subreportParameterExpression><![CDATA[$P{periodoAlteracao}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="concluida">
+					<subreportParameterExpression><![CDATA[$P{concluida}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="periodoAlteracaoFinal">
+					<subreportParameterExpression><![CDATA[$P{periodoAlteracaoFinal}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="isVenda">
+					<subreportParameterExpression><![CDATA[$P{isVenda}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="idEntidade">
+					<subreportParameterExpression><![CDATA[$F{idEntidade}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="isPesagem">
+					<subreportParameterExpression><![CDATA[$P{isPesagem}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="tipo">
+					<subreportParameterExpression><![CDATA[$P{tipo}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="periodoInicial">
+					<subreportParameterExpression><![CDATA[$P{periodoInicial}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="periodoFinal">
+					<subreportParameterExpression><![CDATA[$P{periodoFinal}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="quitada">
+					<subreportParameterExpression><![CDATA[$P{quitada}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="periodo">
+					<subreportParameterExpression><![CDATA[$P{periodo}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="periodoAlteracaoInicial">
+					<subreportParameterExpression><![CDATA[$P{periodoAlteracaoInicial}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<returnValue subreportVariable="SUM_valorTotal" toVariable="valorTotal" calculation="Sum"/>
+				<subreportExpression><![CDATA[getClass().getResource( $P{SUBREPORT_DIR} + "Subrelatorio_PorEntidade.jasper" )]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="537" y="1" width="18" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="18">
+			<textField>
+				<reportElement x="481" y="1" width="73" height="17"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(new DecimalFormat("#,###,##0.00")).format($V{valorTotal})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="463" y="1" width="18" height="17"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[R$]]></text>
+			</staticText>
+			<line>
+				<reportElement x="310" y="17" width="244" height="1"/>
+			</line>
+			<line>
+				<reportElement x="310" y="0" width="244" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="310" y="1" width="151" height="17"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor total deste relatório:]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="EntidadeUnica" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="54"/>
+	<parameter name="Parametro_idEntidade" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="imagem" class="java.io.InputStream"/>
+	<queryString>
+		<![CDATA[SELECT
+     entidade.`idEntidade` AS entidade_idEntidade,
+     entidade.`nome` AS entidade_nome,
+     entidade.`fantasia` AS entidade_fantasia,
+     entidade.`cidade` AS entidade_cidade,
+     entidade.`estado` AS entidade_estado,
+     entidade.`logradouro` AS entidade_logradouro,
+     entidade.`numero` AS entidade_numero,
+     entidade.`bairro` AS entidade_bairro,
+     entidade.`cep` AS entidade_cep,
+     entidade.`cpfCnpj` AS entidade_cpfCnpj,
+     entidade.`telefone` AS entidade_telefone,
+     entidade.`celular` AS entidade_celular,
+     entidade.`fax` AS entidade_fax,
+     entidade.`inscricaoEstadual` AS entidade_inscricaoEstadual,
+     entidade.`tipo` AS entidade_tipo,
+     entidade.`pesJuridica` AS entidade_pesJuridica
+FROM
+     `entidade` entidade
+WHERE
+	entidade.idEntidade = $P{Parametro_idEntidade}]]>
+	</queryString>
+	<field name="entidade_idEntidade" class="java.lang.Integer"/>
+	<field name="entidade_nome" class="java.lang.String"/>
+	<field name="entidade_fantasia" class="java.lang.String"/>
+	<field name="entidade_cidade" class="java.lang.String"/>
+	<field name="entidade_estado" class="java.lang.String"/>
+	<field name="entidade_logradouro" class="java.lang.String"/>
+	<field name="entidade_numero" class="java.lang.String"/>
+	<field name="entidade_bairro" class="java.lang.String"/>
+	<field name="entidade_cep" class="java.lang.String"/>
+	<field name="entidade_cpfCnpj" class="java.lang.String"/>
+	<field name="entidade_telefone" class="java.lang.String"/>
+	<field name="entidade_celular" class="java.lang.String"/>
+	<field name="entidade_fax" class="java.lang.String"/>
+	<field name="entidade_inscricaoEstadual" class="java.lang.String"/>
+	<field name="entidade_tipo" class="java.lang.String"/>
+	<field name="entidade_pesJuridica" class="java.lang.Boolean"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="802" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="133" height="59"/>
+				<imageExpression class="java.io.InputStream"><![CDATA[$P{imagem}]]></imageExpression>
+			</image>
+			<rectangle radius="10">
+				<reportElement x="133" y="0" width="422" height="59" forecolor="#FFFFFF" backcolor="#C0C0C0"/>
+			</rectangle>
+			<textField>
+				<reportElement x="133" y="0" width="422" height="59"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{entidade_nome}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="101" width="44" height="17"/>
+				<textElement>
+					<font fontName="SansSerif" size="12"/>
+				</textElement>
+				<text><![CDATA[Codigo:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="44" y="101" width="100" height="17"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{entidade_idEntidade}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="164" width="44" height="17"/>
+				<textElement>
+					<font fontName="SansSerif" size="12"/>
+				</textElement>
+				<text><![CDATA[Nome:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="198" width="33" height="17"/>
+				<textElement>
+					<font fontName="SansSerif" size="12"/>
+				</textElement>
+				<text><![CDATA[Cnpj:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="247" width="56" height="17"/>
+				<textElement>
+					<font fontName="SansSerif" size="12"/>
+				</textElement>
+				<text><![CDATA[Celular:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="230" width="55" height="17"/>
+				<textElement>
+					<font fontName="SansSerif" size="12"/>
+				</textElement>
+				<text><![CDATA[Telefone:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="67" width="555" height="17"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Informações de Pessoa Jurídica]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="44" y="164" width="511" height="17"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{entidade_nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="56" y="247" width="100" height="17"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{entidade_celular}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="54" y="230" width="100" height="17"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{entidade_telefone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="33" y="198" width="123" height="17"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{entidade_cpfCnpj}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="84" width="555" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="84" width="555" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Informações do Sistema]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="118" width="44" height="17"/>
+				<textElement>
+					<font fontName="SansSerif" size="12"/>
+				</textElement>
+				<text><![CDATA[Vinculo:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="44" y="118" width="134" height="17"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{entidade_tipo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="147" width="555" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Informações da Entidade]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="147" width="555" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="213" width="25" height="17"/>
+				<textElement>
+					<font fontName="SansSerif" size="12"/>
+				</textElement>
+				<text><![CDATA[Fax:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="266" width="106" height="17"/>
+				<textElement>
+					<font fontName="SansSerif" size="12"/>
+				</textElement>
+				<text><![CDATA[Inscrição Estadual:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="25" y="213" width="97" height="17"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{entidade_fax}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="106" y="266" width="293" height="17"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{entidade_inscricaoEstadual}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="181" width="55" height="17"/>
+				<textElement>
+					<font fontName="SansSerif" size="12"/>
+				</textElement>
+				<text><![CDATA[Fantasia:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="50" y="181" width="505" height="17"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{entidade_fantasia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="332" width="100" height="17"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{entidade_numero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="44" y="315" width="432" height="17"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{entidade_cidade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="44" y="349" width="372" height="17"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{entidade_bairro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="332" width="358" height="17"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{entidade_logradouro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="349" width="100" height="17"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{entidade_cep}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="416" y="349" width="39" height="17"/>
+				<textElement>
+					<font fontName="SansSerif" size="12"/>
+				</textElement>
+				<text><![CDATA[Cep:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="435" y="332" width="20" height="17"/>
+				<textElement>
+					<font fontName="SansSerif" size="12"/>
+				</textElement>
+				<text><![CDATA[Nº:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="298" width="555" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="349" width="44" height="17"/>
+				<textElement>
+					<font fontName="SansSerif" size="12"/>
+				</textElement>
+				<text><![CDATA[Bairro:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="315" width="44" height="17"/>
+				<textElement>
+					<font fontName="SansSerif" size="12"/>
+				</textElement>
+				<text><![CDATA[Cidade:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="476" y="315" width="44" height="17"/>
+				<textElement>
+					<font fontName="SansSerif" size="12"/>
+				</textElement>
+				<text><![CDATA[Estado:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="298" width="555" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Endereço]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="520" y="315" width="35" height="17"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{entidade_estado}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="332" width="70" height="17"/>
+				<textElement>
+					<font fontName="SansSerif" size="12"/>
+				</textElement>
+				<text><![CDATA[Logradouro:]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

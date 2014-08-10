@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Subrelatorio_Caixa_Debito" language="groovy" pageWidth="555" pageHeight="802" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="2.143588810000003"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="idCaixaDiario" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT
+     caixadiario.`idCaixaDiario` AS caixadiario_idCaixaDiario,
+     caixadiario.`data` AS caixadiario_data,
+     caixadiario.`fechado` AS caixadiario_fechado,
+     caixadiario.`horaFechamento` AS caixadiario_horaFechamento,
+     caixadiario_has_contaspagar.`idCaixaDiarioHasContasPagar` AS caixadiario_has_contaspagar_idCaixaDiarioHasContasPagar,
+     caixadiario_has_contaspagar.`idCaixaDiario` AS caixadiario_has_contaspagar_idCaixaDiario,
+     caixadiario_has_contaspagar.`idConta` AS caixadiario_has_contaspagar_idConta,
+     contaspagar.`idConta` AS contaspagar_idConta,
+     contaspagar.`idCompra` AS contaspagar_idCompra,
+     contaspagar.`descricao` AS contaspagar_descricao,
+     contaspagar.`observacao` AS contaspagar_observacao,
+     contaspagar.`dataVencimento` AS contaspagar_dataVencimento,
+     contaspagar.`dataPagamento` AS contaspagar_dataPagamento,
+     contaspagar.`horaPagamento` AS contaspagar_horaPagamento,
+     contaspagar.`valor` AS contaspagar_valor,
+     contaspagar.`quitada` AS contaspagar_quitada,
+	c.idCompra,
+	cp.`pesoLiquido`,
+	cp.valorUnitario
+FROM
+     `caixadiario` caixadiario INNER JOIN `caixadiario_has_contaspagar` caixadiario_has_contaspagar ON caixadiario.`idCaixaDiario` = caixadiario_has_contaspagar.`idCaixaDiario`
+     INNER JOIN `contaspagar` contaspagar ON caixadiario_has_contaspagar.`idConta` = contaspagar.`idConta`
+     LEFT JOIN compra c ON c.`idCompra`=contaspagar.`idCompra`
+     LEFT JOIN compra_has_produto cp ON cp.`idCompra`=c.`idCompra`
+
+WHERE
+$P{idCaixaDiario}=caixaDiario.idCaixaDiario]]>
+	</queryString>
+	<field name="caixadiario_idCaixaDiario" class="java.lang.Integer"/>
+	<field name="caixadiario_data" class="java.sql.Date"/>
+	<field name="caixadiario_fechado" class="java.lang.Boolean"/>
+	<field name="caixadiario_horaFechamento" class="java.sql.Time"/>
+	<field name="caixadiario_has_contaspagar_idCaixaDiarioHasContasPagar" class="java.lang.Integer"/>
+	<field name="caixadiario_has_contaspagar_idCaixaDiario" class="java.lang.Integer"/>
+	<field name="caixadiario_has_contaspagar_idConta" class="java.lang.Integer"/>
+	<field name="contaspagar_idConta" class="java.lang.Integer"/>
+	<field name="contaspagar_idCompra" class="java.lang.Integer"/>
+	<field name="contaspagar_descricao" class="java.lang.String"/>
+	<field name="contaspagar_observacao" class="java.lang.String"/>
+	<field name="contaspagar_dataVencimento" class="java.sql.Date"/>
+	<field name="contaspagar_dataPagamento" class="java.sql.Date"/>
+	<field name="contaspagar_horaPagamento" class="java.sql.Time"/>
+	<field name="contaspagar_valor" class="java.math.BigDecimal"/>
+	<field name="contaspagar_quitada" class="java.lang.Boolean"/>
+	<field name="idCompra" class="java.lang.Integer"/>
+	<field name="pesoLiquido" class="java.lang.Integer"/>
+	<field name="valorUnitario" class="java.math.BigDecimal"/>
+	<variable name="SUM_valor" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{contaspagar_valor}]]></variableExpression>
+		<initialValueExpression><![CDATA[new BigDecimal(BigInteger.ZERO)]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="18">
+			<rectangle radius="10">
+				<reportElement x="249" y="1" width="57" height="17" forecolor="#FFFFFF" backcolor="#C0C0C0"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="1" width="555" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Débito]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="16" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement x="0" y="-1" width="555" height="1"/>
+			</line>
+		</band>
+	</title>
+	<detail>
+		<band height="17" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="43" height="17"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contaspagar_idConta}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00">
+				<reportElement x="495" y="0" width="60" height="17"/>
+				<textElement textAlignment="Right">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contaspagar_valor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="54" y="0" width="229" height="17"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contaspagar_descricao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="288" y="0" width="44" height="17"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contaspagar_dataVencimento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="342" y="0" width="54" height="17"/>
+				<textElement textAlignment="Right">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{pesoLiquido} != null ? 
+(new DecimalFormat("#,###")).format($F{pesoLiquido}) + "Kg." : "       -       ")]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00">
+				<reportElement x="407" y="0" width="61" height="17"/>
+				<textElement textAlignment="Right">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{valorUnitario} != null ? 
+$F{valorUnitario} : "       -       ")]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="30">
+			<textField pattern="¤ #,##0.00">
+				<reportElement x="468" y="0" width="87" height="17"/>
+				<textElement textAlignment="Right">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{SUM_valor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="360" y="0" width="108" height="17"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Débito Total:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="360" y="0" width="195" height="1"/>
+			</line>
+			<line>
+				<reportElement x="360" y="17" width="195" height="1"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="subrelatorio_PorEntidade" language="groovy" pageWidth="240" pageHeight="802" columnWidth="240" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="3.1384283767210084"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="idVenda" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT
+* , vp.valorTotal as valorVhp
+FROM
+venda v,
+venda_has_produto vp,
+produto p
+
+WHERE
+
+v.idVenda=vp.idVenda
+
+AND
+
+v.idVenda=$P{idVenda}
+
+AND
+
+p.idProduto=vp.idProduto]]>
+	</queryString>
+	<field name="idVenda" class="java.lang.Integer"/>
+	<field name="idEntidade" class="java.lang.Integer"/>
+	<field name="dataCriacao" class="java.sql.Date"/>
+	<field name="horaCriacao" class="java.sql.Time"/>
+	<field name="dataAlteracao" class="java.sql.Date"/>
+	<field name="horaAlteracao" class="java.sql.Time"/>
+	<field name="placa" class="java.lang.String"/>
+	<field name="valorTotal" class="java.math.BigDecimal"/>
+	<field name="vencimento" class="java.sql.Date"/>
+	<field name="quitada" class="java.lang.Boolean"/>
+	<field name="motorista" class="java.lang.String"/>
+	<field name="pagamento" class="java.lang.String"/>
+	<field name="concluida" class="java.lang.Boolean"/>
+	<field name="idVendaHasProduto" class="java.lang.Integer"/>
+	<field name="idProduto" class="java.lang.Integer"/>
+	<field name="tara" class="java.lang.Integer"/>
+	<field name="pesoBruto" class="java.lang.Integer"/>
+	<field name="pesoLiquido" class="java.lang.Integer"/>
+	<field name="valorUnitario" class="java.math.BigDecimal"/>
+	<field name="nome" class="java.lang.String"/>
+	<field name="estoque" class="java.lang.Integer"/>
+	<field name="precoAVista" class="java.math.BigDecimal"/>
+	<field name="precoAPrazo" class="java.math.BigDecimal"/>
+	<field name="ativo" class="java.lang.Boolean"/>
+	<field name="valorVhp" class="java.math.BigDecimal"/>
+	<variable name="SUM_valor" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{valorTotal}]]></variableExpression>
+		<initialValueExpression><![CDATA[new BigDecimal(BigInteger.ZERO)]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<textField>
+				<reportElement x="122" y="0" width="32" height="15"/>
+				<textElement textAlignment="Right">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{pesoLiquido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="86" y="0" width="33" height="15"/>
+				<textElement textAlignment="Right">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{pesoBruto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="54" y="0" width="29" height="15"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{tara}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="51" height="15"/>
+				<textElement verticalAlignment="Top">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="158" y="0" width="33" height="15"/>
+				<textElement textAlignment="Right">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[(new DecimalFormat("#,###,##0.00")).format($F{valorUnitario})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="194" y="0" width="46" height="15"/>
+				<textElement textAlignment="Right">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[(new DecimalFormat("#,###,##0.00")).format($F{valorVhp})]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

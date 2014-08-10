@@ -1,0 +1,43 @@
+
+                             Pessoa Física
+
+
+              Informações de Pessoa Jurídica
+                  Informações do Sistema
+  Codi1
+  VincCliente
+
+                  Informações da Entidade
+  NomePessoa Física
+  Fanta
+  Cnp
+  Fa
+
+  Telef
+  Celul
+
+  Inscrição
+
+                         Endereço
+  Cida                                           Esta -
+  Logrado                                    Nº
+  Bair                                     Cep
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

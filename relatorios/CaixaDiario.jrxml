@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CaixaDiario" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="2.415765000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="imagem" class="java.io.InputStream"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="idCaixaDiario" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="nome" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     *
+FROM
+     caixadiario
+
+WHERE
+$P{idCaixaDiario}=caixaDiario.idCaixaDiario]]>
+	</queryString>
+	<field name="idCaixaDiario" class="java.lang.Integer"/>
+	<field name="data" class="java.sql.Date"/>
+	<field name="fechado" class="java.lang.Boolean"/>
+	<field name="horaFechamento" class="java.sql.Time"/>
+	<variable name="SUM_credito" class="java.math.BigDecimal">
+		<variableExpression><![CDATA[$V{SUM_credito}]]></variableExpression>
+		<initialValueExpression><![CDATA[new BigDecimal(BigInteger.ZERO)]]></initialValueExpression>
+	</variable>
+	<variable name="SUM_debito" class="java.math.BigDecimal">
+		<variableExpression><![CDATA[$V{SUM_debito}]]></variableExpression>
+		<initialValueExpression><![CDATA[new BigDecimal(BigInteger.ZERO)]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="103" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="63" width="43" height="17"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Código:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="42" y="63" width="100" height="17"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idCaixaDiario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="218" y="63" width="67" height="17"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechado}.booleanValue() == true ? "Fechado às" : "Em Aberto"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="174" y="63" width="44" height="17"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Estado:]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement x="113" y="0" width="443" height="62" forecolor="#FFFFFF" backcolor="#C0C0C0"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="113" y="17" width="443" height="27"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Caixa Diário]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="83" width="555" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="113" y="44" width="442" height="17"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nome}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="62" width="555" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="503" y="0" width="51" height="17"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="289" y="63" width="106" height="17"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{horaFechamento} != null ? $F{horaFechamento} : ""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="86" width="42" height="17"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Codigo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="503" y="86" width="52" height="17"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="342" y="86" width="54" height="17"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Volume:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="289" y="86" width="42" height="17"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Venc:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="54" y="86" width="76" height="17"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descrição:]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="1" width="113" height="62"/>
+				<imageExpression><![CDATA[$P{imagem}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="409" y="86" width="59" height="17"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Preço Uni:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="13" splitType="Stretch">
+			<line>
+				<reportElement x="1" y="0" width="555" height="1"/>
+			</line>
+			<subreport>
+				<reportElement x="1" y="1" width="555" height="6"/>
+				<subreportParameter name="idCaixaDiario">
+					<subreportParameterExpression><![CDATA[$F{idCaixaDiario}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<returnValue subreportVariable="SUM_valor" toVariable="SUM_credito"/>
+				<subreportExpression><![CDATA[getClass().getResource( $P{SUBREPORT_DIR} + "Subrelatorio_Caixa_Credito.jasper" )]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="13" splitType="Stretch">
+			<subreport>
+				<reportElement x="1" y="0" width="555" height="6"/>
+				<subreportParameter name="idCaixaDiario">
+					<subreportParameterExpression><![CDATA[$F{idCaixaDiario}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<returnValue subreportVariable="SUM_valor" toVariable="SUM_debito"/>
+				<subreportExpression><![CDATA[getClass().getResource( $P{SUBREPORT_DIR} + "Subrelatorio_Caixa_Debito.jasper" )]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="537" y="4" width="18" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="20">
+			<rectangle radius="10">
+				<reportElement x="362" y="1" width="194" height="15" forecolor="#FFFFFF" backcolor="#C0C0C0"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="310" y="0" width="151" height="17"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Saldo Total:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="360" y="0" width="194" height="1"/>
+			</line>
+			<line>
+				<reportElement x="360" y="16" width="194" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="481" y="0" width="73" height="17"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(new DecimalFormat("#,###,##0.00")).format($V{SUM_credito} - $V{SUM_debito})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="463" y="0" width="18" height="17"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[R$]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

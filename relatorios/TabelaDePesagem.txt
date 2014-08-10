@@ -1,0 +1,43 @@
+
+                      Tabela de Preço de Pesagens
+
+
+  Data de atualizaçã17/02/20
+
+                       Classificação
+
+  Nom                                  Tara a pa   Valor:
+
+                                            Kg
+  Veículo Pequeno                                  R$5,00
+                                        0
+
+
+                                            Kg
+  Caminhonete                                      R$8,00
+                                        250
+
+
+                                            Kg
+  Caminhão                                         R$10,0
+                                        300
+
+
+                                            Kg
+  CARRETA                                          R$35,0
+                                        150
+
+
+                                            Kg
+  Bi Trem                                          R$50,0
+                                        350
+
+
+
+
+
+
+
+                                                       1
+
+

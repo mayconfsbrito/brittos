@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Subrelatorio_Produtos" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="Parametro_idProduto" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[select * from produto
+where 
+idProduto = $P{Parametro_idProduto}
+group by precoAVista]]>
+	</queryString>
+	<field name="idProduto" class="java.lang.Integer"/>
+	<field name="nome" class="java.lang.String"/>
+	<field name="estoque" class="java.lang.Integer"/>
+	<field name="precoAVista" class="java.math.BigDecimal"/>
+	<field name="precoAPrazo" class="java.math.BigDecimal"/>
+	<field name="ativo" class="java.lang.Boolean"/>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement x="468" y="0" width="18" height="17"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[R$]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="0" width="286" height="17"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="486" y="0" width="69" height="17"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[(new DecimalFormat("#,###,##0.00")).format($F{precoAPrazo})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="379" y="0" width="75" height="17"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[(new DecimalFormat("#,###,##0.00")).format($F{precoAVista})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="361" y="0" width="18" height="17"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[R$]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

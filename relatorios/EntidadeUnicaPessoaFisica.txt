@@ -1,0 +1,43 @@
+
+                             Pessoa Física
+
+
+               Informações de Pessoa Física
+                  Informações do Sistema
+  Codi1
+  VincCliente
+
+                   Informações Pessoais
+  NomPessoa Física
+  Fanta
+
+  Cp
+  Telef
+  Celul
+
+                         Endereço
+  Cida                                           Esta -
+  Lograd                                  Nº:
+  Bairr                                     Ce
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

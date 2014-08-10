@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Subrelatorio_PorEntidade" language="groovy" pageWidth="555" pageHeight="802" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="2.5937424601000036"/>
+	<property name="ireport.x" value="145"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="idEntidade" class="java.lang.Integer"/>
+	<parameter name="tipo" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="periodoInicial" class="java.util.Date"/>
+	<parameter name="periodoFinal" class="java.util.Date"/>
+	<parameter name="periodo" class="java.lang.String"/>
+	<parameter name="concluida" class="java.lang.String"/>
+	<parameter name="pagamento" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="isPesagem" class="java.lang.Boolean">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="isCompra" class="java.lang.Boolean"/>
+	<parameter name="isVenda" class="java.lang.Boolean"/>
+	<parameter name="periodoAlteracao" class="java.lang.String"/>
+	<parameter name="periodoAlteracaoInicial" class="java.util.Date"/>
+	<parameter name="periodoAlteracaoFinal" class="java.util.Date"/>
+	<parameter name="quitada" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+*
+FROM
+pesagem p,
+entidade e
+
+WHERE
+
+IF($P{isPesagem}=true,
+If($P{idEntidade}=0, (p.idEntidade=$P{idEntidade} OR p.idEntidade!=$P{idEntidade}) AND p.idEntidade=e.idEntidade, p.idEntidade=$P{idEntidade} AND p.idEntidade=e.idEntidade)
+AND IF($P{periodo} like 'Todos', true, (p.dataCriacao>=$P{periodoInicial} AND p.dataCriacao<=$P{periodoFinal}))
+AND IF($P{periodoAlteracao} like 'Todos', true, (p.dataAlteracao>=$P{periodoAlteracaoInicial} AND p.dataAlteracao<=$P{periodoAlteracaoFinal}))
+AND IF($P{tipo} like 'Todos', true, e.tipo like $P{tipo})
+AND IF($P{concluida} like 'Todos', true, IF($P{concluida} like 'Concluídas', p.concluida=true, p.concluida=false))
+AND IF($P{quitada} like 'Todos', true, IF($P{quitada} like 'Quitada', p.quitada=true, p.quitada=false))
+, false)
+
+ORDER BY p.idPesagem]]>
+	</queryString>
+	<field name="idPesagem" class="java.lang.Integer"/>
+	<field name="idEntidade" class="java.lang.Integer"/>
+	<field name="dataCriacao" class="java.sql.Date"/>
+	<field name="horaCriacao" class="java.sql.Time"/>
+	<field name="dataAlteracao" class="java.sql.Date"/>
+	<field name="horaAlteracao" class="java.sql.Time"/>
+	<field name="pesoBruto" class="java.lang.Integer"/>
+	<field name="tara" class="java.lang.Integer"/>
+	<field name="pesoLiquido" class="java.lang.Integer"/>
+	<field name="placa" class="java.lang.String"/>
+	<field name="valorPesagem" class="java.math.BigDecimal"/>
+	<field name="vencimento" class="java.sql.Date"/>
+	<field name="quitada" class="java.lang.Boolean"/>
+	<field name="motorista" class="java.lang.String"/>
+	<field name="pagamento" class="java.lang.String"/>
+	<field name="concluida" class="java.lang.Boolean"/>
+	<field name="nome" class="java.lang.String"/>
+	<field name="fantasia" class="java.lang.String"/>
+	<field name="cidade" class="java.lang.String"/>
+	<field name="estado" class="java.lang.String"/>
+	<field name="logradouro" class="java.lang.String"/>
+	<field name="numero" class="java.lang.String"/>
+	<field name="bairro" class="java.lang.String"/>
+	<field name="cep" class="java.lang.String"/>
+	<field name="cpfCnpj" class="java.lang.String"/>
+	<field name="telefone" class="java.lang.String"/>
+	<field name="celular" class="java.lang.String"/>
+	<field name="fax" class="java.lang.String"/>
+	<field name="inscricaoEstadual" class="java.lang.String"/>
+	<field name="tipo" class="java.lang.String"/>
+	<field name="pesJuridica" class="java.lang.Boolean"/>
+	<variable name="SUM_valorPesagem" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{valorPesagem}]]></variableExpression>
+		<initialValueExpression><![CDATA[new BigDecimal(BigInteger.ZERO)]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="18">
+			<rectangle radius="10">
+				<reportElement x="249" y="1" width="57" height="17" forecolor="#FFFFFF" backcolor="#C0C0C0"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="1" width="555" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Pesagens]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="16" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement x="0" y="-1" width="555" height="1"/>
+			</line>
+		</band>
+	</title>
+	<detail>
+		<band height="17" splitType="Stretch">
+			<staticText>
+				<reportElement x="480" y="0" width="13" height="17"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[R$]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="0" width="36" height="17"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idPesagem}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="493" y="0" width="62" height="17"/>
+				<textElement textAlignment="Right">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(new DecimalFormat("#,###,##0.00")).format($F{valorPesagem})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="47" y="0" width="46" height="17"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dataCriacao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="104" y="0" width="47" height="17"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{vencimento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="212" y="0" width="55" height="17"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{placa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="162" y="0" width="40" height="17"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quitada}.booleanValue() == true ? "Sim" : "Não"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="392" y="0" width="55" height="17"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="321" y="0" width="60" height="17"/>
+				<textElement textAlignment="Right">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(new DecimalFormat("#,###")).format($F{pesoLiquido}) + "Kg"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="270" y="0" width="39" height="17"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[-]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<summary>
+		<band height="30">
+			<textField>
+				<reportElement x="493" y="0" width="62" height="17"/>
+				<textElement textAlignment="Right">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(new DecimalFormat("#,###,##0.00")).format($V{SUM_valorPesagem})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="477" y="0" width="16" height="17"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[R$]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="343" y="0" width="134" height="17"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Valor total de pesagens:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="343" y="0" width="212" height="1"/>
+			</line>
+			<line>
+				<reportElement x="343" y="17" width="212" height="1"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

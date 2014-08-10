@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Subrelatorio_DedoDuro" language="groovy" pageWidth="555" pageHeight="802" columnWidth="535" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.7715610000000013"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="idUsuario" class="java.lang.Integer"/>
+	<parameter name="periodoInicial" class="java.util.Date"/>
+	<parameter name="periodoFinal" class="java.util.Date"/>
+	<parameter name="periodo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+
+t.idTransacao, t.idUsuario, t.data, t.hora, t.transacao, u.idUsuario
+
+FROM
+usuario u, transacao t
+
+WHERE
+If($P{idUsuario}=0, 
+	t.idUsuario=$P{idUsuario} OR t.idUsuario!=$P{idUsuario},		       			t.idUsuario=$P{idUsuario})
+
+AND t.idUsuario=u.idUsuario
+
+AND IF($P{periodo} like 'Todos', 
+	t.idUsuario, 
+	(t.data>=$P{periodoInicial} AND t.data<=$P{periodoFinal}))
+ORDER BY t.data desc, t.hora desc]]>
+	</queryString>
+	<field name="idTransacao" class="java.lang.Long"/>
+	<field name="idUsuario" class="java.lang.Integer"/>
+	<field name="data" class="java.sql.Date"/>
+	<field name="hora" class="java.sql.Time"/>
+	<field name="transacao" class="java.lang.String"/>
+	<detail>
+		<band height="19" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="48" height="17"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{data}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="58" y="0" width="48" height="17"/>
+				<textElement verticalAlignment="Top">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{hora}.toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="111" y="0" width="48" height="17"/>
+				<textElement verticalAlignment="Top">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{idTransacao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="0" width="375" height="17"/>
+				<textElement verticalAlignment="Top">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{transacao}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

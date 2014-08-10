@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Subrelatorio_PorEntidade_Compras_Total_Produtos" language="groovy" pageWidth="288" pageHeight="802" whenNoDataType="NoDataSection" columnWidth="288" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="2.853116706110007"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="idEntidade" class="java.lang.Integer"/>
+	<parameter name="tipo" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="periodoInicial" class="java.util.Date"/>
+	<parameter name="periodoFinal" class="java.util.Date"/>
+	<parameter name="periodo" class="java.lang.String"/>
+	<parameter name="concluida" class="java.lang.String"/>
+	<parameter name="pagamento" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="isPesagem" class="java.lang.Boolean">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="isCompra" class="java.lang.Boolean"/>
+	<parameter name="isVenda" class="java.lang.Boolean"/>
+	<parameter name="periodoAlteracao" class="java.lang.String"/>
+	<parameter name="periodoAlteracaoInicial" class="java.util.Date"/>
+	<parameter name="periodoAlteracaoFinal" class="java.util.Date"/>
+	<parameter name="quitada" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT 
+cp.pesoLiquido, 
+p.idProduto, 
+p.nome, 
+sum(cp.pesoLiquido) 
+FROM
+compra c INNER JOIN entidade e ON e.idEntidade=c.idEntidade 
+LEFT JOIN compra_has_produto cp ON cp.idCompra=c.idCompra 
+LEFT JOIN produto p ON cp.idProduto=p.idProduto
+
+WHERE
+
+IF($P{isCompra}=true,
+If($P{idEntidade}=0, (c.idEntidade=$P{idEntidade} OR c.idEntidade!=$P{idEntidade}) AND c.idEntidade=e.idEntidade, c.idEntidade=$P{idEntidade} AND c.idEntidade=e.idEntidade)
+AND IF($P{periodoAlteracao} like 'Todos', c.idEntidade=e.idEntidade, (c.dataAlteracao>=$P{periodoAlteracaoInicial} AND c.dataAlteracao<=$P{periodoAlteracaoFinal}))
+AND IF($P{periodo} like 'Todos', c.idEntidade, (c.dataCriacao>=$P{periodoInicial} AND c.dataCriacao<=$P{periodoFinal}))
+AND IF($P{tipo} like 'Todos', e.tipo=$P{tipo} OR e.tipo!=$P{tipo}, e.tipo like $P{tipo})
+AND IF($P{concluida} like 'Todos', (c.concluida=true OR c.concluida=false), IF($P{concluida} like 'Concluídas', c.concluida=true, c.concluida=false))
+AND IF($P{quitada} like 'Todos', true, IF($P{quitada} like 'Quitada', c.quitada=true, c.quitada=false))
+, false)
+
+GROUP BY cp.idProduto
+
+ORDER BY p.nome]]>
+	</queryString>
+	<field name="pesoLiquido" class="java.lang.Integer"/>
+	<field name="idProduto" class="java.lang.Integer"/>
+	<field name="nome" class="java.lang.String"/>
+	<field name="sum(cp.pesoLiquido)" class="java.math.BigDecimal"/>
+	<variable name="SUM_volumeTotal" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{sum(cp.pesoLiquido)}]]></variableExpression>
+		<initialValueExpression><![CDATA[$F{sum(cp.pesoLiquido)}]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="27">
+			<staticText>
+				<reportElement x="0" y="1" width="288" height="13"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Volume Total Por Produto Comprado:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="14" width="288" height="1"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="288" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="14" width="36" height="13"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Codigo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="43" y="14" width="173" height="13"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Nome:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="216" y="14" width="72" height="13"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Volume Total:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="26" width="288" height="1"/>
+			</line>
+		</band>
+	</title>
+	<detail>
+		<band height="13" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="34" height="13"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idProduto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="43" y="0" width="166" height="13"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="271" y="0" width="17" height="13"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Kg.]]></text>
+			</staticText>
+			<textField pattern="#,##0;-#,##0">
+				<reportElement x="216" y="0" width="55" height="13"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sum(cp.pesoLiquido)}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="24">
+			<line>
+				<reportElement x="110" y="0" width="178" height="1"/>
+			</line>
+			<line>
+				<reportElement x="110" y="13" width="178" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="109" y="1" width="108" height="13"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Volume total comprado:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="271" y="1" width="17" height="13"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="SansSerif" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Kg.]]></text>
+			</staticText>
+			<textField pattern="#,##0.00">
+				<reportElement x="216" y="1" width="55" height="13"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{SUM_volumeTotal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
