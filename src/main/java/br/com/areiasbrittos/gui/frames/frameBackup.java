@@ -2,10 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package gui.frames;
+package br.com.areiasbrittos.gui.frames;
 
-import controle.gui.ControleFPreferencias;
-import controle.gui.ControleFrameBackup;
+import br.com.areiasbrittos.controle.gui.ControleFPreferencias;
+import br.com.areiasbrittos.controle.gui.ControleFrameBackup;
 
 /**
  *

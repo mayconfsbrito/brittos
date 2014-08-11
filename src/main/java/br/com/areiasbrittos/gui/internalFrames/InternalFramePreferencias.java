@@ -1,10 +1,10 @@
-package gui.internalFrames;
+package br.com.areiasbrittos.gui.internalFrames;
 
-import controle.gui.ControleFPreferencias;
-import gui.FramePrincipal;
-import gui.utils.MascarasJTextField;
-import gui.utils.MyDesktopPanel;
-import gui.utils.TamanhoJTextField;
+import br.com.areiasbrittos.controle.gui.ControleFPreferencias;
+import br.com.areiasbrittos.gui.FramePrincipal;
+import br.com.areiasbrittos.gui.utils.MascarasJTextField;
+import br.com.areiasbrittos.gui.utils.MyDesktopPanel;
+import br.com.areiasbrittos.gui.utils.TamanhoJTextField;
 import java.io.File;
 import javax.swing.JFormattedTextField;
 

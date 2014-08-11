@@ -12,8 +12,8 @@ import java.io.File;
 import javax.swing.JDesktopPane;
 
 /**
- *
- * @author maycon
+ * @author Maycon Fernando Silva Brito
+ * @email mayconfsbrito@gmail.com
  */
 public class MyDesktopPanel extends JDesktopPane {
 

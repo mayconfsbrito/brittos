@@ -2,9 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package gui.utils;
+package br.com.areiasbrittos.gui.utils;
 
-import controle.gui.ControleFPreferencias;
+import br.com.areiasbrittos.controle.gui.ControleFPreferencias;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;

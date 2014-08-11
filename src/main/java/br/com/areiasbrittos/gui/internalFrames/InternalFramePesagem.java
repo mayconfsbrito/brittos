@@ -8,19 +8,19 @@
  *
  * Created on 21/01/2011, 18:56:32
  */
-package gui.internalFrames;
+package br.com.areiasbrittos.gui.internalFrames;
 
-import controle.gui.ControleFPreferencias;
-import controle.objetos.*;
-import gui.utils.TamanhoJTextField;
-import gui.utils.MascarasJTextField;
-import gui.utils.ConsertaBugsGUI;
-import gui.utils.ApagaElementosDaInterface;
-import gui.utils.EnabledGUIElements;
-import gui.utils.jtable.RendererTable;
-import persistencia.dao.DAOEntidade;
-import persistencia.dao.DAOPesagem;
-import persistencia.dao.DAOTabelaPesagem;
+import br.com.areiasbrittos.controle.gui.ControleFPreferencias;
+import br.com.areiasbrittos.controle.objetos.*;
+import br.com.areiasbrittos.gui.utils.TamanhoJTextField;
+import br.com.areiasbrittos.gui.utils.MascarasJTextField;
+import br.com.areiasbrittos.gui.utils.ConsertaBugsGUI;
+import br.com.areiasbrittos.gui.utils.ApagaElementosDaInterface;
+import br.com.areiasbrittos.gui.utils.EnabledGUIElements;
+import br.com.areiasbrittos.gui.utils.jtable.RendererTable;
+import br.com.areiasbrittos.persistencia.dao.DAOEntidade;
+import br.com.areiasbrittos.persistencia.dao.DAOPesagem;
+import br.com.areiasbrittos.persistencia.dao.DAOTabelaPesagem;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.math.BigDecimal;
@@ -39,20 +39,20 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
-import persistencia.ConnectionFactory_brittos_bd;
-import controle.utils.Dates;
-import controle.utils.Horas;
-import controle.utils.ReportUtils;
-import gui.FramePrincipal;
-import gui.utils.*;
+import br.com.areiasbrittos.persistencia.ConnectionFactory_brittos_bd;
+import br.com.areiasbrittos.controle.utils.Dates;
+import br.com.areiasbrittos.controle.utils.Horas;
+import br.com.areiasbrittos.controle.utils.ReportUtils;
+import br.com.areiasbrittos.gui.FramePrincipal;
+import br.com.areiasbrittos.gui.utils.*;
 import java.util.*;
-import persistencia.dao.AbstractDAO;
+import br.com.areiasbrittos.persistencia.dao.AbstractDAO;
 
 /**
  * @author Maycon Fernando Silva Brito
  * @email mayconfsbrito@gmail.com
  */
-public class InternalFramePesagem extends gui.superclass.InternalFrame {
+public class InternalFramePesagem extends br.com.areiasbrittos.gui.superclass.InternalFrame {
 
     /*
      * Variáveis desta classe

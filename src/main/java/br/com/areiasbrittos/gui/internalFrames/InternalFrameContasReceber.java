@@ -8,12 +8,12 @@
  *
  * Created on 21/01/2011, 18:56:32
  */
-package gui.internalFrames;
+package br.com.areiasbrittos.gui.internalFrames;
 
-import controle.gui.ControleIFContasReceber;
-import gui.utils.JTextFieldCodigo;
-import gui.utils.MascarasJTextField;
-import gui.utils.NumeroDocument;
+import br.com.areiasbrittos.controle.gui.ControleIFContasReceber;
+import br.com.areiasbrittos.gui.utils.JTextFieldCodigo;
+import br.com.areiasbrittos.gui.utils.MascarasJTextField;
+import br.com.areiasbrittos.gui.utils.NumeroDocument;
 import javax.swing.JFormattedTextField;
 
 /**
@@ -21,7 +21,7 @@ import javax.swing.JFormattedTextField;
  * @author Maycon Fernando Silva Brito
  * @email mayconfsbrito@gmail.com
  */
-public class InternalFrameContasReceber extends gui.superclass.InternalFrame {
+public class InternalFrameContasReceber extends br.com.areiasbrittos.gui.superclass.InternalFrame {
 
     //Variáveis desta classe
     public SelectionListener listener;

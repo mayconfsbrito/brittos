@@ -8,17 +8,17 @@
  *
  * Created on 17/01/2011, 18:27:01
  */
-package gui.relatorios;
+package br.com.areiasbrittos.gui.relatorios;
 
-import controle.gui.ControleIFEstoque;
-import persistencia.dao.AbstractDAO;
+import br.com.areiasbrittos.controle.gui.ControleIFEstoque;
+import br.com.areiasbrittos.persistencia.dao.AbstractDAO;
 
 /**
  *
  * @author Maycon Fernando Silva Brito
  * @email mayconfsbrito@gmail.com
  */
-public class InternalFrameEstoque extends gui.superclass.InternalFrame {
+public class InternalFrameEstoque extends br.com.areiasbrittos.gui.superclass.InternalFrame {
 
     ControleIFEstoque controle = new ControleIFEstoque(this);
 

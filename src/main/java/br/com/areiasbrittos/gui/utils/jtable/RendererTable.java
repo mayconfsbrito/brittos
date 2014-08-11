@@ -2,9 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package gui.utils.jtable;
+package br.com.areiasbrittos.gui.utils.jtable;
 
-import controle.objetos.*;
+import br.com.areiasbrittos.controle.objetos.*;
 import java.awt.Color;
 import java.awt.Component;
 import java.util.List;

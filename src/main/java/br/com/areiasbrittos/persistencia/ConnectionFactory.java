@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package persistencia;
+package br.com.areiasbrittos.persistencia;
 
 import com.mysql.jdbc.Connection;
 import java.sql.DriverManager;

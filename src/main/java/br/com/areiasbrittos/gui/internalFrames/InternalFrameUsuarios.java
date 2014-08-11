@@ -8,14 +8,14 @@
  *
  * Created on 19/09/2011, 08:45:16
  */
-package gui.internalFrames;
+package br.com.areiasbrittos.gui.internalFrames;
 
-import controle.objetos.seguranca.*;
-import gui.utils.ApagaElementosDaInterface;
-import gui.utils.ConsertaBugsGUI;
-import gui.utils.EnabledGUIElements;
-import gui.utils.TamanhoJTextField;
-import gui.utils.MascarasJTextField;
+import br.com.areiasbrittos.controle.objetos.seguranca.*;
+import br.com.areiasbrittos.gui.utils.ApagaElementosDaInterface;
+import br.com.areiasbrittos.gui.utils.ConsertaBugsGUI;
+import br.com.areiasbrittos.gui.utils.EnabledGUIElements;
+import br.com.areiasbrittos.gui.utils.TamanhoJTextField;
+import br.com.areiasbrittos.gui.utils.MascarasJTextField;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -25,16 +25,16 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableModel;
-import gui.FramePrincipal;
-import persistencia.dao.seguranca.DAOPermissao;
-import persistencia.dao.seguranca.DAOPermissaoUsuario;
-import persistencia.dao.seguranca.DAOTransacao;
-import persistencia.dao.seguranca.DAOUsuario;
+import br.com.areiasbrittos.gui.FramePrincipal;
+import br.com.areiasbrittos.persistencia.dao.seguranca.DAOPermissao;
+import br.com.areiasbrittos.persistencia.dao.seguranca.DAOPermissaoUsuario;
+import br.com.areiasbrittos.persistencia.dao.seguranca.DAOTransacao;
+import br.com.areiasbrittos.persistencia.dao.seguranca.DAOUsuario;
 
 /**
  * @author Maycon Fernando Silva Brito @email mayconfsbrito@gmail.com
  */
-public class InternalFrameUsuarios extends gui.superclass.InternalFrame {
+public class InternalFrameUsuarios extends br.com.areiasbrittos.gui.superclass.InternalFrame {
 
     /*
      * Instâncias para outras classes

@@ -9,7 +9,7 @@
  * Created on 05/02/2011, 16:27:01
  */
 
-package gui.internalFrames;
+package br.com.areiasbrittos.gui.internalFrames;
 
 /**
  * @author Maycon Fernando Silva Brito

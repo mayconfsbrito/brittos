@@ -2,12 +2,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package gui.internalFrames;
+package br.com.areiasbrittos.gui.internalFrames;
 
-import controle.gui.ControleIFMovimentoCaixaDiario;
-import gui.superclass.InternalFrame;
-import gui.utils.MascarasJTextField;
-import gui.utils.NumeroDocument;
+import br.com.areiasbrittos.controle.gui.ControleIFMovimentoCaixaDiario;
+import br.com.areiasbrittos.gui.superclass.InternalFrame;
+import br.com.areiasbrittos.gui.utils.MascarasJTextField;
+import br.com.areiasbrittos.gui.utils.NumeroDocument;
 import javax.swing.JFormattedTextField;
 
 /**

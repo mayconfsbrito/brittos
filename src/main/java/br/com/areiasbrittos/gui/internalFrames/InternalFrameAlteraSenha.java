@@ -8,23 +8,24 @@
  *
  * Created on 14/09/2011, 14:46:25
  */
-package gui.internalFrames;
+package br.com.areiasbrittos.gui.internalFrames;
 
-import controle.objetos.seguranca.Transacao;
-import gui.utils.ApagaElementosDaInterface;
-import gui.utils.TamanhoJTextField;
+import br.com.areiasbrittos.controle.objetos.seguranca.Transacao;
+import br.com.areiasbrittos.gui.utils.ApagaElementosDaInterface;
+import br.com.areiasbrittos.gui.utils.TamanhoJTextField;
 import javax.swing.JOptionPane;
-import persistencia.dao.seguranca.DAOUsuario;
-import controle.utils.Criptografia;
-import gui.FramePrincipal;
-import persistencia.dao.seguranca.DAOTransacao;
+import br.com.areiasbrittos.persistencia.dao.seguranca.DAOUsuario;
+import br.com.areiasbrittos.controle.utils.Criptografia;
+import br.com.areiasbrittos.gui.FramePrincipal;
+import br.com.areiasbrittos.gui.superclass.InternalFrame;
+import br.com.areiasbrittos.persistencia.dao.seguranca.DAOTransacao;
 
 /**
  *
  * @author Maycon Fernando Silva Brito
  * @email mayconfsbrito@gmail.com
  */
-public class InternalFrameAlteraSenha extends gui.superclass.InternalFrame {
+public class InternalFrameAlteraSenha extends InternalFrame {
 
     private TamanhoJTextField limita = new TamanhoJTextField();
     private final int[] tamanhosJTextField = {45, 45};

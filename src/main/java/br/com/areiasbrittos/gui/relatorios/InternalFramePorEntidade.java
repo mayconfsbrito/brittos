@@ -8,13 +8,13 @@
  *
  * Created on 17/01/2011, 18:27:01
  */
-package gui.relatorios;
+package br.com.areiasbrittos.gui.relatorios;
 
-import controle.gui.ControleFPreferencias;
-import controle.utils.Dates;
-import controle.utils.ReportUtils;
-import gui.utils.ApagaElementosDaInterface;
-import gui.utils.MascarasJTextField;
+import br.com.areiasbrittos.controle.gui.ControleFPreferencias;
+import br.com.areiasbrittos.controle.utils.Dates;
+import br.com.areiasbrittos.controle.utils.ReportUtils;
+import br.com.areiasbrittos.gui.utils.ApagaElementosDaInterface;
+import br.com.areiasbrittos.gui.utils.MascarasJTextField;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.sql.Date;
@@ -26,15 +26,15 @@ import java.util.Locale;
 import java.util.Map;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
-import persistencia.ConnectionFactory_brittos_bd;
-import persistencia.dao.DAOEntidade;
+import br.com.areiasbrittos.persistencia.ConnectionFactory_brittos_bd;
+import br.com.areiasbrittos.persistencia.dao.DAOEntidade;
 
 /**
  *
  * @author Maycon Fernando Silva Brito
  * @email mayconfsbrito@gmail.com
  */
-public class InternalFramePorEntidade extends gui.superclass.InternalFrame {
+public class InternalFramePorEntidade extends br.com.areiasbrittos.gui.superclass.InternalFrame {
 
     private String[] botoesOpcoes = {"Sim", "Não"};
     ApagaElementosDaInterface apaga = new ApagaElementosDaInterface();

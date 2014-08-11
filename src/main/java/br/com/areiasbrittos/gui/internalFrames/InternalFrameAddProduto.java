@@ -8,12 +8,12 @@
  *
  * Created on 26/01/2012, 13:54:12
  */
-package gui.internalFrames;
+package br.com.areiasbrittos.gui.internalFrames;
 
-import controle.gui.ControleIFAddProduto;
-import gui.superclass.InternalFrame;
-import gui.utils.MascarasJTextField;
-import gui.utils.TextFieldMoedaReal;
+import br.com.areiasbrittos.controle.gui.ControleIFAddProduto;
+import br.com.areiasbrittos.gui.superclass.InternalFrame;
+import br.com.areiasbrittos.gui.utils.MascarasJTextField;
+import br.com.areiasbrittos.gui.utils.TextFieldMoedaReal;
 import javax.swing.JFormattedTextField;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;

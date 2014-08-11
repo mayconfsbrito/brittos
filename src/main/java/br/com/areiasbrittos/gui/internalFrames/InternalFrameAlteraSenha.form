@@ -33,7 +33,7 @@
           <Group type="102" alignment="0" attributes="0">
               <Component id="panelUsuario" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="panelOpcoes" min="-2" pref="62" max="-2" attributes="0"/>
+              <Component id="panelOpcoes" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="panelMensagem" min="-2" pref="22" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -74,7 +74,7 @@
                       <Component id="buttonCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="buttonRedefinirSenha" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="19" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

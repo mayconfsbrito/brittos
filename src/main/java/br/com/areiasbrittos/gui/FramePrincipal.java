@@ -8,49 +8,49 @@
  *
  * Created on 17/01/2011, 17:45:01
  */
-package gui;
+package br.com.areiasbrittos.gui;
 
-import controle.gui.ControleFPreferencias;
-import gui.internalFrames.InternalFrameProdutos;
-import gui.internalFrames.InternalFrameUsuarios;
-import gui.internalFrames.InternalFrameEntidade;
-import gui.internalFrames.InternalFrameSobre;
-import gui.internalFrames.InternalFramePreferencias;
-import gui.internalFrames.InternalFrameAlteraSenha;
-import gui.internalFrames.InternalFrameLogin;
-import gui.internalFrames.InternalFrameProdutosCompra;
-import gui.internalFrames.InternalFramePesagem;
-import gui.internalFrames.InternalFrameProdutosVenda;
-import gui.internalFrames.InternalFrameTabelaPrecosPesagem;
-import controle.gui.ControleFPrincipal;
-import controle.objetos.Caixadiario;
-import controle.objetos.Entidade;
-import controle.objetos.Produto;
-import controle.objetos.Tabelapesagem;
-import gui.relatorios.InternalFrameRastreio;
+import br.com.areiasbrittos.controle.gui.ControleFPreferencias;
+import br.com.areiasbrittos.gui.internalFrames.InternalFrameProdutos;
+import br.com.areiasbrittos.gui.internalFrames.InternalFrameUsuarios;
+import br.com.areiasbrittos.gui.internalFrames.InternalFrameEntidade;
+import br.com.areiasbrittos.gui.internalFrames.InternalFrameSobre;
+import br.com.areiasbrittos.gui.internalFrames.InternalFramePreferencias;
+import br.com.areiasbrittos.gui.internalFrames.InternalFrameAlteraSenha;
+import br.com.areiasbrittos.gui.internalFrames.InternalFrameLogin;
+import br.com.areiasbrittos.gui.internalFrames.InternalFrameProdutosCompra;
+import br.com.areiasbrittos.gui.internalFrames.InternalFramePesagem;
+import br.com.areiasbrittos.gui.internalFrames.InternalFrameProdutosVenda;
+import br.com.areiasbrittos.gui.internalFrames.InternalFrameTabelaPrecosPesagem;
+import br.com.areiasbrittos.controle.gui.ControleFPrincipal;
+import br.com.areiasbrittos.controle.objetos.Caixadiario;
+import br.com.areiasbrittos.controle.objetos.Entidade;
+import br.com.areiasbrittos.controle.objetos.Produto;
+import br.com.areiasbrittos.controle.objetos.Tabelapesagem;
+import br.com.areiasbrittos.gui.relatorios.InternalFrameRastreio;
 import java.text.ParseException;
-import gui.relatorios.InternalFramePorEntidade;
-import gui.utils.EnabledGUIElements;
+import br.com.areiasbrittos.gui.relatorios.InternalFramePorEntidade;
+import br.com.areiasbrittos.gui.utils.EnabledGUIElements;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
-import controle.objetos.seguranca.Permissao;
-import controle.objetos.seguranca.PermissaoUsuario;
-import controle.objetos.seguranca.Usuario;
-import gui.internalFrames.*;
-import gui.relatorios.InternalFrameEstoque;
-import gui.utils.MyDesktopPanel;
-import gui.utils.WindowListenerFramePrincipal;
+import br.com.areiasbrittos.controle.objetos.seguranca.Permissao;
+import br.com.areiasbrittos.controle.objetos.seguranca.PermissaoUsuario;
+import br.com.areiasbrittos.controle.objetos.seguranca.Usuario;
+import br.com.areiasbrittos.gui.internalFrames.*;
+import br.com.areiasbrittos.gui.relatorios.InternalFrameEstoque;
+import br.com.areiasbrittos.gui.utils.MyDesktopPanel;
+import br.com.areiasbrittos.gui.utils.WindowListenerFramePrincipal;
 import java.io.File;
 import org.hibernate.exception.SQLGrammarException;
-import persistencia.dao.AbstractDAO;
-import persistencia.dao.hibernateSessionFactory_bd_Seguranca;
-import persistencia.dao.hibernateSessionFactory_brittos_bd;
-import persistencia.dao.seguranca.DAOPermissao;
-import persistencia.dao.seguranca.DAOPermissaoUsuario;
-import persistencia.dao.seguranca.DAOUsuario;
+import br.com.areiasbrittos.persistencia.dao.AbstractDAO;
+import br.com.areiasbrittos.persistencia.dao.hibernateSessionFactory_bd_Seguranca;
+import br.com.areiasbrittos.persistencia.dao.hibernateSessionFactory_brittos_bd;
+import br.com.areiasbrittos.persistencia.dao.seguranca.DAOPermissao;
+import br.com.areiasbrittos.persistencia.dao.seguranca.DAOPermissaoUsuario;
+import br.com.areiasbrittos.persistencia.dao.seguranca.DAOUsuario;
 
 /**
  * @author Maycon Fernando Silva Brito
@@ -535,7 +535,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        desktopPanel = new gui.utils.MyDesktopPanel();
+        desktopPanel = new br.com.areiasbrittos.gui.utils.MyDesktopPanel();
         panelMensagem = new javax.swing.JPanel();
         textMensagem = new javax.swing.JTextField();
         jToolBar1 = new javax.swing.JToolBar();

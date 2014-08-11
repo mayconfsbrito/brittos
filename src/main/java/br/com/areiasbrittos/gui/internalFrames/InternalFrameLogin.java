@@ -8,23 +8,23 @@
  *
  * Created on 14/09/2011, 14:46:25
  */
-package gui.internalFrames;
+package br.com.areiasbrittos.gui.internalFrames;
 
-import gui.utils.TamanhoJTextField;
+import br.com.areiasbrittos.gui.utils.TamanhoJTextField;
 import java.sql.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
-import controle.objetos.seguranca.Usuario;
-import persistencia.dao.seguranca.DAOUsuario;
-import controle.utils.Criptografia;
-import gui.FramePrincipal;
+import br.com.areiasbrittos.controle.objetos.seguranca.Usuario;
+import br.com.areiasbrittos.persistencia.dao.seguranca.DAOUsuario;
+import br.com.areiasbrittos.controle.utils.Criptografia;
+import br.com.areiasbrittos.gui.FramePrincipal;
 
 /**
  *
  * @author Maycon Fernando Silva Brito
  * @email mayconfsbrito@gmail.com
  */
-public class InternalFrameLogin extends gui.superclass.InternalFrame {
+public class InternalFrameLogin extends br.com.areiasbrittos.gui.superclass.InternalFrame {
 
     private TamanhoJTextField limita = new TamanhoJTextField();
     private final int[] tamanhosJTextField = {45, 45};

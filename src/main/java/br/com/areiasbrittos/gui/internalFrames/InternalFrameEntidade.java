@@ -8,14 +8,14 @@
  *
  * Created on 17/01/2011, 18:27:01
  */
-package gui.internalFrames;
+package br.com.areiasbrittos.gui.internalFrames;
 
-import controle.gui.ControleFPreferencias;
-import gui.utils.TamanhoJTextField;
-import gui.utils.MascarasJTextField;
-import gui.utils.ApagaElementosDaInterface;
-import gui.utils.EnabledGUIElements;
-import persistencia.dao.DAOEntidade;
+import br.com.areiasbrittos.controle.gui.ControleFPreferencias;
+import br.com.areiasbrittos.gui.utils.TamanhoJTextField;
+import br.com.areiasbrittos.gui.utils.MascarasJTextField;
+import br.com.areiasbrittos.gui.utils.ApagaElementosDaInterface;
+import br.com.areiasbrittos.gui.utils.EnabledGUIElements;
+import br.com.areiasbrittos.persistencia.dao.DAOEntidade;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.HashMap;
@@ -24,19 +24,19 @@ import java.util.Map;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import controle.objetos.Entidade;
-import persistencia.ConnectionFactory_brittos_bd;
-import controle.utils.ReportUtils;
-import gui.FramePrincipal;
-import gui.utils.*;
-import persistencia.dao.AbstractDAO;
+import br.com.areiasbrittos.controle.objetos.Entidade;
+import br.com.areiasbrittos.persistencia.ConnectionFactory_brittos_bd;
+import br.com.areiasbrittos.controle.utils.ReportUtils;
+import br.com.areiasbrittos.gui.FramePrincipal;
+import br.com.areiasbrittos.gui.utils.*;
+import br.com.areiasbrittos.persistencia.dao.AbstractDAO;
 
 /**
  *
  * @author Maycon Fernando Silva Brito
  * @email mayconfsbrito@gmail.com
  */
-public class InternalFrameEntidade extends gui.superclass.InternalFrame {
+public class InternalFrameEntidade extends br.com.areiasbrittos.gui.superclass.InternalFrame {
 
     /*
      * Variaveis da classe

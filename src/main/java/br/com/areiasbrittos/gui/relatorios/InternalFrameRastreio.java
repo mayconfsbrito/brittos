@@ -8,10 +8,10 @@
  *
  * Created on 17/01/2011, 18:27:01
  */
-package gui.relatorios;
+package br.com.areiasbrittos.gui.relatorios;
 
-import gui.utils.MascarasJTextField;
-import gui.utils.ApagaElementosDaInterface;
+import br.com.areiasbrittos.gui.utils.MascarasJTextField;
+import br.com.areiasbrittos.gui.utils.ApagaElementosDaInterface;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.sql.Date;
@@ -23,15 +23,15 @@ import java.util.Locale;
 import java.util.Map;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
-import persistencia.ConnectionFactory_bd_seguranca;
-import persistencia.dao.seguranca.DAOUsuario;
-import controle.utils.ReportUtils;
+import br.com.areiasbrittos.persistencia.ConnectionFactory_bd_seguranca;
+import br.com.areiasbrittos.persistencia.dao.seguranca.DAOUsuario;
+import br.com.areiasbrittos.controle.utils.ReportUtils;
 
 /**
  * @author Maycon Fernando Silva Brito
  * @email mayconfsbrito@gmail.com
  */
-public class InternalFrameRastreio extends gui.superclass.InternalFrame {
+public class InternalFrameRastreio extends br.com.areiasbrittos.gui.superclass.InternalFrame {
 
     private String[] botoesOpcoes = {"Sim", "Não"};
     ApagaElementosDaInterface apaga = new ApagaElementosDaInterface();
