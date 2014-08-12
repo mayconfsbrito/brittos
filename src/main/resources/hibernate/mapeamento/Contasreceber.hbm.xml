@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 01/03/2012 13:32:55 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="controle.objetos.Contasreceber" table="contasreceber" catalog="bd_brittos">
+        <id name="idConta" type="java.lang.Integer">
+            <column name="idConta" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="pesagem" class="controle.objetos.Pesagem" >
+            <column name="idPesagem" />
+        </many-to-one>
+        <many-to-one name="venda" class="controle.objetos.Venda" >
+            <column name="idVenda" />
+        </many-to-one>
+        <property name="descricao" type="string">
+            <column name="descricao" length="100" not-null="true" />
+        </property>
+        <property name="observacao" type="string">
+            <column name="observacao" length="200" not-null="false"/>
+        </property>
+        <property name="dataVencimento" type="date">
+            <column name="dataVencimento" length="10" not-null="true" />
+        </property>
+        <property name="dataPagamento" type="date">
+            <column name="dataPagamento" length="8" not-null="false" />
+        </property>
+        <property name="horaPagamento" type="time">
+            <column name="horaPagamento" length="8" not-null="false" />
+        </property>
+        <property name="valor" type="big_decimal">
+            <column name="valor" precision="10" not-null="true" />
+        </property>
+        <property name="quitada" type="boolean">
+            <column name="quitada" not-null="true" />
+        </property>
+        <set name="caixadiarioHasContasrecebers" inverse="true" cascade="all-delete-orphan">
+            <key>
+                <column name="idConta" not-null="true" />
+            </key>
+            <one-to-many class="controle.objetos.CaixadiarioHasContasreceber" />
+        </set>
+    </class>
+</hibernate-mapping>

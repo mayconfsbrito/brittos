@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 01/03/2012 13:32:55 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="controle.objetos.CaixadiarioHasContasreceber" table="caixadiario_has_contasreceber" catalog="bd_brittos">
+        <id name="idCaixaDiarioHasContasReceber" type="java.lang.Integer">
+            <column name="idCaixaDiarioHasContasReceber" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="caixadiario" class="controle.objetos.Caixadiario" >
+            <column name="idCaixaDiario" not-null="true" />
+        </many-to-one>
+        <many-to-one name="contasreceber" class="controle.objetos.Contasreceber" >
+            <column name="idConta" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 09/03/2011 22:10:25 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class catalog="bd_brittos" name="controle.objetos.Pesagem" table="pesagem">
+        <id name="idPesagem" type="java.lang.Integer">
+            <column name="idPesagem"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="controle.objetos.Entidade" name="entidade" >
+            <column name="idEntidade" not-null="true"/>
+        </many-to-one>
+        <property name="dataCriacao" type="date">
+            <column name="dataCriacao" length="10" not-null="true" />
+        </property>
+        <property name="horaCriacao" type="time">
+            <column name="horaCriacao" length="8" not-null="true" />
+        </property>
+        <property name="dataAlteracao" type="date">
+            <column name="dataAlteracao" length="10" not-null="true" />
+        </property>
+        <property name="horaAlteracao" type="time">
+            <column name="horaAlteracao" length="8" not-null="true" />
+        </property>
+        <property name="pesoBruto" type="int">
+            <column name="pesoBruto" not-null="true"/>
+        </property>
+        <property name="tara" type="int">
+            <column name="tara" not-null="true"/>
+        </property>
+        <property name="pesoLiquido" type="int">
+            <column name="pesoLiquido" not-null="true"/>
+        </property>
+        <property name="placa" type="string">
+            <column length="8" name="placa" not-null="true"/>
+        </property>
+        <property name="valorPesagem" type="big_decimal">
+            <column name="valorPesagem" not-null="true" precision="10"/>
+        </property>
+        <property name="vencimento" type="date">
+            <column length="10" name="vencimento" not-null="true"/>
+        </property>
+        <property name="quitada" type="boolean">
+            <column name="quitada" not-null="true"/>
+        </property>
+        <property name="motorista" type="string">
+            <column length="45" name="motorista"/>
+        </property>
+        <property name="pagamento" type="string">
+            <column name="pagamento" length="8"/>
+        </property>
+        <property name="concluida" type="boolean">
+            <column name="concluida" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

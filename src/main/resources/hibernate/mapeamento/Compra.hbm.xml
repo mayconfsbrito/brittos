@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 11/01/2012 10:46:47 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="controle.objetos.Compra" table="compra" catalog="bd_brittos">
+        <id name="idCompra" type="java.lang.Integer">
+            <column name="idCompra" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="entidade" class="controle.objetos.Entidade" >
+            <column name="idEntidade" not-null="true" />
+        </many-to-one>
+        <property name="dataCriacao" type="date">
+            <column name="dataCriacao" length="10" not-null="true" />
+        </property>
+        <property name="horaCriacao" type="time">
+            <column name="horaCriacao" length="8" not-null="true" />
+        </property>
+        <property name="dataAlteracao" type="date">
+            <column name="dataAlteracao" length="10" not-null="true" />
+        </property>
+        <property name="horaAlteracao" type="time">
+            <column name="horaAlteracao" length="8" not-null="true" />
+        </property>
+        <property name="placa" type="string">
+            <column name="placa" length="8" not-null="true" />
+        </property>
+        <property name="valorTotal" type="big_decimal">
+            <column name="valorTotal" precision="10" not-null="true" />
+        </property>
+        <property name="vencimento" type="date">
+            <column name="vencimento" length="10" not-null="true" />
+        </property>
+        <property name="quitada" type="boolean">
+            <column name="quitada" not-null="true" />
+        </property>
+        <property name="motorista" type="string">
+            <column name="motorista" length="45" />
+        </property>
+        <property name="pagamento" type="string">
+            <column name="pagamento" length="8"/>
+        </property>
+        <property name="concluida" type="boolean">
+            <column name="concluida" not-null="true" />
+        </property>
+        <set name="compraHasProdutos" inverse="true" cascade="all-delete-orphan">
+            <key>
+                <column name="idCompra" not-null="true" unique="true" />
+            </key>
+            <one-to-many class="controle.objetos.CompraHasProduto" />
+        </set>
+    </class>
+</hibernate-mapping>

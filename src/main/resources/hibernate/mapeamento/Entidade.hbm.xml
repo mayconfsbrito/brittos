@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 09/03/2011 22:10:25 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="bd_brittos" name="controle.objetos.Entidade" table="entidade">
+    <id name="idEntidade" type="java.lang.Integer">
+      <column name="idEntidade"/>
+      <generator class="identity"/>
+    </id>
+    <property name="nome" type="string">
+      <column length="60" name="nome" not-null="true" unique="true"/>
+    </property>
+    <property name="fantasia" type="string">
+      <column length="60" name="fantasia"/>
+    </property>
+    <property name="cidade" type="string">
+      <column length="40" name="cidade"/>
+    </property>
+    <property name="estado" type="string">
+      <column length="2" name="estado"/>
+    </property>
+    <property name="logradouro" type="string">
+      <column length="60" name="logradouro"/>
+    </property>
+    <property name="numero" type="string">
+      <column length="10" name="numero"/>
+    </property>
+    <property name="bairro" type="string">
+      <column length="60" name="bairro"/>
+    </property>
+    <property name="cep" type="string">
+      <column length="9" name="cep"/>
+    </property>
+    <property name="cpfCnpj" type="string">
+      <column length="18" name="cpfCnpj"/>
+    </property>
+    <property name="telefone" type="string">
+      <column length="13" name="telefone"/>
+    </property>
+    <property name="celular" type="string">
+      <column length="13" name="celular"/>
+    </property>
+    <property name="fax" type="string">
+      <column length="13" name="fax"/>
+    </property>
+    <property name="inscricaoEstadual" type="string">
+      <column length="17" name="inscricaoEstadual"/>
+    </property>
+    <property name="tipo" type="string">
+      <column length="20" name="tipo" not-null="true"/>
+    </property>
+    <property name="pesJuridica" type="boolean">
+      <column name="pesJuridica" not-null="true"/>
+    </property>
+    <set inverse="true" name="pesagems">
+      <key>
+        <column name="idEntidade" not-null="true"/>
+      </key>
+      <one-to-many class="controle.objetos.Pesagem"/>
+    </set>
+    <set inverse="true" name="compras">
+      <key>
+        <column name="idEntidade" not-null="true"/>
+      </key>
+      <one-to-many class="controle.objetos.Compra"/>
+    </set>
+    <set inverse="true" name="vendas">
+      <key>
+        <column name="idEntidade" not-null="true"/>
+      </key>
+      <one-to-many class="controle.objetos.Venda"/>
+    </set>
+  </class>
+</hibernate-mapping>

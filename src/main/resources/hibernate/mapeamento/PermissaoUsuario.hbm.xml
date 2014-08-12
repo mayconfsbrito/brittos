@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 06/09/2011 03:48:18 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="bd_seguranca" name="controle.objetos.seguranca.PermissaoUsuario" table="permissao_usuario">
+    <composite-id class="controle.objetos.seguranca.PermissaoUsuarioId" name="id">
+      <key-property name="idPermissao" type="int">
+        <column name="idPermissao"/>
+      </key-property>
+      <key-property name="idUsuario" type="int">
+        <column name="idUsuario"/>
+      </key-property>
+    </composite-id>
+    <many-to-one class="controle.objetos.seguranca.Usuario" insert="false" name="usuario" update="false">
+      <column name="idUsuario" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="controle.objetos.seguranca.Permissao" insert="false" name="idPermissao" update="false">
+      <column name="idPermissao" not-null="true"/>
+    </many-to-one>
+    <property name="permissao" type="boolean">
+      <column name="permissao" not-null="true"/>
+    </property>
+  </class>
+</hibernate-mapping>

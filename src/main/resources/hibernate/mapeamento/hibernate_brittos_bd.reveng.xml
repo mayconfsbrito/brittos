@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="bd_brittos"/>
+  <table-filter match-name="venda"/>
+  <table-filter match-name="venda_has_produto"/>
+  <table-filter match-name="tabelapesagem"/>
+  <table-filter match-name="produto"/>
+  <table-filter match-name="compra_has_produto"/>
+  <table-filter match-name="entidade"/>
+  <table-filter match-name="pesagem"/>
+  <table-filter match-name="compra"/>
+  <table-filter match-name="contasreceber"/>
+  <table-filter match-name="caixadiario_has_contaspagar"/>
+  <table-filter match-name="contaspagar"/>
+  <table-filter match-name="caixadiario"/>
+  <table-filter match-name="caixadiario_has_contasreceber"/>
+  <table-filter match-name="conf"/>
+</hibernate-reverse-engineering>

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 19/09/2012 14:34:21 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="controle.objetos.Conf" table="conf" catalog="bd_brittos">
+        <id name="idConf" type="int">
+            <column name="idConf" />
+            <generator class="assigned" />
+        </id>
+        <property name="validadeTransacoes" type="string">
+            <column name="validadeTransacoes" length="45" not-null="true" />
+        </property>
+        <property name="imagem" type="string">
+            <column name="imagem" length="45" not-null="true" />
+        </property>
+        <property name="nome" type="string">
+            <column name="nome" length="60" not-null="true" />
+        </property>
+        <property name="logradouro" type="string">
+            <column name="logradouro" length="60" not-null="true" />
+        </property>
+        <property name="numero" type="string">
+            <column name="numero" length="20" not-null="true" />
+        </property>
+        <property name="bairro" type="string">
+            <column name="bairro" length="45" not-null="true" />
+        </property>
+        <property name="cep" type="string">
+            <column name="cep" length="9" not-null="true" />
+        </property>
+        <property name="cidade" type="string">
+            <column name="cidade" length="45" not-null="true" />
+        </property>
+        <property name="telefone" type="string">
+            <column name="telefone" length="14" not-null="true" />
+        </property>
+        <property name="cnpj" type="string">
+            <column name="cnpj" length="18" not-null="true" />
+        </property>
+        <property name="bkpAtivacao" type="boolean">
+            <column name="bkpAtivacao" not-null="true" />
+        </property>
+        <property name="bkpEndereco" type="binary">
+            <column name="bkpEndereco" />
+        </property>
+        <property name="bkpAviso" type="boolean">
+            <column name="bkpAviso" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 06/09/2011 03:48:18 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="bd_seguranca" name="controle.objetos.seguranca.Usuario" table="usuario">
+    <id name="idUsuario" type="java.lang.Integer">
+      <column name="idUsuario"/>
+      <generator class="identity"/>
+    </id>
+    <property name="login" type="string">
+      <column length="45" name="login" not-null="true" unique="true"/>
+    </property>
+    <property name="senha" type="string">
+      <column length="45" name="senha" not-null="true"/>
+    </property>
+    <property name="nome" type="string">
+      <column length="100" name="nome" not-null="true"/>
+    </property>
+    <property name="ativo" type="boolean">
+      <column name="ativo" not-null="true"/>
+    </property>
+    <property name="validade" type="date">
+      <column length="10" name="validade" not-null="true"/>
+    </property>
+    <set inverse="true" name="permissaoUsuarios">
+      <key>
+        <column name="idUsuario" not-null="true"/>
+      </key>
+      <one-to-many class="controle.objetos.seguranca.PermissaoUsuario"/>
+    </set>
+    <set inverse="true" name="transacaos">
+      <key>
+        <column name="idUsuario" not-null="true"/>
+      </key>
+      <one-to-many class="controle.objetos.seguranca.Transacao"/>
+    </set>
+  </class>
+</hibernate-mapping>

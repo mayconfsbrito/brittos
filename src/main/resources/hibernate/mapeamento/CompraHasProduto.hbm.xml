@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 11/01/2012 10:46:47 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="controle.objetos.CompraHasProduto" table="compra_has_produto" catalog="bd_brittos">
+        <id name="idCompraHasProduto" type="java.lang.Integer">
+            <column name="idCompraHasProduto" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="compra" class="controle.objetos.Compra" >
+            <column name="idCompra" not-null="true" unique="true" />
+        </many-to-one>
+        <many-to-one name="produto" class="controle.objetos.Produto" >
+            <column name="idProduto" not-null="true" />
+        </many-to-one>
+        <property name="tara" type="int">
+            <column name="tara" not-null="true" />
+        </property>
+        <property name="pesoBruto" type="int">
+            <column name="pesoBruto" not-null="true" />
+        </property>
+        <property name="pesoLiquido" type="int">
+            <column name="pesoLiquido" not-null="true" />
+        </property>
+        <property name="valorUnitario" type="big_decimal">
+            <column name="valorUnitario" precision="10" not-null="true" />
+        </property>
+        <property name="valorTotal" type="big_decimal">
+            <column name="valorTotal" precision="10" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

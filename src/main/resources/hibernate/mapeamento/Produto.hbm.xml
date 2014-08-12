@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 11/01/2012 10:46:47 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="controle.objetos.Produto" table="produto" catalog="bd_brittos">
+        <id name="idProduto" type="java.lang.Integer">
+            <column name="idProduto" />
+            <generator class="identity" />
+        </id>
+        <property name="nome" type="string">
+            <column name="nome" length="30" not-null="true" />
+        </property>
+        <property name="estoque" type="int">
+            <column name="estoque" not-null="true" />
+        </property>
+        <property name="precoAVista" type="big_decimal">
+            <column name="precoAVista" precision="10" not-null="true" />
+        </property>
+        <property name="precoAPrazo" type="big_decimal">
+            <column name="precoAPrazo" precision="10" not-null="true" />
+        </property>
+        <property name="ativo" type="boolean">
+            <column name="ativo" not-null="true" />
+        </property>
+        <set name="vendaHasProdutos" inverse="true" cascade="all">
+            <key>
+                <column name="idProduto" not-null="true" />
+            </key>
+            <one-to-many class="controle.objetos.VendaHasProduto" />
+        </set>
+        <set name="compraHasProdutos" inverse="true" cascade="all">
+            <key>
+                <column name="idProduto" not-null="true" />
+            </key>
+            <one-to-many class="controle.objetos.CompraHasProduto" />
+        </set>
+    </class>
+</hibernate-mapping>

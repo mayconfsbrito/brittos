@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 09/03/2011 22:10:25 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class catalog="bd_brittos" name="controle.objetos.Tabelapesagem" table="tabelapesagem">
+        <id name="idTabelaPesagem" type="java.lang.Integer">
+            <column name="idTabelaPesagem"/>
+            <generator class="identity"/>
+        </id>
+        <property name="tara" type="int">
+            <column name="tara" not-null="true"/>
+        </property>
+        <property name="nome" type="string">
+            <column length="60" name="nome" not-null="true" unique="true"/>
+        </property>
+        <property name="precoAVista" type="big_decimal">
+            <column name="precoAVista" precision="10" not-null="true" />
+        </property>
+        <property name="precoAPrazo" type="big_decimal">
+            <column name="precoAPrazo" precision="10" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

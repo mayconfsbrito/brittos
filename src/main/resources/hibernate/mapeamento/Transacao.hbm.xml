@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 06/09/2011 03:48:18 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="bd_seguranca" name="controle.objetos.seguranca.Transacao" table="transacao">
+    <id name="idTransacao" type="java.lang.Integer">
+      <column name="idTransacao"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="controle.objetos.seguranca.Usuario" name="usuario">
+      <column name="idUsuario" not-null="true"/>
+    </many-to-one>
+    <property name="data" type="date">
+      <column length="10" name="data" not-null="true"/>
+    </property>
+    <property name="hora" type="time">
+      <column length="8" name="hora" not-null="true"/>
+    </property>
+    <property name="transacao" type="string">
+      <column length="100" name="transacao" not-null="true"/>
+    </property>
+  </class>
+</hibernate-mapping>
