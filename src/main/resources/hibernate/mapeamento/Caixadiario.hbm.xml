@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 01/03/2012 13:32:55 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-    <class name="controle.objetos.Caixadiario" table="caixadiario" catalog="bd_brittos">
+    <class name="br.com.areiasbrittos.controle.objetos.Caixadiario" table="caixadiario" catalog="bd_brittos">
         <id name="idCaixaDiario" type="java.lang.Integer">
             <column name="idCaixaDiario" />
             <generator class="identity" />
@@ -21,13 +21,13 @@
             <key>
                 <column name="idCaixaDiario" not-null="true" />
             </key>
-            <one-to-many class="controle.objetos.CaixadiarioHasContaspagar" />
+            <one-to-many class="br.com.areiasbrittos.controle.objetos.CaixadiarioHasContaspagar" />
         </set>
         <set name="caixadiarioHasContasrecebers" inverse="true" cascade="all-delete-orphan">
             <key>
                 <column name="idCaixaDiario" not-null="true" />
             </key>
-            <one-to-many class="controle.objetos.CaixadiarioHasContasreceber" />
+            <one-to-many class="br.com.areiasbrittos.controle.objetos.CaixadiarioHasContasreceber" />
         </set>
     </class>
 </hibernate-mapping>

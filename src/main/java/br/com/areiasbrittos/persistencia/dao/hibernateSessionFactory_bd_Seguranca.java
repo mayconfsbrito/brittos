@@ -15,7 +15,7 @@ public class hibernateSessionFactory_bd_Seguranca {
     private static SessionFactory fabricaSessoesBDSeguranca;
     static{
         try{
-            fabricaSessoesBDSeguranca = new Configuration().configure("persistencia/hibernate/mapeamento/hibernate_bd_seguranca.cfg.xml").buildSessionFactory();
+            fabricaSessoesBDSeguranca = new Configuration().configure("hibernate/mapeamento/hibernate_bd_seguranca.cfg.xml").buildSessionFactory();
  
         }
         catch(Exception er){

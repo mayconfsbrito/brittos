@@ -3,12 +3,12 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 11/01/2012 10:46:47 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-    <class name="controle.objetos.Venda" table="venda" catalog="bd_brittos">
+    <class name="br.com.areiasbrittos.controle.objetos.Venda" table="venda" catalog="bd_brittos">
         <id name="idVenda" type="java.lang.Integer">
             <column name="idVenda" />
             <generator class="identity" />
         </id>
-        <many-to-one name="entidade" class="controle.objetos.Entidade" >
+        <many-to-one name="entidade" class="br.com.areiasbrittos.controle.objetos.Entidade" >
             <column name="idEntidade" not-null="true" />
         </many-to-one>
         <property name="dataCriacao" type="date">
@@ -48,7 +48,7 @@
             <key>
                 <column name="idVenda" not-null="true" unique="true" />
             </key>
-            <one-to-many class="controle.objetos.VendaHasProduto" />
+            <one-to-many class="br.com.areiasbrittos.controle.objetos.VendaHasProduto" />
         </set>
     </class>
 </hibernate-mapping>

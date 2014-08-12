@@ -7,9 +7,9 @@
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/bd_seguranca</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">AdminRoot12</property>
-    <mapping resource="persistencia/hibernate/mapeamento/Transacao.hbm.xml"/>
-    <mapping resource="persistencia/hibernate/mapeamento/PermissaoUsuario.hbm.xml"/>
-    <mapping resource="persistencia/hibernate/mapeamento/Usuario.hbm.xml"/>
-    <mapping resource="persistencia/hibernate/mapeamento/Permissao.hbm.xml"/>
+    <mapping resource="hibernate/mapeamento/Transacao.hbm.xml"/>
+    <mapping resource="hibernate/mapeamento/PermissaoUsuario.hbm.xml"/>
+    <mapping resource="hibernate/mapeamento/Usuario.hbm.xml"/>
+    <mapping resource="hibernate/mapeamento/Permissao.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

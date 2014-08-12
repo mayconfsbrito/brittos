@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 09/03/2011 22:10:25 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-  <class catalog="bd_brittos" name="controle.objetos.Entidade" table="entidade">
+  <class catalog="bd_brittos" name="br.com.areiasbrittos.controle.objetos.Entidade" table="entidade">
     <id name="idEntidade" type="java.lang.Integer">
       <column name="idEntidade"/>
       <generator class="identity"/>
@@ -56,19 +56,19 @@
       <key>
         <column name="idEntidade" not-null="true"/>
       </key>
-      <one-to-many class="controle.objetos.Pesagem"/>
+      <one-to-many class="br.com.areiasbrittos.controle.objetos.Pesagem"/>
     </set>
     <set inverse="true" name="compras">
       <key>
         <column name="idEntidade" not-null="true"/>
       </key>
-      <one-to-many class="controle.objetos.Compra"/>
+      <one-to-many class="br.com.areiasbrittos.controle.objetos.Compra"/>
     </set>
     <set inverse="true" name="vendas">
       <key>
         <column name="idEntidade" not-null="true"/>
       </key>
-      <one-to-many class="controle.objetos.Venda"/>
+      <one-to-many class="br.com.areiasbrittos.controle.objetos.Venda"/>
     </set>
   </class>
 </hibernate-mapping>

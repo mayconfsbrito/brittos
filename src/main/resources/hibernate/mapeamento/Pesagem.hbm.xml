@@ -2,12 +2,12 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 09/03/2011 22:10:25 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-    <class catalog="bd_brittos" name="controle.objetos.Pesagem" table="pesagem">
+    <class catalog="bd_brittos" name="br.com.areiasbrittos.controle.objetos.Pesagem" table="pesagem">
         <id name="idPesagem" type="java.lang.Integer">
             <column name="idPesagem"/>
             <generator class="identity"/>
         </id>
-        <many-to-one class="controle.objetos.Entidade" name="entidade" >
+        <many-to-one class="br.com.areiasbrittos.controle.objetos.Entidade" name="entidade" >
             <column name="idEntidade" not-null="true"/>
         </many-to-one>
         <property name="dataCriacao" type="date">

@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 11/01/2012 10:46:47 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-    <class name="controle.objetos.Produto" table="produto" catalog="bd_brittos">
+    <class name="br.com.areiasbrittos.controle.objetos.Produto" table="produto" catalog="bd_brittos">
         <id name="idProduto" type="java.lang.Integer">
             <column name="idProduto" />
             <generator class="identity" />
@@ -27,13 +27,13 @@
             <key>
                 <column name="idProduto" not-null="true" />
             </key>
-            <one-to-many class="controle.objetos.VendaHasProduto" />
+            <one-to-many class="br.com.areiasbrittos.controle.objetos.VendaHasProduto" />
         </set>
         <set name="compraHasProdutos" inverse="true" cascade="all">
             <key>
                 <column name="idProduto" not-null="true" />
             </key>
-            <one-to-many class="controle.objetos.CompraHasProduto" />
+            <one-to-many class="br.com.areiasbrittos.controle.objetos.CompraHasProduto" />
         </set>
     </class>
 </hibernate-mapping>

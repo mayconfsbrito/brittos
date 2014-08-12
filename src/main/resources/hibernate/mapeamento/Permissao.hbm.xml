@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 06/09/2011 03:48:18 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-  <class catalog="bd_seguranca" name="controle.objetos.seguranca.Permissao" table="permissao">
+  <class catalog="bd_seguranca" name="br.com.areiasbrittos.controle.objetos.seguranca.Permissao" table="permissao">
     <id name="idPermissao" type="java.lang.Integer">
       <column name="idPermissao"/>
       <generator class="identity"/>
@@ -14,7 +14,7 @@
       <key>
         <column name="idPermissao" not-null="true"/>
       </key>
-      <one-to-many class="controle.objetos.seguranca.PermissaoUsuario"/>
+      <one-to-many class="br.com.areiasbrittos.controle.objetos.seguranca.PermissaoUsuario"/>
     </set>
   </class>
 </hibernate-mapping>

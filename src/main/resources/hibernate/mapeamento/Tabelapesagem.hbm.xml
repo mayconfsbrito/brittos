@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 09/03/2011 22:10:25 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-    <class catalog="bd_brittos" name="controle.objetos.Tabelapesagem" table="tabelapesagem">
+    <class catalog="bd_brittos" name="br.com.areiasbrittos.controle.objetos.Tabelapesagem" table="tabelapesagem">
         <id name="idTabelaPesagem" type="java.lang.Integer">
             <column name="idTabelaPesagem"/>
             <generator class="identity"/>

@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 19/09/2012 14:34:21 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-    <class name="controle.objetos.Conf" table="conf" catalog="bd_brittos">
+    <class name="br.com.areiasbrittos.controle.objetos.Conf" table="conf" catalog="bd_brittos">
         <id name="idConf" type="int">
             <column name="idConf" />
             <generator class="assigned" />
