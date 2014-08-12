@@ -51,6 +51,7 @@ import br.com.areiasbrittos.persistencia.dao.hibernateSessionFactory_brittos_bd;
 import br.com.areiasbrittos.persistencia.dao.seguranca.DAOPermissao;
 import br.com.areiasbrittos.persistencia.dao.seguranca.DAOPermissaoUsuario;
 import br.com.areiasbrittos.persistencia.dao.seguranca.DAOUsuario;
+import br.com.areiasbrittos.gui.*;
 
 /**
  * @author Maycon Fernando Silva Brito
@@ -535,7 +536,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        desktopPanel = new br.com.areiasbrittos.gui.utils.MyDesktopPanel();
+        desktopPanel = new MyDesktopPanel();
         panelMensagem = new javax.swing.JPanel();
         textMensagem = new javax.swing.JTextField();
         jToolBar1 = new javax.swing.JToolBar();
@@ -616,7 +617,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         jToolBar1.setFloatable(false);
         jToolBar1.setRollover(true);
 
-        buttonEntidades.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barra/Entidades.png"))); // NOI18N
+        buttonEntidades.setIcon(new javax.swing.ImageIcon("/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/Entidades.png")); // NOI18N
         buttonEntidades.setToolTipText("Entidades");
         buttonEntidades.setFocusable(false);
         buttonEntidades.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -628,7 +629,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
         jToolBar1.add(buttonEntidades);
 
-        buttonProdutos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barra/Produtos.png"))); // NOI18N
+        buttonProdutos.setIcon(new javax.swing.ImageIcon("/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/Produtos.png")); // NOI18N
         buttonProdutos.setToolTipText("Produtos");
         buttonProdutos.setFocusable(false);
         buttonProdutos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -640,7 +641,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
         jToolBar1.add(buttonProdutos);
 
-        buttonTabelaDePesagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barra/Tabela de Pesagem.png"))); // NOI18N
+        buttonTabelaDePesagem.setIcon(new javax.swing.ImageIcon("/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/Tabela de Pesagem.png")); // NOI18N
         buttonTabelaDePesagem.setToolTipText("Tabela de Preços de Pesagem");
         buttonTabelaDePesagem.setFocusable(false);
         buttonTabelaDePesagem.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -653,7 +654,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         jToolBar1.add(buttonTabelaDePesagem);
         jToolBar1.add(jSeparator2);
 
-        buttonPesagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barra/Pesagem.png"))); // NOI18N
+        buttonPesagem.setIcon(new javax.swing.ImageIcon("/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/Pesagem.png")); // NOI18N
         buttonPesagem.setToolTipText("Pesagens");
         buttonPesagem.setFocusable(false);
         buttonPesagem.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -665,7 +666,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
         jToolBar1.add(buttonPesagem);
 
-        buttonCompra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barra/Compra.png"))); // NOI18N
+        buttonCompra.setIcon(new javax.swing.ImageIcon("/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/Compra.png")); // NOI18N
         buttonCompra.setToolTipText("Compra");
         buttonCompra.setFocusable(false);
         buttonCompra.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -677,7 +678,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
         jToolBar1.add(buttonCompra);
 
-        buttonVenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barra/Venda.png"))); // NOI18N
+        buttonVenda.setIcon(new javax.swing.ImageIcon("/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/Venda.png")); // NOI18N
         buttonVenda.setToolTipText("Venda");
         buttonVenda.setFocusable(false);
         buttonVenda.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -690,7 +691,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         jToolBar1.add(buttonVenda);
         jToolBar1.add(jSeparator1);
 
-        buttonContasPagar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barra/Pagar.png"))); // NOI18N
+        buttonContasPagar.setIcon(new javax.swing.ImageIcon("/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/Pagar.png")); // NOI18N
         buttonContasPagar.setToolTipText("Contas a Pagar");
         buttonContasPagar.setFocusable(false);
         buttonContasPagar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -702,7 +703,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
         jToolBar1.add(buttonContasPagar);
 
-        buttonContasReceber.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barra/Receber.png"))); // NOI18N
+        buttonContasReceber.setIcon(new javax.swing.ImageIcon("/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/Receber.png")); // NOI18N
         buttonContasReceber.setToolTipText("Contas a Receber");
         buttonContasReceber.setFocusable(false);
         buttonContasReceber.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -714,7 +715,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
         jToolBar1.add(buttonContasReceber);
 
-        buttonCaixaDiário.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barra/Caixa Diário.png"))); // NOI18N
+        buttonCaixaDiário.setIcon(new javax.swing.ImageIcon("/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/Caixa Diário.png")); // NOI18N
         buttonCaixaDiário.setToolTipText("Movimento de Caixa Diário");
         buttonCaixaDiário.setFocusable(false);
         buttonCaixaDiário.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -727,7 +728,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         jToolBar1.add(buttonCaixaDiário);
         jToolBar1.add(jSeparator3);
 
-        buttonRelatorioPorEntidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barra/Relatorio Entidade.png"))); // NOI18N
+        buttonRelatorioPorEntidade.setIcon(new javax.swing.ImageIcon("/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/Relatorio Entidade.png")); // NOI18N
         buttonRelatorioPorEntidade.setToolTipText("Relatório Por Entidades");
         buttonRelatorioPorEntidade.setFocusable(false);
         buttonRelatorioPorEntidade.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -740,7 +741,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         jToolBar1.add(buttonRelatorioPorEntidade);
         jToolBar1.add(jSeparator4);
 
-        buttonPreferencias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barra/preferencias.png"))); // NOI18N
+        buttonPreferencias.setIcon(new javax.swing.ImageIcon("/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/preferencias.png")); // NOI18N
         buttonPreferencias.setFocusable(false);
         buttonPreferencias.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         buttonPreferencias.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -1014,7 +1015,7 @@ public class FramePrincipal extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(desktopPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 424, Short.MAX_VALUE))
+                        .addComponent(desktopPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE))
                     .addComponent(panelLateral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(4, 4, 4)
                 .addComponent(panelMensagem, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1297,7 +1298,7 @@ private void menuItemRelatorioDedoDuroActionPerformed(java.awt.event.ActionEvent
     private static javax.swing.JButton buttonRelatorioPorEntidade;
     private static javax.swing.JButton buttonTabelaDePesagem;
     public static javax.swing.JButton buttonVenda;
-    public static MyDesktopPanel desktopPanel;
+    public static javax.swing.JDesktopPane desktopPanel;
     private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JToolBar.Separator jSeparator2;
     private javax.swing.JToolBar.Separator jSeparator3;
@@ -1330,7 +1331,7 @@ private void menuItemRelatorioDedoDuroActionPerformed(java.awt.event.ActionEvent
     static javax.swing.JMenu menuRelatorio;
     private static javax.swing.JMenu menuTransacoes;
     private javax.swing.JPanel panelLateral;
-    public static MyDesktopPanel panelLogo;
+    public static javax.swing.JDesktopPane panelLogo;
     private javax.swing.JPanel panelMensagem;
     private javax.swing.JTextField textMensagem;
     // End of variables declaration//GEN-END:variables
