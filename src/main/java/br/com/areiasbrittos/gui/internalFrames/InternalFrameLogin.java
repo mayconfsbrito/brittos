@@ -90,7 +90,7 @@ public class InternalFrameLogin extends br.com.areiasbrittos.gui.superclass.Inte
 
         panelOpcoes.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Opções", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
 
-        buttonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Cancelar.png"))); // NOI18N
+        buttonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Cancelar.png"))); // NOI18N
         buttonCancelar.setText("Cancelar");
         buttonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,7 +98,7 @@ public class InternalFrameLogin extends br.com.areiasbrittos.gui.superclass.Inte
             }
         });
 
-        buttonLogar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Confirma.png"))); // NOI18N
+        buttonLogar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Confirma.png"))); // NOI18N
         buttonLogar.setText("Logar");
         buttonLogar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,7 +106,7 @@ public class InternalFrameLogin extends br.com.areiasbrittos.gui.superclass.Inte
             }
         });
 
-        buttonLimpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Novo.png"))); // NOI18N
+        buttonLimpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Novo.png"))); // NOI18N
         buttonLimpar.setText("Limpar");
         buttonLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,7 +163,7 @@ public class InternalFrameLogin extends br.com.areiasbrittos.gui.superclass.Inte
             }
         });
 
-        labelImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/panels/Usuario seguro.png"))); // NOI18N
+        labelImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/panels/Usuario seguro.png"))); // NOI18N
 
         javax.swing.GroupLayout panelUsuarioLayout = new javax.swing.GroupLayout(panelUsuario);
         panelUsuario.setLayout(panelUsuarioLayout);

@@ -43,7 +43,7 @@ public class frameBackup extends javax.swing.JFrame {
         setForeground(java.awt.Color.white);
         setResizable(false);
 
-        labelIcone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/panels/Backup.png"))); // NOI18N
+        labelIcone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/panels/Backup.png"))); // NOI18N
 
         labelAviso.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         labelAviso.setText("Realizando Backup...");

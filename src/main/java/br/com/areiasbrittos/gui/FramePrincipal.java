@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /*
  * FramePrincipal.java
@@ -617,7 +613,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         jToolBar1.setFloatable(false);
         jToolBar1.setRollover(true);
 
-        buttonEntidades.setIcon(new javax.swing.ImageIcon("/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/Entidades.png")); // NOI18N
+        buttonEntidades.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/barra/Entidades.png"))); // NOI18N
         buttonEntidades.setToolTipText("Entidades");
         buttonEntidades.setFocusable(false);
         buttonEntidades.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -629,7 +625,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
         jToolBar1.add(buttonEntidades);
 
-        buttonProdutos.setIcon(new javax.swing.ImageIcon("/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/Produtos.png")); // NOI18N
+        buttonProdutos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/barra/Produtos.png"))); // NOI18N
         buttonProdutos.setToolTipText("Produtos");
         buttonProdutos.setFocusable(false);
         buttonProdutos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -641,7 +637,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
         jToolBar1.add(buttonProdutos);
 
-        buttonTabelaDePesagem.setIcon(new javax.swing.ImageIcon("/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/Tabela de Pesagem.png")); // NOI18N
+        buttonTabelaDePesagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/barra/Tabela de Pesagem.png"))); // NOI18N
         buttonTabelaDePesagem.setToolTipText("Tabela de Preços de Pesagem");
         buttonTabelaDePesagem.setFocusable(false);
         buttonTabelaDePesagem.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -654,7 +650,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         jToolBar1.add(buttonTabelaDePesagem);
         jToolBar1.add(jSeparator2);
 
-        buttonPesagem.setIcon(new javax.swing.ImageIcon("/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/Pesagem.png")); // NOI18N
+        buttonPesagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/barra/Pesagem.png"))); // NOI18N
         buttonPesagem.setToolTipText("Pesagens");
         buttonPesagem.setFocusable(false);
         buttonPesagem.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -666,7 +662,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
         jToolBar1.add(buttonPesagem);
 
-        buttonCompra.setIcon(new javax.swing.ImageIcon("/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/Compra.png")); // NOI18N
+        buttonCompra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/barra/Compra.png"))); // NOI18N
         buttonCompra.setToolTipText("Compra");
         buttonCompra.setFocusable(false);
         buttonCompra.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -678,7 +674,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
         jToolBar1.add(buttonCompra);
 
-        buttonVenda.setIcon(new javax.swing.ImageIcon("/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/Venda.png")); // NOI18N
+        buttonVenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/barra/Venda.png"))); // NOI18N
         buttonVenda.setToolTipText("Venda");
         buttonVenda.setFocusable(false);
         buttonVenda.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -691,7 +687,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         jToolBar1.add(buttonVenda);
         jToolBar1.add(jSeparator1);
 
-        buttonContasPagar.setIcon(new javax.swing.ImageIcon("/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/Pagar.png")); // NOI18N
+        buttonContasPagar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/barra/Pagar.png"))); // NOI18N
         buttonContasPagar.setToolTipText("Contas a Pagar");
         buttonContasPagar.setFocusable(false);
         buttonContasPagar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -703,7 +699,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
         jToolBar1.add(buttonContasPagar);
 
-        buttonContasReceber.setIcon(new javax.swing.ImageIcon("/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/Receber.png")); // NOI18N
+        buttonContasReceber.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/barra/Receber.png"))); // NOI18N
         buttonContasReceber.setToolTipText("Contas a Receber");
         buttonContasReceber.setFocusable(false);
         buttonContasReceber.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -715,7 +711,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
         jToolBar1.add(buttonContasReceber);
 
-        buttonCaixaDiário.setIcon(new javax.swing.ImageIcon("/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/Caixa Diário.png")); // NOI18N
+        buttonCaixaDiário.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/barra/Caixa Diário.png"))); // NOI18N
         buttonCaixaDiário.setToolTipText("Movimento de Caixa Diário");
         buttonCaixaDiário.setFocusable(false);
         buttonCaixaDiário.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -728,7 +724,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         jToolBar1.add(buttonCaixaDiário);
         jToolBar1.add(jSeparator3);
 
-        buttonRelatorioPorEntidade.setIcon(new javax.swing.ImageIcon("/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/Relatorio Entidade.png")); // NOI18N
+        buttonRelatorioPorEntidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/barra/Relatorio Entidade.png"))); // NOI18N
         buttonRelatorioPorEntidade.setToolTipText("Relatório Por Entidades");
         buttonRelatorioPorEntidade.setFocusable(false);
         buttonRelatorioPorEntidade.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -741,7 +737,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         jToolBar1.add(buttonRelatorioPorEntidade);
         jToolBar1.add(jSeparator4);
 
-        buttonPreferencias.setIcon(new javax.swing.ImageIcon("/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/preferencias.png")); // NOI18N
+        buttonPreferencias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/barra/preferencias.png"))); // NOI18N
         buttonPreferencias.setFocusable(false);
         buttonPreferencias.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         buttonPreferencias.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -756,7 +752,7 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         labelUsuario.setText("Usuário Desconectado");
 
-        buttonLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Login.png"))); // NOI18N
+        buttonLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Login.png"))); // NOI18N
         buttonLogin.setText("Login");
         buttonLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -764,7 +760,7 @@ public class FramePrincipal extends javax.swing.JFrame {
             }
         });
 
-        buttonLogoff.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Logoff.png"))); // NOI18N
+        buttonLogoff.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Logoff.png"))); // NOI18N
         buttonLogoff.setText("Logoff");
         buttonLogoff.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -772,9 +768,9 @@ public class FramePrincipal extends javax.swing.JFrame {
             }
         });
 
-        labelConectado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Conectado.png"))); // NOI18N
+        labelConectado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Conectado.png"))); // NOI18N
 
-        labelDesconectado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Desconectado.png"))); // NOI18N
+        labelDesconectado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Desconectado.png"))); // NOI18N
 
         carregarLogotipo();
         panelLogo.setBackground(new java.awt.Color(231, 231, 227));
@@ -821,7 +817,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
 
         menuItemEntidades.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_MASK));
-        menuItemEntidades.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menus/Entidades (1).png"))); // NOI18N
+        menuItemEntidades.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/menus/Entidades (1).png"))); // NOI18N
         menuItemEntidades.setText("Entidades");
         menuItemEntidades.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -831,7 +827,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         menuInformacoes.add(menuItemEntidades);
 
         menuItemProdutos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_MASK));
-        menuItemProdutos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menus/Produtos.png"))); // NOI18N
+        menuItemProdutos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/menus/Produtos.png"))); // NOI18N
         menuItemProdutos.setText("Produtos");
         menuItemProdutos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -841,7 +837,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         menuInformacoes.add(menuItemProdutos);
 
         menuItemTabelaPesagem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.ALT_MASK));
-        menuItemTabelaPesagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menus/Tabela de Pesagem.png"))); // NOI18N
+        menuItemTabelaPesagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/menus/Tabela de Pesagem.png"))); // NOI18N
         menuItemTabelaPesagem.setText("Tabela de Pesagem");
         menuItemTabelaPesagem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -855,7 +851,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         menuTransacoes.setText("Transações");
 
         menuItemPesagem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
-        menuItemPesagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menus/Pesagem.png"))); // NOI18N
+        menuItemPesagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/menus/Pesagem.png"))); // NOI18N
         menuItemPesagem.setText("Pesagem");
         menuItemPesagem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -864,7 +860,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
         menuTransacoes.add(menuItemPesagem);
 
-        menuItemProdutosCompra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menus/Compra.png"))); // NOI18N
+        menuItemProdutosCompra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/menus/Compra.png"))); // NOI18N
         menuItemProdutosCompra.setText("Compra de Produtos");
         menuItemProdutosCompra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -873,7 +869,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
         menuTransacoes.add(menuItemProdutosCompra);
 
-        menuItemProdutosVenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menus/Venda.png"))); // NOI18N
+        menuItemProdutosVenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/menus/Venda.png"))); // NOI18N
         menuItemProdutosVenda.setText("Venda de Produtos");
         menuItemProdutosVenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -886,7 +882,7 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         menuCaixa.setText("Caixa");
 
-        menuItemMovimentoCaixaDiario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menus/Caixa Diário.png"))); // NOI18N
+        menuItemMovimentoCaixaDiario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/menus/Caixa Diário.png"))); // NOI18N
         menuItemMovimentoCaixaDiario.setText("Movimento de Caixa Diário");
         menuItemMovimentoCaixaDiario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -895,7 +891,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
         menuCaixa.add(menuItemMovimentoCaixaDiario);
 
-        menuItemContasPagar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menus/Pagar.png"))); // NOI18N
+        menuItemContasPagar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/menus/Pagar.png"))); // NOI18N
         menuItemContasPagar.setText("Contas a Pagar");
         menuItemContasPagar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -904,7 +900,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
         menuCaixa.add(menuItemContasPagar);
 
-        menuItemContasReceber.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menus/Receber.png"))); // NOI18N
+        menuItemContasReceber.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/menus/Receber.png"))); // NOI18N
         menuItemContasReceber.setText("Contas a Receber");
         menuItemContasReceber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -917,7 +913,7 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         menuRelatorio.setText("Relatórios");
 
-        menuItemRelatorioPorEntidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menus/Relatorio por Entidade (2).png"))); // NOI18N
+        menuItemRelatorioPorEntidade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/menus/Relatorio por Entidade (2).png"))); // NOI18N
         menuItemRelatorioPorEntidade.setText("Por Entidade");
         menuItemRelatorioPorEntidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -971,7 +967,7 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         menuOpcoes.add(Usuarios);
 
-        menuItemPreferencias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/menus/preferencias.png"))); // NOI18N
+        menuItemPreferencias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/menus/preferencias.png"))); // NOI18N
         menuItemPreferencias.setText("Preferências");
         menuItemPreferencias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -353,12 +353,12 @@ public class ControleIFMovimentoCaixaDiario {
         if (!frame.textCodigo.getText().isEmpty()) {
 
             try {
-                InputStream inputStream = getClass().getResourceAsStream("/CaixaDiario.jasper");
+                InputStream inputStream = getClass().getResourceAsStream("/relatorios/CaixaDiario.jasper");
 
                 Map parametros = new HashMap();
 
                 parametros.put("idCaixaDiario", Integer.parseInt(frame.textCodigo.getText()));
-                FileInputStream imagem = new FileInputStream("Logo.png");
+                FileInputStream imagem = new FileInputStream(new java.io.File("logo.png"));
                 parametros.put("imagem", imagem);
                 parametros.put("nome", ControleFPreferencias.conf.getNome());
 

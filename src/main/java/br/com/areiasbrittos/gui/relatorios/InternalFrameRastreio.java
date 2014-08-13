@@ -103,7 +103,7 @@ public class InternalFrameRastreio extends br.com.areiasbrittos.gui.superclass.I
 
         panelBotoes.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Opções", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
 
-        buttonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Cancelar.png"))); // NOI18N
+        buttonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Cancelar.png"))); // NOI18N
         buttonCancelar.setText("Cancelar");
         buttonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,7 +111,7 @@ public class InternalFrameRastreio extends br.com.areiasbrittos.gui.superclass.I
             }
         });
 
-        buttonLimpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Novo.png"))); // NOI18N
+        buttonLimpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Novo.png"))); // NOI18N
         buttonLimpar.setText("Limpar");
         buttonLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,7 +119,7 @@ public class InternalFrameRastreio extends br.com.areiasbrittos.gui.superclass.I
             }
         });
 
-        buttonImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Imprimir (2).png"))); // NOI18N
+        buttonImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Imprimir (2).png"))); // NOI18N
         buttonImprimir.setText("Imprimir");
         buttonImprimir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -286,10 +286,10 @@ public class InternalFrameRastreio extends br.com.areiasbrittos.gui.superclass.I
         boolean imprime = true;
 
         try {
-            InputStream inputStream = getClass().getResourceAsStream("/DedoDuro.jasper");
+            InputStream inputStream = getClass().getResourceAsStream("/relatorios/DedoDuro.jasper");
             Map parametros = new HashMap();
 
-            FileInputStream imagem = new FileInputStream("Logo.png");
+            FileInputStream imagem = new FileInputStream(new java.io.File("logo.png"));
             parametros.put("imagem", imagem);
 
             /*Define parâmetros de período*/

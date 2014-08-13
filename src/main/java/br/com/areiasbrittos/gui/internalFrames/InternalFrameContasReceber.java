@@ -333,7 +333,7 @@ public class InternalFrameContasReceber extends br.com.areiasbrittos.gui.supercl
 
         panelOpcoes.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Opções", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
 
-        buttonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Cancelar.png"))); // NOI18N
+        buttonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Cancelar.png"))); // NOI18N
         buttonCancelar.setText("Cancelar");
         buttonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -341,7 +341,7 @@ public class InternalFrameContasReceber extends br.com.areiasbrittos.gui.supercl
             }
         });
 
-        buttonCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Confirma.png"))); // NOI18N
+        buttonCadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Confirma.png"))); // NOI18N
         buttonCadastrar.setText("Cadastrar");
         buttonCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -349,7 +349,7 @@ public class InternalFrameContasReceber extends br.com.areiasbrittos.gui.supercl
             }
         });
 
-        buttonAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Alterar (2).png"))); // NOI18N
+        buttonAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Alterar (2).png"))); // NOI18N
         buttonAlterar.setText("Alterar");
         buttonAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -357,7 +357,7 @@ public class InternalFrameContasReceber extends br.com.areiasbrittos.gui.supercl
             }
         });
 
-        buttonLimpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Novo.png"))); // NOI18N
+        buttonLimpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Novo.png"))); // NOI18N
         buttonLimpar.setText("Nova/Limpar");
         buttonLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -365,7 +365,7 @@ public class InternalFrameContasReceber extends br.com.areiasbrittos.gui.supercl
             }
         });
 
-        buttonQuitar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Quitar.png"))); // NOI18N
+        buttonQuitar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Quitar.png"))); // NOI18N
         buttonQuitar.setText("Quitar");
         buttonQuitar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -373,7 +373,7 @@ public class InternalFrameContasReceber extends br.com.areiasbrittos.gui.supercl
             }
         });
 
-        buttonExcluir1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Excluir.png"))); // NOI18N
+        buttonExcluir1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Excluir.png"))); // NOI18N
         buttonExcluir1.setText("Excluir");
         buttonExcluir1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -432,7 +432,7 @@ public class InternalFrameContasReceber extends br.com.areiasbrittos.gui.supercl
 
         labelBuscaDesc.setText("Descrição:");
 
-        buttonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Buscar.png"))); // NOI18N
+        buttonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Buscar.png"))); // NOI18N
         buttonBuscar.setText("Buscar");
         buttonBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -440,7 +440,7 @@ public class InternalFrameContasReceber extends br.com.areiasbrittos.gui.supercl
             }
         });
 
-        buttonLimparBusca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Limpar.png"))); // NOI18N
+        buttonLimparBusca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Limpar.png"))); // NOI18N
         buttonLimparBusca.setText("Limpar Busca");
         buttonLimparBusca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

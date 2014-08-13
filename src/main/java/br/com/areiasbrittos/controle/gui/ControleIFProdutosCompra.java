@@ -945,12 +945,12 @@ public class ControleIFProdutosCompra {
             if (!frame.textCodigo.getText().isEmpty()) {
 
                 try {
-                    InputStream inputStream = getClass().getResourceAsStream("/Compra.jasper");
+                    InputStream inputStream = getClass().getResourceAsStream("/relatorios/Compra.jasper");
 
                     Map parametros = new HashMap();
 
                     parametros.put("idCompra", Integer.parseInt(frame.textCodigo.getText()));
-                    FileInputStream imagem = new FileInputStream("Logo.png");
+                    FileInputStream imagem = new FileInputStream(new java.io.File("logo.png"));
                     parametros.put("imagem", imagem);
 
                     parametros = ControleFPreferencias.preencheParametrosRelatorio(parametros);

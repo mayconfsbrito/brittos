@@ -109,13 +109,13 @@ public class ControleFrameBackup {
 
         if (estado.equals(BACKUP_OK)) {
             frame.getLabelAviso().setText("Backup realizado com sucesso!");
-            frame.getLabelIcone().setIcon(new javax.swing.ImageIcon(getClass().getResource("/panels/Ok.png")));
+            frame.getLabelIcone().setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/panels/Ok.png")));
         } else if (estado.equals(BACKUP_ERRO)) {
             frame.getLabelAviso().setText("Erro ao realizar backup!");
-            frame.getLabelIcone().setIcon(new javax.swing.ImageIcon(getClass().getResource("/panels/Erro.png")));
+            frame.getLabelIcone().setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/panels/Erro.png")));
         } else {
             frame.getLabelAviso().setText("Realizando backup...");
-            frame.getLabelIcone().setIcon(new javax.swing.ImageIcon(getClass().getResource("/panels/Backup.png")));
+            frame.getLabelIcone().setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/panels/Backup.png")));
             frame.setEnabled(false);
             
             return;

@@ -28,6 +28,7 @@ import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 import br.com.areiasbrittos.persistencia.ConnectionFactory_brittos_bd;
 import br.com.areiasbrittos.persistencia.dao.DAOEntidade;
+import java.io.File;
 
 /**
  *
@@ -126,7 +127,7 @@ public class InternalFramePorEntidade extends br.com.areiasbrittos.gui.superclas
 
         panelBotoes.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Opções", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
 
-        buttonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Cancelar.png"))); // NOI18N
+        buttonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Cancelar.png"))); // NOI18N
         buttonCancelar.setText("Cancelar");
         buttonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -134,7 +135,7 @@ public class InternalFramePorEntidade extends br.com.areiasbrittos.gui.superclas
             }
         });
 
-        buttonLimpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Novo.png"))); // NOI18N
+        buttonLimpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Novo.png"))); // NOI18N
         buttonLimpar.setText("Limpar");
         buttonLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -142,7 +143,7 @@ public class InternalFramePorEntidade extends br.com.areiasbrittos.gui.superclas
             }
         });
 
-        buttonImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Imprimir (2).png"))); // NOI18N
+        buttonImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Imprimir (2).png"))); // NOI18N
         buttonImprimir.setText("Imprimir");
         buttonImprimir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -562,10 +563,10 @@ public class InternalFramePorEntidade extends br.com.areiasbrittos.gui.superclas
         if (this.checkPesagem.isSelected() || this.checkCompra.isSelected() || this.checkVenda.isSelected()) {
 
             try {
-                InputStream inputStream = getClass().getResourceAsStream("/PorEntidade.jasper");
+                InputStream inputStream = getClass().getResourceAsStream("/relatorios/PorEntidade.jasper");
                 Map parametros = new HashMap();
 
-                FileInputStream imagem = new FileInputStream("Logo.png");
+                FileInputStream imagem = new FileInputStream(new java.io.File("logo.png"));
                 parametros.put("imagem", imagem);
 
                 parametros = ControleFPreferencias.preencheParametrosRelatorio(parametros);

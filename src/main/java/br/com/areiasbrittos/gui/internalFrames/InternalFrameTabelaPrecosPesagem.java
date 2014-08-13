@@ -213,7 +213,7 @@ public class InternalFrameTabelaPrecosPesagem extends br.com.areiasbrittos.gui.s
 
         panelBotoes.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Opções", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
 
-        buttonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Cancelar.png"))); // NOI18N
+        buttonCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Cancelar.png"))); // NOI18N
         buttonCancelar.setText("Cancelar");
         buttonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -221,7 +221,7 @@ public class InternalFrameTabelaPrecosPesagem extends br.com.areiasbrittos.gui.s
             }
         });
 
-        buttonCadastro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Confirma.png"))); // NOI18N
+        buttonCadastro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Confirma.png"))); // NOI18N
         buttonCadastro.setText("Cadastrar");
         buttonCadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -229,7 +229,7 @@ public class InternalFrameTabelaPrecosPesagem extends br.com.areiasbrittos.gui.s
             }
         });
 
-        buttonAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Alterar (2).png"))); // NOI18N
+        buttonAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Alterar (2).png"))); // NOI18N
         buttonAlterar.setText("Alterar");
         buttonAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -237,7 +237,7 @@ public class InternalFrameTabelaPrecosPesagem extends br.com.areiasbrittos.gui.s
             }
         });
 
-        buttonExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Excluir.png"))); // NOI18N
+        buttonExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Excluir.png"))); // NOI18N
         buttonExcluir.setText("Excluir");
         buttonExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -245,7 +245,7 @@ public class InternalFrameTabelaPrecosPesagem extends br.com.areiasbrittos.gui.s
             }
         });
 
-        buttonLimpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Novo.png"))); // NOI18N
+        buttonLimpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Novo.png"))); // NOI18N
         buttonLimpar.setText("Novo/Limpar");
         buttonLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -253,7 +253,7 @@ public class InternalFrameTabelaPrecosPesagem extends br.com.areiasbrittos.gui.s
             }
         });
 
-        buttonImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Imprimir (2).png"))); // NOI18N
+        buttonImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Imprimir (2).png"))); // NOI18N
         buttonImprimir.setText("Imprimir");
         buttonImprimir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -581,12 +581,12 @@ public class InternalFrameTabelaPrecosPesagem extends br.com.areiasbrittos.gui.s
 
     private void buttonImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonImprimirActionPerformed
 
-        InputStream inputStream = getClass().getResourceAsStream("/TabelaDePesagem.jasper");
+        InputStream inputStream = getClass().getResourceAsStream("/relatorios/TabelaDePesagem.jasper");
 
         try {
 
             Map parametros = new HashMap();
-            FileInputStream imagem = new FileInputStream("Logo.png");
+            FileInputStream imagem = new FileInputStream(new java.io.File("logo.png"));
             parametros.put("imagem", imagem);
 
 

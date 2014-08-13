@@ -959,12 +959,12 @@ public class ControleIFProdutosVenda {
             if (!frame.textCodigo.getText().isEmpty()) {
 
                 try {
-                    InputStream inputStream = getClass().getResourceAsStream("/Venda.jasper");
+                    InputStream inputStream = getClass().getResourceAsStream("/relatorios/Venda.jasper");
 
                     Map parametros = new HashMap();
 
                     parametros.put("idVenda", Integer.parseInt(frame.textCodigo.getText()));
-                    FileInputStream imagem = new FileInputStream("Logo.png");
+                    FileInputStream imagem = new FileInputStream(new java.io.File("logo.png"));
                     parametros.put("imagem", imagem);
 
                     parametros = ControleFPreferencias.preencheParametrosRelatorio(parametros);

@@ -5,12 +5,10 @@
 package br.com.areiasbrittos.controle.testes;
 
 import br.com.areiasbrittos.controle.interfaces.Constantes;
-import br.com.areiasbrittos.controle.objetos.Caixadiario;
 import br.com.areiasbrittos.controle.utils.Dates;
 import br.com.areiasbrittos.gui.utils.ConsertaBugsGUI;
 import java.io.IOException;
-import java.util.List;
-import br.com.areiasbrittos.persistencia.dao.AbstractDAO;
+import java.io.InputStream;
 
 /**
  *
@@ -21,6 +19,10 @@ public class Teste {
     public static void main(String[] args) throws IOException {
 
         try {
+
+            InputStream inputStream = Teste.class.getResourceAsStream("/relatorios/PorEntidade.jasper");
+            System.out.println(inputStream);
+            System.exit(0);
 
             Process processRuntime1;
             Process processRuntime2;

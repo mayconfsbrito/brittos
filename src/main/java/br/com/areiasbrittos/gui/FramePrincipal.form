@@ -427,7 +427,7 @@
         <Component class="javax.swing.JButton" name="buttonEntidades">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/Entidades.png"/>
+              <Image iconType="3" name="/icons/barra/Entidades.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Entidades"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -444,7 +444,7 @@
         <Component class="javax.swing.JButton" name="buttonProdutos">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/Produtos.png"/>
+              <Image iconType="3" name="/icons/barra/Produtos.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Produtos"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -461,7 +461,7 @@
         <Component class="javax.swing.JButton" name="buttonTabelaDePesagem">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/Tabela de Pesagem.png"/>
+              <Image iconType="3" name="/icons/barra/Tabela de Pesagem.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Tabela de Pre&#xe7;os de Pesagem"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -480,7 +480,7 @@
         <Component class="javax.swing.JButton" name="buttonPesagem">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/Pesagem.png"/>
+              <Image iconType="3" name="/icons/barra/Pesagem.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Pesagens"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -497,7 +497,7 @@
         <Component class="javax.swing.JButton" name="buttonCompra">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/Compra.png"/>
+              <Image iconType="3" name="/icons/barra/Compra.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Compra"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -514,7 +514,7 @@
         <Component class="javax.swing.JButton" name="buttonVenda">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/Venda.png"/>
+              <Image iconType="3" name="/icons/barra/Venda.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Venda"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -533,7 +533,7 @@
         <Component class="javax.swing.JButton" name="buttonContasPagar">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/Pagar.png"/>
+              <Image iconType="3" name="/icons/barra/Pagar.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Contas a Pagar"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -550,7 +550,7 @@
         <Component class="javax.swing.JButton" name="buttonContasReceber">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/Receber.png"/>
+              <Image iconType="3" name="/icons/barra/Receber.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Contas a Receber"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -567,7 +567,7 @@
         <Component class="javax.swing.JButton" name="buttonCaixaDi&#xe1;rio">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/Caixa Di&#xe1;rio.png"/>
+              <Image iconType="3" name="/icons/barra/Caixa Di&#xe1;rio.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Movimento de Caixa Di&#xe1;rio"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -586,7 +586,7 @@
         <Component class="javax.swing.JButton" name="buttonRelatorioPorEntidade">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/Relatorio Entidade.png"/>
+              <Image iconType="3" name="/icons/barra/Relatorio Entidade.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Relat&#xf3;rio Por Entidades"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -605,7 +605,7 @@
         <Component class="javax.swing.JButton" name="buttonPreferencias">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/media/maycon/Maycon/Google Drive/Documents/Desenvolvimento/Brittos/Sistema Brittos/Engenharia de Software/Projeto/brittos/src/main/resources/icons/barra/preferencias.png"/>
+              <Image iconType="3" name="/icons/barra/preferencias.png"/>
             </Property>
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -682,7 +682,7 @@
         <Component class="javax.swing.JButton" name="buttonLogin">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/buttons/Login.png"/>
+              <Image iconType="3" name="/icons/buttons/Login.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Login"/>
           </Properties>
@@ -696,7 +696,7 @@
         <Component class="javax.swing.JButton" name="buttonLogoff">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/buttons/Logoff.png"/>
+              <Image iconType="3" name="/icons/buttons/Logoff.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Logoff"/>
           </Properties>
@@ -710,7 +710,7 @@
         <Component class="javax.swing.JLabel" name="labelConectado">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/buttons/Conectado.png"/>
+              <Image iconType="3" name="/icons/buttons/Conectado.png"/>
             </Property>
           </Properties>
           <AuxValues>
@@ -720,7 +720,7 @@
         <Component class="javax.swing.JLabel" name="labelDesconectado">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/buttons/Desconectado.png"/>
+              <Image iconType="3" name="/icons/buttons/Desconectado.png"/>
             </Property>
           </Properties>
           <AuxValues>

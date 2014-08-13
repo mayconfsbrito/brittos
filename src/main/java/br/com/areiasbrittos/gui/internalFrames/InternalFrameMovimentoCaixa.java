@@ -90,7 +90,7 @@ public class InternalFrameMovimentoCaixa extends InternalFrame {
             }
         });
 
-        buttonConsulta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Procurar.png"))); // NOI18N
+        buttonConsulta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Procurar.png"))); // NOI18N
         buttonConsulta.setText("Consultar");
         buttonConsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,7 +148,7 @@ public class InternalFrameMovimentoCaixa extends InternalFrame {
 
         panelOpcoesConta.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Opções da Conta", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
 
-        buttonAreceber.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Adicionar (2).png"))); // NOI18N
+        buttonAreceber.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Adicionar (2).png"))); // NOI18N
         buttonAreceber.setText("A receber");
         buttonAreceber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -156,7 +156,7 @@ public class InternalFrameMovimentoCaixa extends InternalFrame {
             }
         });
 
-        buttonApagar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Menos.png"))); // NOI18N
+        buttonApagar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Menos.png"))); // NOI18N
         buttonApagar.setText("A pagar");
         buttonApagar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -164,7 +164,7 @@ public class InternalFrameMovimentoCaixa extends InternalFrame {
             }
         });
 
-        buttonDesfazer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Desconcluir.png"))); // NOI18N
+        buttonDesfazer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Desconcluir.png"))); // NOI18N
         buttonDesfazer.setText("Desfazer pagamento");
         buttonDesfazer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -332,7 +332,7 @@ public class InternalFrameMovimentoCaixa extends InternalFrame {
 
         panelOpcoes.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Opções", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
 
-        buttonSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Cancelar.png"))); // NOI18N
+        buttonSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Cancelar.png"))); // NOI18N
         buttonSair.setText("Sair");
         buttonSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -340,7 +340,7 @@ public class InternalFrameMovimentoCaixa extends InternalFrame {
             }
         });
 
-        buttonImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Imprimir (2).png"))); // NOI18N
+        buttonImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Imprimir (2).png"))); // NOI18N
         buttonImprimir.setText("Imprimir");
         buttonImprimir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -348,7 +348,7 @@ public class InternalFrameMovimentoCaixa extends InternalFrame {
             }
         });
 
-        buttonFechar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Concluir.png"))); // NOI18N
+        buttonFechar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Concluir.png"))); // NOI18N
         buttonFechar.setText("Fechar o Caixa");
         buttonFechar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -356,7 +356,7 @@ public class InternalFrameMovimentoCaixa extends InternalFrame {
             }
         });
 
-        buttonLimpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/buttons/Novo.png"))); // NOI18N
+        buttonLimpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/buttons/Novo.png"))); // NOI18N
         buttonLimpar.setText("Limpar");
         buttonLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

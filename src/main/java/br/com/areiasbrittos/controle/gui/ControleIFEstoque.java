@@ -63,10 +63,10 @@ public class ControleIFEstoque {
         boolean imprime = true;
 
         try {
-            InputStream inputStream = getClass().getResourceAsStream("/Estoque.jasper");
+            InputStream inputStream = getClass().getResourceAsStream("/relatorios/Estoque.jasper");
             Map parametros = new HashMap();
 
-            FileInputStream imagem = new FileInputStream("Logo.png");
+            FileInputStream imagem = new FileInputStream(new java.io.File("logo.png"));
             parametros.put("imagem", imagem);
 
 
