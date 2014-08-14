@@ -7,8 +7,10 @@ package br.com.areiasbrittos.controle.testes;
 import br.com.areiasbrittos.controle.interfaces.Constantes;
 import br.com.areiasbrittos.controle.utils.Dates;
 import br.com.areiasbrittos.gui.utils.ConsertaBugsGUI;
+import java.awt.Image;
+import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
+import java.net.URL;
 
 /**
  *
@@ -16,12 +18,21 @@ import java.io.InputStream;
  */
 public class Teste {
 
+    
+    
     public static void main(String[] args) throws IOException {
 
+        Image img;
+        
         try {
 
-            InputStream inputStream = Teste.class.getResourceAsStream("/relatorios/PorEntidade.jasper");
-            System.out.println(inputStream);
+            String path = "/backgrounds/Metal 1.png";
+            System.out.println("bkgs=" + Teste.class.getResource("/icons/barra/Entidades.png"));
+            System.out.println("bkgs=" + Teste.class.getResource(path));
+            File fl = new File(Teste.class.getResource(path).getPath());
+            URL url = Teste.class.getResource(path);
+            img = javax.imageio.ImageIO.read(url);
+            System.out.println("Caminho background=" + fl.toString());
             System.exit(0);
 
             Process processRuntime1;

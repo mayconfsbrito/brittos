@@ -9,6 +9,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.io.File;
+import java.net.URL;
 import javax.swing.JDesktopPane;
 
 /**
@@ -22,7 +23,7 @@ public class MyDesktopPanel extends JDesktopPane {
 
     public MyDesktopPanel() {
         String path = ControleFPreferencias.conf.getImagem();
-        this.setImgBackground(path);
+        this.setImgBackground(File.separator + "backgrounds" + File.separator + path);
 
     }
 
@@ -36,10 +37,13 @@ public class MyDesktopPanel extends JDesktopPane {
 
     public void setImgBackground(String path) {
         try {
-            img = javax.imageio.ImageIO.read(new java.net.URL(getClass().getResource(path), path));
+
+            URL url = getClass().getResource(path);
+            img = javax.imageio.ImageIO.read(url);
             this.repaint();
         } catch (Exception e) {
-        }//do nothing  
+            e.printStackTrace();
+        }
     }
 
     public void setImgBackground(File file) {
@@ -47,7 +51,8 @@ public class MyDesktopPanel extends JDesktopPane {
             img = javax.imageio.ImageIO.read(file);
             this.repaint();
         } catch (Exception e) {
-        }//do nothing  
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -55,14 +60,13 @@ public class MyDesktopPanel extends JDesktopPane {
 
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g.create();
-
+        
         if (img != null) {
 
             //Dimension dimension = this.getSize();
             //int x = (int) (dimension.getWidth() - img.getWidth(this)) / 2;
             //int y = (int) (dimension.getHeight() - img.getHeight(this)) / 2;
             //g.drawImage(img, x, y, img.getWidth(this), img.getHeight(this), this);
-
             g2d.drawImage(img, 0, 0, this.getWidth(), this.getHeight(), this);
             g2d.dispose();
 

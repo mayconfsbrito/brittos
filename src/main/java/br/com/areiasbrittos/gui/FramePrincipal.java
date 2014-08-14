@@ -1294,7 +1294,7 @@ private void menuItemRelatorioDedoDuroActionPerformed(java.awt.event.ActionEvent
     private static javax.swing.JButton buttonRelatorioPorEntidade;
     private static javax.swing.JButton buttonTabelaDePesagem;
     public static javax.swing.JButton buttonVenda;
-    public static javax.swing.JDesktopPane desktopPanel;
+    public static MyDesktopPanel desktopPanel;
     private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JToolBar.Separator jSeparator2;
     private javax.swing.JToolBar.Separator jSeparator3;
@@ -1327,7 +1327,7 @@ private void menuItemRelatorioDedoDuroActionPerformed(java.awt.event.ActionEvent
     static javax.swing.JMenu menuRelatorio;
     private static javax.swing.JMenu menuTransacoes;
     private javax.swing.JPanel panelLateral;
-    public static javax.swing.JDesktopPane panelLogo;
+    public static MyDesktopPanel panelLogo;
     private javax.swing.JPanel panelMensagem;
     private javax.swing.JTextField textMensagem;
     // End of variables declaration//GEN-END:variables
