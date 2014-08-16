@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Subrelatorio_PorEntidade_Vendas_Total_Produtos" language="groovy" pageWidth="288" pageHeight="802" whenNoDataType="NoDataSection" columnWidth="288" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Subrelatorio_PorEntidade_Vendas_Total_Produtos" pageWidth="288" pageHeight="802" whenNoDataType="NoDataSection" columnWidth="288" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="7fe05b3e-705f-49a0-b56b-b4959eef2adf">
 	<property name="ireport.zoom" value="2.853116706110007"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
@@ -63,69 +63,69 @@ ORDER BY p.nome]]>
 	<title>
 		<band height="27">
 			<staticText>
-				<reportElement x="0" y="1" width="288" height="13"/>
+				<reportElement x="0" y="1" width="288" height="13" uuid="d8c0310d-2714-4fcc-a364-f25ccbae1d6b"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="SansSerif" size="10" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Volume Total Por Produto Vendido:]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="14" width="288" height="1"/>
+				<reportElement x="0" y="14" width="288" height="1" uuid="84d44346-84c1-463b-b765-1cafb99e0b2b"/>
 			</line>
 			<line>
-				<reportElement x="0" y="0" width="288" height="1"/>
+				<reportElement x="0" y="0" width="288" height="1" uuid="93fa23fd-f8c3-4856-9ef4-f85d20aecb63"/>
 			</line>
 			<staticText>
-				<reportElement x="0" y="14" width="36" height="13"/>
+				<reportElement x="0" y="14" width="36" height="13" uuid="73224351-2cf4-47e7-a572-de9a7adae7cc"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="SansSerif" size="10" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Codigo:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="43" y="14" width="173" height="13"/>
+				<reportElement x="43" y="14" width="173" height="13" uuid="0e72ff05-3798-4740-a0bf-3fe3d0509aa0"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="SansSerif" size="10" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Nome:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="216" y="14" width="72" height="13"/>
+				<reportElement x="216" y="14" width="72" height="13" uuid="194ce8dd-6f14-4ac9-aec1-0606a53524bd"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="SansSerif" size="10" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Volume Total:]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="26" width="288" height="1"/>
+				<reportElement x="0" y="26" width="288" height="1" uuid="f065ec5b-0a0f-468a-957d-54131e69518a"/>
 			</line>
 		</band>
 	</title>
 	<detail>
 		<band height="13" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="0" width="34" height="13"/>
+				<reportElement x="0" y="0" width="34" height="13" uuid="f5d0f2a5-47c7-4bd7-a4b5-4da5e84ba983"/>
 				<textElement textAlignment="Right" verticalAlignment="Bottom">
 					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{idProduto}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="43" y="0" width="166" height="13"/>
+				<reportElement x="43" y="0" width="166" height="13" uuid="7b520d52-cb14-4ed8-aa2b-e63dbd56c90e"/>
 				<textElement verticalAlignment="Bottom">
 					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0;-#,##0">
-				<reportElement x="216" y="0" width="55" height="13"/>
+				<reportElement x="216" y="0" width="55" height="13" uuid="5afd778c-f874-4456-ba55-190517702299"/>
 				<textElement textAlignment="Right" verticalAlignment="Bottom">
 					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{sum(vp.pesoLiquido)}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="271" y="0" width="17" height="13"/>
+				<reportElement x="271" y="0" width="17" height="13" uuid="0ad45dfe-912f-4956-9a44-4e090f91adb8"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="SansSerif" size="10" isBold="false"/>
 				</textElement>
@@ -136,27 +136,27 @@ ORDER BY p.nome]]>
 	<summary>
 		<band height="24">
 			<line>
-				<reportElement x="110" y="0" width="178" height="1"/>
+				<reportElement x="110" y="0" width="178" height="1" uuid="b5481f37-4058-4926-8b2d-fa1798221d52"/>
 			</line>
 			<line>
-				<reportElement x="110" y="13" width="178" height="1"/>
+				<reportElement x="110" y="13" width="178" height="1" uuid="a510e598-7cef-4d8c-a21e-4aa7355bd09e"/>
 			</line>
 			<staticText>
-				<reportElement x="110" y="1" width="99" height="13"/>
+				<reportElement x="110" y="1" width="99" height="13" uuid="fcd4be46-ba74-4b6a-a718-a4328257d045"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="SansSerif" size="10" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Volume total vendido:]]></text>
 			</staticText>
 			<textField pattern="#,##0.00">
-				<reportElement x="216" y="1" width="55" height="13"/>
+				<reportElement x="216" y="1" width="55" height="13" uuid="df79eebb-4eef-43a2-b47a-f03dfe1e910c"/>
 				<textElement textAlignment="Right" verticalAlignment="Bottom">
 					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{SUM_volumeTotal}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="271" y="0" width="17" height="13"/>
+				<reportElement x="271" y="0" width="17" height="13" uuid="911b31f4-d1b3-4ec0-92d3-939fc26a76e7"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="SansSerif" size="10" isBold="false"/>
 				</textElement>

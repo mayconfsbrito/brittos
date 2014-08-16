@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Subrelatorio_Produtos" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Subrelatorio_Produtos" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="bd26ebba-2021-4e35-b043-80d441836840">
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
@@ -12,9 +12,7 @@ produto p
 
 
 where 
-p.idProduto = $P{Parametro_idProduto}
-
-]]>
+p.idProduto = $P{Parametro_idProduto}]]>
 	</queryString>
 	<field name="idProduto" class="java.lang.Integer"/>
 	<field name="nome" class="java.lang.String"/>
@@ -28,18 +26,18 @@ p.idProduto = $P{Parametro_idProduto}
 	<detail>
 		<band height="25" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="0" width="286" height="17"/>
+				<reportElement x="0" y="0" width="286" height="17" uuid="bf3a9fb4-b5cc-4349-aa66-4e4c020d21de"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{nome}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="449" y="0" width="106" height="17"/>
+				<reportElement x="449" y="0" width="106" height="17" uuid="90db699d-cac8-4c13-a49d-5c7e6d66a385"/>
 				<textElement textAlignment="Right">
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{estoque} + "Kg"]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{estoque} + "Kg"]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

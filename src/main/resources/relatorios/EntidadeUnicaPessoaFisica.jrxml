@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="EntidadeUnica" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="EntidadeUnica" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="751bf9c3-c152-4118-a46f-8e82688324a4">
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="203"/>
@@ -52,237 +52,237 @@ WHERE
 	<detail>
 		<band height="802" splitType="Stretch">
 			<rectangle radius="10">
-				<reportElement x="133" y="0" width="422" height="59" forecolor="#FFFFFF" backcolor="#C0C0C0"/>
+				<reportElement x="133" y="0" width="422" height="59" forecolor="#FFFFFF" backcolor="#C0C0C0" uuid="ff7bf1fa-41c3-475a-a3b4-4de26c64b8f2"/>
 			</rectangle>
 			<textField>
-				<reportElement x="133" y="0" width="422" height="59"/>
+				<reportElement x="133" y="0" width="422" height="59" uuid="0839d066-1c08-41c8-8e92-0059ae11efc8"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{entidade_nome}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{entidade_nome}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="101" width="44" height="17"/>
+				<reportElement x="0" y="101" width="44" height="17" uuid="c22a8ba3-8597-4b75-8895-295371572d71"/>
 				<textElement>
 					<font fontName="SansSerif" size="12"/>
 				</textElement>
 				<text><![CDATA[Codigo:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="44" y="101" width="100" height="17"/>
+				<reportElement x="44" y="101" width="100" height="17" uuid="e151fe33-4a3b-4cc8-8b6f-a374fecd42e2"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{entidade_idEntidade}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{entidade_idEntidade}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="164" width="37" height="17"/>
+				<reportElement x="0" y="164" width="37" height="17" uuid="de65dde9-5f14-473d-885d-e8312e6215cb"/>
 				<textElement>
 					<font fontName="SansSerif" size="12"/>
 				</textElement>
 				<text><![CDATA[Nome:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="294" width="44" height="17"/>
+				<reportElement x="0" y="294" width="44" height="17" uuid="ca63d051-43be-4e31-944f-c450c79be0f6"/>
 				<textElement>
 					<font fontName="SansSerif" size="12"/>
 				</textElement>
 				<text><![CDATA[Cidade:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="476" y="294" width="44" height="17"/>
+				<reportElement x="476" y="294" width="44" height="17" uuid="940b6f42-4a24-46b7-8044-efd58cf59f7c"/>
 				<textElement>
 					<font fontName="SansSerif" size="12"/>
 				</textElement>
 				<text><![CDATA[Estado:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="311" width="66" height="17"/>
+				<reportElement x="0" y="311" width="66" height="17" uuid="0b28a93b-e90e-47fc-9bb4-934c6e47e853"/>
 				<textElement>
 					<font fontName="SansSerif" size="12"/>
 				</textElement>
 				<text><![CDATA[Logradouro:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="428" y="328" width="27" height="17"/>
+				<reportElement x="428" y="328" width="27" height="17" uuid="a609621c-c948-48bc-9076-5d1c25555892"/>
 				<textElement>
 					<font fontName="SansSerif" size="12"/>
 				</textElement>
 				<text><![CDATA[Cep:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="405" y="311" width="50" height="17"/>
+				<reportElement x="405" y="311" width="50" height="17" uuid="b03cdb8b-aa0a-4260-9925-db2aae3b94dc"/>
 				<textElement>
 					<font fontName="SansSerif" size="12"/>
 				</textElement>
 				<text><![CDATA[Nº:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="328" width="50" height="17"/>
+				<reportElement x="0" y="328" width="50" height="17" uuid="20fcb7c6-36fd-4557-b023-b2a50c8ce359"/>
 				<textElement>
 					<font fontName="SansSerif" size="12"/>
 				</textElement>
 				<text><![CDATA[Bairro:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="214" width="27" height="17"/>
+				<reportElement x="0" y="214" width="27" height="17" uuid="2161bdc0-ea70-4354-b03f-055fb53b5e63"/>
 				<textElement>
 					<font fontName="SansSerif" size="12"/>
 				</textElement>
 				<text><![CDATA[Cpf:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="248" width="50" height="17"/>
+				<reportElement x="0" y="248" width="50" height="17" uuid="537b441d-a375-4bdf-86e8-90d771ae4838"/>
 				<textElement>
 					<font fontName="SansSerif" size="12"/>
 				</textElement>
 				<text><![CDATA[Celular:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="231" width="50" height="17"/>
+				<reportElement x="0" y="231" width="50" height="17" uuid="5f76a6bf-908a-48ff-877b-8f317f8acbc7"/>
 				<textElement>
 					<font fontName="SansSerif" size="12"/>
 				</textElement>
 				<text><![CDATA[Telefone:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="67" width="555" height="17"/>
+				<reportElement x="0" y="67" width="555" height="17" uuid="886b55db-0cd8-4794-a51d-998771638d64"/>
 				<textElement textAlignment="Center">
 					<font fontName="SansSerif" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Informações de Pessoa Física]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="37" y="164" width="518" height="17"/>
+				<reportElement x="37" y="164" width="518" height="17" uuid="1b189e85-fe4d-4fa2-8661-3642523e4f7a"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{entidade_nome}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{entidade_nome}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="50" y="328" width="378" height="17"/>
+				<reportElement x="50" y="328" width="378" height="17" uuid="4119e0cd-1ff5-4ad7-8f95-e127c5ed3ae6"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{entidade_bairro}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{entidade_bairro}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="66" y="311" width="339" height="17"/>
+				<reportElement x="66" y="311" width="339" height="17" uuid="dccd4a4c-fdbd-4215-a06a-a888e81d0360"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{entidade_logradouro}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{entidade_logradouro}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="50" y="248" width="100" height="17"/>
+				<reportElement x="50" y="248" width="100" height="17" uuid="c2b7246b-e6a3-44b3-95ff-1d62418b4a51"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{entidade_celular}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{entidade_celular}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="50" y="231" width="100" height="17"/>
+				<reportElement x="50" y="231" width="100" height="17" uuid="6c3b6516-321b-4398-88a1-dec4b4ee4da9"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{entidade_telefone}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{entidade_telefone}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="455" y="328" width="100" height="17"/>
+				<reportElement x="455" y="328" width="100" height="17" uuid="6dc3dc5d-3552-4223-9a24-00033c18795f"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{entidade_cep}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{entidade_cep}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="455" y="311" width="100" height="17"/>
+				<reportElement x="455" y="311" width="100" height="17" uuid="e7367b06-cb8b-4a91-a10f-b19e58683676"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{entidade_numero}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{entidade_numero}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="520" y="294" width="35" height="17"/>
+				<reportElement x="520" y="294" width="35" height="17" uuid="660db5c7-6e11-473b-b088-1f845d36cc61"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{entidade_estado}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{entidade_estado}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="27" y="214" width="100" height="17"/>
+				<reportElement x="27" y="214" width="100" height="17" uuid="7d277ff4-000a-48a6-ba37-0b58339587ee"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{entidade_cpfCnpj}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{entidade_cpfCnpj}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="44" y="294" width="432" height="17"/>
+				<reportElement x="44" y="294" width="432" height="17" uuid="ebdf9aac-1195-47b2-830e-1b7f1898c960"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{entidade_cidade}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{entidade_cidade}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement x="0" y="84" width="555" height="1"/>
+				<reportElement x="0" y="84" width="555" height="1" uuid="7f2bead2-9b02-4ba6-8d56-a85309adab7f"/>
 			</line>
 			<staticText>
-				<reportElement x="0" y="84" width="555" height="17"/>
+				<reportElement x="0" y="84" width="555" height="17" uuid="8b7bdc34-3b85-4c1d-9047-fd86a278d35e"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Informações do Sistema]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="118" width="44" height="17"/>
+				<reportElement x="0" y="118" width="44" height="17" uuid="97243403-6f85-48be-9e98-d64349aebb8a"/>
 				<textElement>
 					<font fontName="SansSerif" size="12"/>
 				</textElement>
 				<text><![CDATA[Vinculo:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="44" y="118" width="134" height="17"/>
+				<reportElement x="44" y="118" width="134" height="17" uuid="70c8af4e-a1e9-472d-8bcf-b0ebebade911"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{entidade_tipo}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{entidade_tipo}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="147" width="555" height="17"/>
+				<reportElement x="0" y="147" width="555" height="17" uuid="4f8b9b6b-8384-46c5-ba05-5b14fc8dadf3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Informações Pessoais]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="147" width="555" height="1"/>
+				<reportElement x="0" y="147" width="555" height="1" uuid="f6bcf068-052f-4a3c-ae27-84e8eb528c06"/>
 			</line>
 			<staticText>
-				<reportElement x="0" y="277" width="555" height="17"/>
+				<reportElement x="0" y="277" width="555" height="17" uuid="63d344ec-f2bd-465c-b319-01f9c4bd45c1"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Endereço]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="277" width="555" height="1"/>
+				<reportElement x="0" y="277" width="555" height="1" uuid="28646382-0e24-47f3-a8cf-f87ed6a65746"/>
 			</line>
 			<image>
-				<reportElement x="0" y="0" width="133" height="59"/>
-				<imageExpression class="java.io.InputStream"><![CDATA[$P{imagem}]]></imageExpression>
+				<reportElement x="0" y="0" width="133" height="59" uuid="8f63be43-ec05-4b9f-b270-8964d0552d93"/>
+				<imageExpression><![CDATA[$P{imagem}]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement x="0" y="181" width="50" height="17"/>
+				<reportElement x="0" y="181" width="50" height="17" uuid="05251f71-7682-4142-8767-ae90f964e0f9"/>
 				<textElement>
 					<font fontName="SansSerif" size="12"/>
 				</textElement>
 				<text><![CDATA[Fantasia:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="50" y="181" width="505" height="17"/>
+				<reportElement x="50" y="181" width="505" height="17" uuid="da4e38de-0f2e-4e73-a0ae-620a99cabd2f"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{entidade_fantasia}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{entidade_fantasia}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

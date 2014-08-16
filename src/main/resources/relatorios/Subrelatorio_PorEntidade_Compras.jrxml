@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Subrelatorio_PorEntidade_Compras" language="groovy" pageWidth="555" pageHeight="802" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Subrelatorio_PorEntidade_Compras" pageWidth="555" pageHeight="802" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="ea64dd16-70d8-4103-9cd2-a1b37023a8b5">
 	<property name="ireport.zoom" value="2.143588810000003"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
@@ -90,104 +90,104 @@ ORDER BY c.idCompra]]>
 	<title>
 		<band height="18">
 			<rectangle radius="10">
-				<reportElement x="249" y="1" width="57" height="17" forecolor="#FFFFFF" backcolor="#C0C0C0"/>
+				<reportElement x="249" y="1" width="57" height="17" forecolor="#FFFFFF" backcolor="#C0C0C0" uuid="a5ccb361-1a5e-4693-ad86-9857351e5169"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="0" y="1" width="555" height="17"/>
+				<reportElement x="0" y="1" width="555" height="17" uuid="11aea92a-49aa-42bb-8673-1e3fc679b742"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Compras]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="16" width="555" height="1"/>
+				<reportElement x="0" y="16" width="555" height="1" uuid="b4942d73-0dbc-4716-93ca-99d901f262eb"/>
 			</line>
 			<line>
-				<reportElement x="0" y="-1" width="555" height="1"/>
+				<reportElement x="0" y="-1" width="555" height="1" uuid="ff855a9b-418c-4659-bb25-ffab19946bd7"/>
 			</line>
 		</band>
 	</title>
 	<detail>
 		<band height="17" splitType="Stretch">
 			<staticText>
-				<reportElement x="480" y="0" width="13" height="17"/>
+				<reportElement x="480" y="0" width="13" height="17" uuid="36085d24-24a2-4db5-b4ed-b7709e191df8"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="SansSerif" size="10" isBold="false"/>
 				</textElement>
 				<text><![CDATA[R$]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="0" y="0" width="36" height="17"/>
+				<reportElement x="0" y="0" width="36" height="17" uuid="e5b77c18-176c-47ab-b383-781b5dc0cdb1"/>
 				<textElement>
 					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{idCompra}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="47" y="0" width="48" height="17"/>
+				<reportElement x="47" y="0" width="48" height="17" uuid="e9a713b0-cfbb-4321-b80a-fd3e1bcc46ee"/>
 				<textElement>
 					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dataCriacao}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="104" y="0" width="47" height="17"/>
+				<reportElement x="104" y="0" width="47" height="17" uuid="a6b4f593-1f20-4567-b404-7ebac69e8fc9"/>
 				<textElement>
 					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{vencimento}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="162" y="0" width="40" height="17"/>
+				<reportElement x="162" y="0" width="40" height="17" uuid="7f2dfe58-eee7-4272-a0e5-a9d4d80be501"/>
 				<textElement>
 					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{quitada}.booleanValue() == true ? "Sim" : "Não"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="212" y="0" width="54" height="17"/>
+				<reportElement x="212" y="0" width="54" height="17" uuid="8a303bac-1975-4d03-80c1-d6fbb36fdc9e"/>
 				<textElement>
 					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{placa}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="364" y="0" width="17" height="17"/>
+				<reportElement x="364" y="0" width="17" height="17" uuid="6f47930b-fb65-4122-b1e0-9d050e4fd6ca"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="SansSerif" size="10" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Kg.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="392" y="0" width="13" height="17"/>
+				<reportElement x="392" y="0" width="13" height="17" uuid="da98e1ee-eea8-4bab-b2a8-2bdfe0306beb"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="SansSerif" size="10" isBold="false"/>
 				</textElement>
 				<text><![CDATA[R$]]></text>
 			</staticText>
 			<textField pattern="#,##0.00">
-				<reportElement x="405" y="0" width="40" height="17"/>
+				<reportElement x="405" y="0" width="40" height="17" uuid="92e9c9e8-0b69-48e4-8ed8-95c65ac08f6e"/>
 				<textElement>
 					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{valorUnitario} != null ? $F{valorUnitario} : "")]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0">
-				<reportElement x="317" y="0" width="47" height="17"/>
+				<reportElement x="317" y="0" width="47" height="17" uuid="f4afb09d-97f3-413a-9330-0ab12ce67686"/>
 				<textElement textAlignment="Right">
 					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{pesoLiquido} != null ? $F{pesoLiquido} : "")]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="270" y="0" width="40" height="17"/>
+				<reportElement x="270" y="0" width="40" height="17" uuid="f478df96-b316-47ed-98fa-01b3961e7c0b"/>
 				<textElement textAlignment="Right">
 					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{idProduto} != null ? $F{idProduto} : "")]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00;-#,##0.00">
-				<reportElement x="493" y="0" width="62" height="17"/>
+				<reportElement x="493" y="0" width="62" height="17" uuid="2ad6da6a-da99-4500-9d86-1b296c86e086"/>
 				<textElement textAlignment="Right">
 					<font size="10"/>
 				</textElement>
@@ -198,27 +198,27 @@ ORDER BY c.idCompra]]>
 	<summary>
 		<band height="35">
 			<staticText>
-				<reportElement x="477" y="0" width="16" height="17"/>
+				<reportElement x="477" y="0" width="16" height="17" uuid="89f40ee2-2226-42ba-99e3-aabc6b7da938"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="SansSerif" size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[R$]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="343" y="0" width="134" height="17"/>
+				<reportElement x="343" y="0" width="134" height="17" uuid="6245bf1d-b3df-4c4f-85bf-e1d931e0f01f"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="SansSerif" size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Valor total de compras:]]></text>
 			</staticText>
 			<line>
-				<reportElement x="343" y="0" width="212" height="1"/>
+				<reportElement x="343" y="0" width="212" height="1" uuid="52dd61f3-e92d-4d88-8195-698539ef3e18"/>
 			</line>
 			<line>
-				<reportElement x="343" y="17" width="212" height="1"/>
+				<reportElement x="343" y="17" width="212" height="1" uuid="364dc3c0-8f66-43c2-aac7-2195bc855a86"/>
 			</line>
 			<subreport>
-				<reportElement x="266" y="23" width="289" height="4"/>
+				<reportElement x="266" y="23" width="289" height="4" uuid="c72dada0-d1b4-419d-8658-cf67137c9aa2"/>
 				<subreportParameter name="isCompra">
 					<subreportParameterExpression><![CDATA[$P{isCompra}]]></subreportParameterExpression>
 				</subreportParameter>
@@ -262,7 +262,7 @@ ORDER BY c.idCompra]]>
 				<subreportExpression><![CDATA[getClass().getResource( $P{SUBREPORT_DIR} + "Subrelatorio_PorEntidade_Compras_Total_Produtos.jasper" )]]></subreportExpression>
 			</subreport>
 			<textField pattern="#,##0.00;-#,##0.00">
-				<reportElement x="493" y="1" width="62" height="17"/>
+				<reportElement x="493" y="1" width="62" height="17" uuid="86f9a5be-8e49-4ee0-ae80-9bee216f0aa9"/>
 				<textElement textAlignment="Right">
 					<font size="12"/>
 				</textElement>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PorEntidade" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PorEntidade" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="20b6c254-f965-406c-8bd4-0d1cd94479a1">
 	<property name="ireport.zoom" value="1.9965000000000008"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
@@ -44,17 +44,17 @@ u.idUsuario]]>
 	<title>
 		<band height="40">
 			<rectangle radius="10">
-				<reportElement x="97" y="0" width="459" height="40" forecolor="#FFFFFF" backcolor="#C0C0C0"/>
+				<reportElement x="97" y="0" width="459" height="40" forecolor="#FFFFFF" backcolor="#C0C0C0" uuid="c15f671d-bbce-4603-9005-25206dc978f8"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="97" y="0" width="459" height="24"/>
+				<reportElement x="97" y="0" width="459" height="24" uuid="afcafed5-50be-4b76-bb2e-20ae89baa258"/>
 				<textElement textAlignment="Center" verticalAlignment="Top">
 					<font size="18" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Relatório de Rastreio de Transações de Usuários]]></text>
 			</staticText>
 			<image>
-				<reportElement x="0" y="0" width="97" height="40"/>
+				<reportElement x="0" y="0" width="97" height="40" uuid="821ea439-8715-46a7-a24a-da30d95de12d"/>
 				<imageExpression><![CDATA[$P{imagem}]]></imageExpression>
 			</image>
 		</band>
@@ -62,48 +62,48 @@ u.idUsuario]]>
 	<pageHeader>
 		<band height="29" splitType="Stretch">
 			<textField>
-				<reportElement x="216" y="0" width="209" height="17"/>
+				<reportElement x="216" y="0" width="209" height="17" uuid="eb408b80-5bdf-41c7-bb08-936223ec5901"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{periodo}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="1" y="0" width="31" height="17"/>
+				<reportElement x="1" y="0" width="31" height="17" uuid="c021cb1b-5b4f-457f-adac-b4ad343cc4cf"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="SansSerif" size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Data:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="32" y="0" width="88" height="17"/>
+				<reportElement x="32" y="0" width="88" height="17" uuid="2e7eaa35-e447-4b05-834a-9caa16480e28"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new java.text.SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date())]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement x="-1" y="18" width="555" height="1"/>
+				<reportElement x="-1" y="18" width="555" height="1" uuid="82f1c235-70de-4d81-b164-61b68edf44dd"/>
 			</line>
 			<staticText>
-				<reportElement x="170" y="0" width="47" height="17"/>
+				<reportElement x="170" y="0" width="47" height="17" uuid="1babc356-a9b7-4bf7-96b8-7d67dc204ef6"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="SansSerif" size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Período:]]></text>
 			</staticText>
 			<line>
-				<reportElement x="1" y="0" width="555" height="1"/>
+				<reportElement x="1" y="0" width="555" height="1" uuid="37ce4055-f3e7-4895-828f-ecca3590f5ae"/>
 			</line>
 			<staticText>
-				<reportElement x="499" y="1" width="24" height="17"/>
+				<reportElement x="499" y="1" width="24" height="17" uuid="13913b6c-4b44-4d6d-80aa-02ca12c9b611"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="SansSerif" size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[pag.]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="528" y="1" width="28" height="17"/>
+				<reportElement x="528" y="1" width="28" height="17" uuid="db7c870b-a780-44e8-a5a8-d07bceff0021"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
@@ -114,78 +114,78 @@ u.idUsuario]]>
 	<detail>
 		<band height="90" splitType="Stretch">
 			<rectangle radius="0">
-				<reportElement x="1" y="0" width="553" height="17" forecolor="#FFFFFF" backcolor="#C0C0C0"/>
+				<reportElement x="1" y="0" width="553" height="17" forecolor="#FFFFFF" backcolor="#C0C0C0" uuid="09854f3b-6387-4216-9c46-1946abd663fd"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="0" y="17" width="555" height="17"/>
+				<reportElement x="0" y="17" width="555" height="17" uuid="70687b95-a3da-42de-b0e3-0fe8e503e5f5"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Log do usuário]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="1" y="35" width="46" height="17"/>
+				<reportElement x="1" y="35" width="46" height="17" uuid="6eb1fcfe-daa5-4cd3-bcde-f8dd1e399875"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="SansSerif" size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Data:]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="34" width="555" height="1"/>
+				<reportElement x="0" y="34" width="555" height="1" uuid="eaffd31a-57d8-40a9-a234-cdd03a8401c0"/>
 			</line>
 			<staticText>
-				<reportElement x="180" y="34" width="374" height="17"/>
+				<reportElement x="180" y="34" width="374" height="17" uuid="08c061c4-6096-4f82-943c-07a8e17010cc"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="SansSerif" size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Transação:]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="52" width="555" height="1"/>
+				<reportElement x="0" y="52" width="555" height="1" uuid="ea0ab28c-7dd3-4935-9c72-4c5a3eb9c963"/>
 			</line>
 			<line>
-				<reportElement x="1" y="0" width="555" height="1"/>
+				<reportElement x="1" y="0" width="555" height="1" uuid="86aa91ad-e405-4744-ba65-6750897c4f71"/>
 			</line>
 			<staticText>
-				<reportElement x="60" y="35" width="37" height="17"/>
+				<reportElement x="60" y="35" width="37" height="17" uuid="4ae04801-c012-4ff6-8093-b0525b0c400b"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="SansSerif" size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Hora:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="-1" width="43" height="17"/>
+				<reportElement x="0" y="-1" width="43" height="17" uuid="2fdb4a1c-b349-4fc4-8cb2-3c412baf0b02"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="SansSerif" size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Código:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="134" y="0" width="244" height="17"/>
+				<reportElement x="134" y="0" width="244" height="17" uuid="33942814-9f74-4b32-b251-c51705a8259e"/>
 				<textElement>
 					<font size="12" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="42" y="-1" width="45" height="17"/>
+				<reportElement x="42" y="-1" width="45" height="17" uuid="394f2381-91e3-4207-9cb0-1c33091ab92e"/>
 				<textElement>
 					<font size="12" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{idUsuario}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="97" y="0" width="37" height="17"/>
+				<reportElement x="97" y="0" width="37" height="17" uuid="3da47469-7d97-4e97-9c10-a2f8457898b1"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="SansSerif" size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Nome:]]></text>
 			</staticText>
 			<line>
-				<reportElement x="1" y="16" width="555" height="1"/>
+				<reportElement x="1" y="16" width="555" height="1" uuid="e81014ea-5028-409e-955c-c7a43ad9f7ff"/>
 			</line>
 			<subreport>
-				<reportElement x="-1" y="54" width="555" height="27"/>
+				<reportElement x="-1" y="54" width="555" height="27" uuid="3e10e53e-b536-42a4-95db-5e4ae1995463"/>
 				<subreportParameter name="idUsuario">
 					<subreportParameterExpression><![CDATA[$F{idUsuario}]]></subreportParameterExpression>
 				</subreportParameter>
@@ -202,21 +202,21 @@ u.idUsuario]]>
 				<subreportExpression><![CDATA[getClass().getResource( $P{SUBREPORT_DIR} + "Subrelatorio_DedoDuro.jasper" )]]></subreportExpression>
 			</subreport>
 			<staticText>
-				<reportElement x="390" y="0" width="35" height="17"/>
+				<reportElement x="390" y="0" width="35" height="17" uuid="36a782a4-b8fc-4057-89d6-49148f281f8a"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="SansSerif" size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Login:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="425" y="0" width="129" height="17"/>
+				<reportElement x="425" y="0" width="129" height="17" uuid="594cf801-ed78-40f2-b0e0-677bdaddcd6a"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{login}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="111" y="35" width="35" height="17"/>
+				<reportElement x="111" y="35" width="35" height="17" uuid="b196f378-093a-4cbf-b549-754f682275f6"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="SansSerif" size="12" isBold="false"/>
 				</textElement>
@@ -227,7 +227,7 @@ u.idUsuario]]>
 	<pageFooter>
 		<band height="21" splitType="Stretch">
 			<textField>
-				<reportElement x="537" y="1" width="18" height="20"/>
+				<reportElement x="537" y="1" width="18" height="20" uuid="c789910c-6b7b-4166-a527-e63a79b7a59e"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>

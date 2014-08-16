@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Subrelatorio_Caixa_Credito" language="groovy" pageWidth="555" pageHeight="802" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Subrelatorio_Caixa_Credito" pageWidth="555" pageHeight="802" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="d8b945e8-2db1-4772-ac4b-b9b6f6ac4385">
 	<property name="ireport.zoom" value="2.143588810000003"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
@@ -69,55 +69,55 @@ $P{idCaixaDiario}=c.idCaixaDiario]]>
 	<title>
 		<band height="18">
 			<rectangle radius="10">
-				<reportElement x="249" y="1" width="57" height="17" forecolor="#FFFFFF" backcolor="#C0C0C0"/>
+				<reportElement x="249" y="1" width="57" height="17" forecolor="#FFFFFF" backcolor="#C0C0C0" uuid="7a558850-aa64-4379-8c37-8384c8bb6a20"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="0" y="1" width="555" height="17"/>
+				<reportElement x="0" y="1" width="555" height="17" uuid="6b480372-d79a-482f-be26-54421b0de133"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Crédito]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="16" width="555" height="1"/>
+				<reportElement x="0" y="16" width="555" height="1" uuid="047d9fa6-7abe-4bc6-a0d3-989e703d2f06"/>
 			</line>
 			<line>
-				<reportElement x="0" y="-1" width="555" height="1"/>
+				<reportElement x="0" y="-1" width="555" height="1" uuid="b53cb153-ba81-48dc-9c7d-56d3c632fbfb"/>
 			</line>
 		</band>
 	</title>
 	<detail>
 		<band height="17" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="0" width="43" height="17"/>
+				<reportElement x="0" y="0" width="43" height="17" uuid="412683c0-7011-47f0-bab4-0b3e3a5bcb5d"/>
 				<textElement>
 					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{contasreceber_idConta}]]></textFieldExpression>
 			</textField>
 			<textField pattern="¤ #,##0.00">
-				<reportElement x="495" y="0" width="60" height="17"/>
+				<reportElement x="495" y="0" width="60" height="17" uuid="928b7a2f-d3d4-4aca-9433-3f38f70c4bf1"/>
 				<textElement textAlignment="Right">
 					<font size="10" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{contasreceber_valor}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="54" y="0" width="229" height="17"/>
+				<reportElement x="54" y="0" width="229" height="17" uuid="3704a7c1-7a5f-4077-8ca0-8c8562bc09d1"/>
 				<textElement>
 					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{contasreceber_descricao}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="288" y="0" width="43" height="17"/>
+				<reportElement x="288" y="0" width="43" height="17" uuid="68a18340-7478-4d17-a97f-dfd33d4c3ff7"/>
 				<textElement>
 					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{contasreceber_dataVencimento}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="342" y="0" width="54" height="17"/>
+				<reportElement x="342" y="0" width="54" height="17" uuid="8cd25ef0-0c2a-450e-b18d-bda314e1b5ae"/>
 				<textElement textAlignment="Right">
 					<font size="10"/>
 				</textElement>
@@ -125,7 +125,7 @@ $P{idCaixaDiario}=c.idCaixaDiario]]>
 (new DecimalFormat("#,###")).format($F{pesoLiquido}) + "Kg." : "       -       ")]]></textFieldExpression>
 			</textField>
 			<textField pattern="¤ #,##0.00">
-				<reportElement x="407" y="0" width="61" height="17"/>
+				<reportElement x="407" y="0" width="61" height="17" uuid="0875b671-c22b-4583-bc94-fa7e0dac74ad"/>
 				<textElement textAlignment="Right">
 					<font size="10"/>
 				</textElement>
@@ -137,24 +137,24 @@ $F{valorUnitario} : "       -       ")]]></textFieldExpression>
 	<summary>
 		<band height="30">
 			<textField pattern="¤ #,##0.00">
-				<reportElement x="468" y="0" width="87" height="17"/>
+				<reportElement x="468" y="0" width="87" height="17" uuid="5008f486-738b-48a9-85e1-61eb5f574248"/>
 				<textElement textAlignment="Right">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{SUM_valor}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="360" y="0" width="108" height="17"/>
+				<reportElement x="360" y="0" width="108" height="17" uuid="0ad688ea-847b-4f41-8cb7-ae47c8a94124"/>
 				<textElement textAlignment="Right" verticalAlignment="Top">
 					<font fontName="SansSerif" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Crédito Total:]]></text>
 			</staticText>
 			<line>
-				<reportElement x="360" y="0" width="195" height="1"/>
+				<reportElement x="360" y="0" width="195" height="1" uuid="6696cf98-073f-4a1c-8927-0ca55496c5d3"/>
 			</line>
 			<line>
-				<reportElement x="360" y="17" width="195" height="1"/>
+				<reportElement x="360" y="17" width="195" height="1" uuid="09492789-7c86-4d2d-abb1-a454998a0464"/>
 			</line>
 		</band>
 	</summary>

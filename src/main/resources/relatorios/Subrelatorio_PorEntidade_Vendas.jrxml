@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Subrelatorio_PorEntidade_Vendas" language="groovy" pageWidth="555" pageHeight="802" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Subrelatorio_PorEntidade_Vendas" pageWidth="555" pageHeight="802" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="5a28a956-78de-40a6-aada-ceca1582cc81">
 	<property name="ireport.zoom" value="2.143588810000003"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
@@ -92,104 +92,104 @@ ORDER BY v.idVenda]]>
 	<title>
 		<band height="18">
 			<rectangle radius="10">
-				<reportElement x="249" y="1" width="57" height="17" forecolor="#FFFFFF" backcolor="#C0C0C0"/>
+				<reportElement x="249" y="1" width="57" height="17" forecolor="#FFFFFF" backcolor="#C0C0C0" uuid="bc05aab7-564c-47ca-a417-8059e2a393de"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="0" y="1" width="555" height="17"/>
+				<reportElement x="0" y="1" width="555" height="17" uuid="d1a1ce8c-a1bf-4dca-9537-2900c13be353"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Vendas]]></text>
 			</staticText>
 			<line>
-				<reportElement x="0" y="16" width="555" height="1"/>
+				<reportElement x="0" y="16" width="555" height="1" uuid="54bc6047-61fa-4ef3-9afc-d6fe1e2af51a"/>
 			</line>
 			<line>
-				<reportElement x="0" y="-1" width="555" height="1"/>
+				<reportElement x="0" y="-1" width="555" height="1" uuid="8911ffb2-54a6-4dd1-a1d1-9c666f370257"/>
 			</line>
 		</band>
 	</title>
 	<detail>
 		<band height="17" splitType="Stretch">
 			<staticText>
-				<reportElement x="480" y="0" width="13" height="17"/>
+				<reportElement x="480" y="0" width="13" height="17" uuid="630464f4-1322-443e-af4b-cdbdc422d494"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="SansSerif" size="10" isBold="false"/>
 				</textElement>
 				<text><![CDATA[R$]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="0" y="0" width="36" height="17"/>
+				<reportElement x="0" y="0" width="36" height="17" uuid="4f31a91b-6eb3-40c5-b2f5-db6bf8883e2f"/>
 				<textElement>
 					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{idVenda}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00;-#,##0.00">
-				<reportElement x="493" y="0" width="62" height="17"/>
+				<reportElement x="493" y="0" width="62" height="17" uuid="82e38e6a-b234-42f7-a3b0-0f9a487c47e1"/>
 				<textElement textAlignment="Right">
 					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{valorTotal}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="47" y="0" width="46" height="17"/>
+				<reportElement x="47" y="0" width="46" height="17" uuid="acac7275-e161-4311-9ab4-14f0e08e5d05"/>
 				<textElement>
 					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dataCriacao}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="104" y="0" width="47" height="17"/>
+				<reportElement x="104" y="0" width="47" height="17" uuid="42c2ccf4-03a8-44ad-be95-a6608c78386d"/>
 				<textElement>
 					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{vencimento}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="213" y="0" width="53" height="17"/>
+				<reportElement x="213" y="0" width="53" height="17" uuid="effc36e8-e7ed-47ba-9784-806897a9042b"/>
 				<textElement>
 					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{placa}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="162" y="0" width="40" height="17"/>
+				<reportElement x="162" y="0" width="40" height="17" uuid="9c240684-0c75-4005-ae21-343289ef0f85"/>
 				<textElement>
 					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{quitada}.booleanValue() == true ? "Sim" : "Não"]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="270" y="0" width="40" height="17"/>
+				<reportElement x="270" y="0" width="40" height="17" uuid="726938ed-b658-46ed-bd25-9b6cc43bd55d"/>
 				<textElement textAlignment="Right">
 					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{idProduto} != null ? $F{idProduto} : "")]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0">
-				<reportElement x="317" y="0" width="47" height="17"/>
+				<reportElement x="317" y="0" width="47" height="17" uuid="bc8cc7eb-4d07-4bb8-8714-c7047e9fa9ec"/>
 				<textElement textAlignment="Right">
 					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{pesoLiquido} != null ? $F{pesoLiquido} : "")]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="392" y="0" width="13" height="17"/>
+				<reportElement x="392" y="0" width="13" height="17" uuid="52987fca-e0f5-4441-b9e0-8ca36bf299bc"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="SansSerif" size="10" isBold="false"/>
 				</textElement>
 				<text><![CDATA[R$]]></text>
 			</staticText>
 			<textField pattern="#,##0.00">
-				<reportElement x="405" y="0" width="40" height="17"/>
+				<reportElement x="405" y="0" width="40" height="17" uuid="f81f2ea5-54e9-4e02-a597-88c9071be38d"/>
 				<textElement>
 					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[($F{valorUnitario} != null ? $F{valorUnitario} : "")]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="364" y="0" width="17" height="17"/>
+				<reportElement x="364" y="0" width="17" height="17" uuid="830eb3f0-6898-45c2-995f-ab4bd401eaf3"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="SansSerif" size="10" isBold="false"/>
 				</textElement>
@@ -200,34 +200,34 @@ ORDER BY v.idVenda]]>
 	<summary>
 		<band height="35">
 			<textField pattern="#,##0.00;-#,##0.00">
-				<reportElement x="493" y="0" width="62" height="17"/>
+				<reportElement x="493" y="0" width="62" height="17" uuid="6a8d5845-3d83-405e-8a06-5c0ceedab171"/>
 				<textElement textAlignment="Right">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$V{SUM_valorPesagem}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="477" y="0" width="16" height="17"/>
+				<reportElement x="477" y="0" width="16" height="17" uuid="5e559215-f483-4a60-8d90-2239cb451766"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="SansSerif" size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[R$]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="343" y="0" width="134" height="17"/>
+				<reportElement x="343" y="0" width="134" height="17" uuid="a2415b33-8699-45a9-b170-7124a24fd518"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="SansSerif" size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Valor total de vendas:]]></text>
 			</staticText>
 			<line>
-				<reportElement x="343" y="0" width="212" height="1"/>
+				<reportElement x="343" y="0" width="212" height="1" uuid="f5268472-80c7-4ed8-ba08-0c1ab43ba839"/>
 			</line>
 			<line>
-				<reportElement x="343" y="17" width="212" height="1"/>
+				<reportElement x="343" y="17" width="212" height="1" uuid="67d874cb-278d-43eb-98f6-f91bc8ad4217"/>
 			</line>
 			<subreport>
-				<reportElement x="266" y="23" width="289" height="4"/>
+				<reportElement x="266" y="23" width="289" height="4" uuid="a53ea79d-8603-4887-b243-d8f147864bb0"/>
 				<subreportParameter name="isCompra">
 					<subreportParameterExpression><![CDATA[$P{isCompra}]]></subreportParameterExpression>
 				</subreportParameter>

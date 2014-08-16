@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CaixaDiario" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CaixaDiario" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cb43fd2c-3eb2-4b14-b890-aab99a77b1b1">
 	<property name="ireport.zoom" value="2.415765000000001"/>
-	<property name="ireport.x" value="0"/>
+	<property name="ireport.x" value="805"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="imagem" class="java.io.InputStream"/>
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
@@ -38,111 +38,111 @@ $P{idCaixaDiario}=caixaDiario.idCaixaDiario]]>
 	<pageHeader>
 		<band height="103" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="63" width="43" height="17"/>
+				<reportElement x="0" y="63" width="43" height="17" uuid="e71e1507-7093-4795-bbd1-24b82f1d0a68"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="SansSerif" size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Código:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="42" y="63" width="100" height="17"/>
+				<reportElement x="42" y="63" width="100" height="17" uuid="9f6919f7-7631-44fb-93d0-ed52b65c3b9c"/>
 				<textElement verticalAlignment="Bottom">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{idCaixaDiario}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="218" y="63" width="67" height="17"/>
+				<reportElement x="218" y="63" width="67" height="17" uuid="ebea00e8-4f5e-4624-90bc-905eb82ab92d"/>
 				<textElement verticalAlignment="Bottom">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{fechado}.booleanValue() == true ? "Fechado às" : "Em Aberto"]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="174" y="63" width="44" height="17"/>
+				<reportElement x="174" y="63" width="44" height="17" uuid="088ff814-f91b-4db1-a52e-2f5e117674ab"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="SansSerif" size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Estado:]]></text>
 			</staticText>
 			<rectangle radius="10">
-				<reportElement x="113" y="0" width="443" height="62" forecolor="#FFFFFF" backcolor="#C0C0C0"/>
+				<reportElement x="113" y="0" width="443" height="62" forecolor="#FFFFFF" backcolor="#C0C0C0" uuid="3f6a0fbf-3fb6-4589-a67d-d25804be9dbe"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="113" y="17" width="443" height="27"/>
+				<reportElement x="113" y="17" width="443" height="27" uuid="3ce8c9e4-424e-47a4-9897-1d6f9c576436"/>
 				<textElement textAlignment="Center" verticalAlignment="Top">
 					<font size="20" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Caixa Diário]]></text>
 			</staticText>
 			<line>
-				<reportElement x="1" y="83" width="555" height="1"/>
+				<reportElement x="1" y="83" width="555" height="1" uuid="55d4d580-412d-41e5-b112-f1393f0df610"/>
 			</line>
 			<textField>
-				<reportElement x="113" y="44" width="442" height="17"/>
+				<reportElement x="113" y="44" width="442" height="17" uuid="8b05ba86-6bc8-413d-a8e5-dc2f0fbe41ec"/>
 				<textElement textAlignment="Center">
 					<font isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{nome}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement x="0" y="62" width="555" height="1"/>
+				<reportElement x="0" y="62" width="555" height="1" uuid="f9094374-4c3e-4255-ae28-2308b3abe003"/>
 			</line>
 			<textField>
-				<reportElement x="503" y="0" width="51" height="17"/>
+				<reportElement x="503" y="0" width="51" height="17" uuid="02def9f1-6642-4719-bb84-46cdf1a6a70f"/>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{data}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="289" y="63" width="106" height="17"/>
+				<reportElement x="289" y="63" width="106" height="17" uuid="48fd81be-bcea-47ad-ae58-60b7c8edce92"/>
 				<textElement verticalAlignment="Bottom">
 					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{horaFechamento} != null ? $F{horaFechamento} : ""]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="1" y="86" width="42" height="17"/>
+				<reportElement x="1" y="86" width="42" height="17" uuid="4f79a0db-82a0-459a-a276-096b374e91c8"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="SansSerif" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Codigo:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="503" y="86" width="52" height="17"/>
+				<reportElement x="503" y="86" width="52" height="17" uuid="e7de3085-3fd6-4323-b60c-40fae41a79f9"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="SansSerif" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Valor:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="342" y="86" width="54" height="17"/>
+				<reportElement x="342" y="86" width="54" height="17" uuid="d59caecb-5d8a-4d97-8d9b-307a24052f7c"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="SansSerif" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Volume:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="289" y="86" width="42" height="17"/>
+				<reportElement x="289" y="86" width="42" height="17" uuid="b751dc42-9ac3-4184-845e-a7f539eb15a5"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="SansSerif" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Venc:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="54" y="86" width="76" height="17"/>
+				<reportElement x="54" y="86" width="76" height="17" uuid="e8b44aa2-c215-4159-b993-517ff4f2b357"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="SansSerif" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Descrição:]]></text>
 			</staticText>
 			<image>
-				<reportElement x="0" y="1" width="113" height="62"/>
+				<reportElement x="0" y="1" width="113" height="62" uuid="7ac5cf7e-ce56-49f4-8414-60305c568c77"/>
 				<imageExpression><![CDATA[$P{imagem}]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement x="409" y="86" width="59" height="17"/>
+				<reportElement x="409" y="86" width="59" height="17" uuid="79677488-3704-484b-8489-2e39e3cc6f91"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="SansSerif" size="10" isBold="true"/>
 				</textElement>
@@ -153,10 +153,10 @@ $P{idCaixaDiario}=caixaDiario.idCaixaDiario]]>
 	<detail>
 		<band height="13" splitType="Stretch">
 			<line>
-				<reportElement x="1" y="0" width="555" height="1"/>
+				<reportElement x="1" y="0" width="555" height="1" uuid="668aa570-c502-4d60-97a6-b42e0708804e"/>
 			</line>
 			<subreport>
-				<reportElement x="1" y="1" width="555" height="6"/>
+				<reportElement x="1" y="1" width="555" height="6" uuid="aff5c8d6-ffb5-4953-bb0d-4262e604477b"/>
 				<subreportParameter name="idCaixaDiario">
 					<subreportParameterExpression><![CDATA[$F{idCaixaDiario}]]></subreportParameterExpression>
 				</subreportParameter>
@@ -167,7 +167,7 @@ $P{idCaixaDiario}=caixaDiario.idCaixaDiario]]>
 		</band>
 		<band height="13" splitType="Stretch">
 			<subreport>
-				<reportElement x="1" y="0" width="555" height="6"/>
+				<reportElement x="1" y="0" width="555" height="6" uuid="5d2f9e5d-90c2-4264-8f9e-546029c60eab"/>
 				<subreportParameter name="idCaixaDiario">
 					<subreportParameterExpression><![CDATA[$F{idCaixaDiario}]]></subreportParameterExpression>
 				</subreportParameter>
@@ -180,7 +180,7 @@ $P{idCaixaDiario}=caixaDiario.idCaixaDiario]]>
 	<pageFooter>
 		<band height="24" splitType="Stretch">
 			<textField>
-				<reportElement x="537" y="4" width="18" height="20"/>
+				<reportElement x="537" y="4" width="18" height="20" uuid="d6535e95-e3d9-404a-821f-d437ab54b7a8"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
@@ -191,30 +191,30 @@ $P{idCaixaDiario}=caixaDiario.idCaixaDiario]]>
 	<summary>
 		<band height="20">
 			<rectangle radius="10">
-				<reportElement x="362" y="1" width="194" height="15" forecolor="#FFFFFF" backcolor="#C0C0C0"/>
+				<reportElement x="362" y="1" width="194" height="15" forecolor="#FFFFFF" backcolor="#C0C0C0" uuid="6a5816a6-fb82-447f-abee-a5783e7f35c3"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="310" y="0" width="151" height="17"/>
+				<reportElement x="310" y="0" width="151" height="17" uuid="87384bed-a989-4ccd-84e7-45d20200d533"/>
 				<textElement textAlignment="Right" verticalAlignment="Top">
 					<font fontName="SansSerif" size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Saldo Total:]]></text>
 			</staticText>
 			<line>
-				<reportElement x="360" y="0" width="194" height="1"/>
+				<reportElement x="360" y="0" width="194" height="1" uuid="9ab1d5b7-ac95-48a6-a270-a88f550a6860"/>
 			</line>
 			<line>
-				<reportElement x="360" y="16" width="194" height="1"/>
+				<reportElement x="360" y="16" width="194" height="1" uuid="6f165575-6a4e-4339-a4f4-fda7ced62051"/>
 			</line>
 			<textField>
-				<reportElement x="481" y="0" width="73" height="17"/>
+				<reportElement x="481" y="0" width="73" height="17" uuid="0d815adf-4442-4a37-8193-283ae88e3ee7"/>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA[(new DecimalFormat("#,###,##0.00")).format($V{SUM_credito} - $V{SUM_debito})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[(new DecimalFormat("#,###,##0.00")).format($V{SUM_credito}.subtract($V{SUM_debito}))]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="463" y="0" width="18" height="17"/>
+				<reportElement x="463" y="0" width="18" height="17" uuid="1aa859f4-5ab1-47f2-9a90-a279544607f7"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="SansSerif" size="12" isBold="true"/>
 				</textElement>
