@@ -9,7 +9,7 @@
 	<parameter name="periodoInicial" class="java.util.Date"/>
 	<parameter name="periodoFinal" class="java.util.Date"/>
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["/relatorios/"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="tipo" class="java.lang.String"/>
 	<queryString>
@@ -17,12 +17,7 @@
 *
 FROM
 pesagem p, entidade e
-WHERE
-If($P{nomeEntidade} like 'Todos',
-	IF($P{periodo} like 'Todos', p.idEntidade, 							(p.data>=$P{periodoInicial} AND p.data<=$P{periodoFinal})), 				e.nome like $P{nomeEntidade})
-AND p.idEntidade=e.idEntidade
-GROUP BY
-p.idEntidade]]>
+]]>
 	</queryString>
 	<field name="idPesagem" class="java.lang.Integer"/>
 	<field name="idEntidade" class="java.lang.Integer"/>
@@ -172,7 +167,7 @@ p.idEntidade]]>
 					<subreportParameterExpression><![CDATA[$P{periodo}]]></subreportParameterExpression>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA[getClass().getResource( $P{SUBREPORT_DIR} + "Subrelatorio_PorEntidade.jasper" )]]></subreportExpression>
+				<subreportExpression><![CDATA["Subrelatorio_PorEntidade.jasper"]]></subreportExpression>
 			</subreport>
 		</band>
 	</detail>

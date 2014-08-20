@@ -510,7 +510,14 @@ public class AbstractDAO {
             inicializaSessao();
             Criteria criteria = sessao.createCriteria(classe);
             criteria.setProjection(Projections.rowCount());
-
+            
+            Object resultado = criteria.list().get(0);
+            
+            if(resultado instanceof Long){
+                Long longResult = new Long(resultado.toString());
+                return longResult.intValue();
+            }
+            
             return ((Integer) criteria.list().get(0)).intValue();
 
         } catch (Exception er) {

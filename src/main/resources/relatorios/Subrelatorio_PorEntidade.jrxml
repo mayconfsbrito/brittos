@@ -19,7 +19,7 @@
 	<parameter name="isCompra" class="java.lang.Boolean"/>
 	<parameter name="isVenda" class="java.lang.Boolean"/>
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["/relatorios/"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="periodoAlteracao" class="java.lang.String"/>
 	<parameter name="periodoAlteracaoInicial" class="java.util.Date"/>
@@ -219,7 +219,7 @@ entidade.idEntidade=$P{idEntidade}]]>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<returnValue subreportVariable="SUM_valorPesagem" toVariable="SUM_valorTotal" calculation="Sum"/>
-				<subreportExpression><![CDATA[getClass().getResource( $P{SUBREPORT_DIR} + "Subrelatorio_PorEntidade_Pesagens.jasper" )]]></subreportExpression>
+				<subreportExpression><![CDATA[getClass().getResource($P{SUBREPORT_DIR} + "Subrelatorio_PorEntidade_Pesagens.jasper")]]></subreportExpression>
 			</subreport>
 		</band>
 		<band height="5">
@@ -267,7 +267,7 @@ entidade.idEntidade=$P{idEntidade}]]>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<returnValue subreportVariable="SUM_valorPesagem" toVariable="SUM_valorTotal" calculation="Sum"/>
-				<subreportExpression><![CDATA[getClass().getResource( $P{SUBREPORT_DIR} + "Subrelatorio_PorEntidade_Vendas.jasper" )]]></subreportExpression>
+				<subreportExpression><![CDATA[getClass().getResource($P{SUBREPORT_DIR} + "Subrelatorio_PorEntidade_Vendas.jasper")]]></subreportExpression>
 			</subreport>
 		</band>
 		<band height="6">
@@ -315,7 +315,7 @@ entidade.idEntidade=$P{idEntidade}]]>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<returnValue subreportVariable="SUM_valorPesagem" toVariable="SUM_valorTotal" calculation="Sum"/>
-				<subreportExpression><![CDATA[getClass().getResource( $P{SUBREPORT_DIR} + "Subrelatorio_PorEntidade_Compras.jasper" )]]></subreportExpression>
+				<subreportExpression><![CDATA[getClass().getResource($P{SUBREPORT_DIR} + "Subrelatorio_PorEntidade_Compras.jasper")]]></subreportExpression>
 			</subreport>
 		</band>
 	</detail>

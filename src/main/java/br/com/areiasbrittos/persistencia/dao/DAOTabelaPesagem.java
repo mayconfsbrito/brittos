@@ -137,7 +137,7 @@ public class DAOTabelaPesagem {
 
             inicializaSessao();
             transacao = sessao.beginTransaction();
-            List list = sessao.createQuery("from controle.objetos.Tabelapesagem where " + str).list();
+            List list = sessao.createQuery("from Tabelapesagem where " + str).list();
             sessao.close();
             return list;
 
@@ -153,7 +153,7 @@ public class DAOTabelaPesagem {
         try {
 
             inicializaSessao();
-            List list = sessao.createQuery("from controle.objetos.Tabelapesagem").list();
+            List list = sessao.createQuery("from Tabelapesagem").list();
             sessao.close();
             return list;
 

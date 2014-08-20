@@ -4,7 +4,7 @@
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["/relatorios/"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="imagem" class="java.io.InputStream"/>
 	<parameter name="nomeProduto" class="java.lang.String"/>
@@ -103,7 +103,7 @@ order by nome]]>
 					<subreportParameterExpression><![CDATA[$F{idProduto}]]></subreportParameterExpression>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA[getClass().getResource( $P{SUBREPORT_DIR} + "Subrelatorio_Estoque.jasper" )]]></subreportExpression>
+				<subreportExpression><![CDATA[getClass().getResource($P{SUBREPORT_DIR} + "Subrelatorio_Estoque.jasper")]]></subreportExpression>
 			</subreport>
 		</band>
 	</detail>

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CaixaDiario" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cb43fd2c-3eb2-4b14-b890-aab99a77b1b1">
-	<property name="ireport.zoom" value="2.415765000000001"/>
-	<property name="ireport.x" value="805"/>
+	<property name="ireport.zoom" value="1.650000000000001"/>
+	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="imagem" class="java.io.InputStream"/>
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["/relatorios/"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="idCaixaDiario" class="java.lang.Integer">
-		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[290]]></defaultValueExpression>
 	</parameter>
 	<parameter name="nome" class="java.lang.String"/>
 	<queryString>
@@ -18,7 +18,7 @@ FROM
      caixadiario
 
 WHERE
-$P{idCaixaDiario}=caixaDiario.idCaixaDiario]]>
+$P{idCaixaDiario}=idCaixaDiario]]>
 	</queryString>
 	<field name="idCaixaDiario" class="java.lang.Integer"/>
 	<field name="data" class="java.sql.Date"/>
@@ -38,14 +38,14 @@ $P{idCaixaDiario}=caixaDiario.idCaixaDiario]]>
 	<pageHeader>
 		<band height="103" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="63" width="43" height="17" uuid="e71e1507-7093-4795-bbd1-24b82f1d0a68"/>
+				<reportElement x="0" y="63" width="46" height="17" uuid="e71e1507-7093-4795-bbd1-24b82f1d0a68"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="SansSerif" size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Código:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="42" y="63" width="100" height="17" uuid="9f6919f7-7631-44fb-93d0-ed52b65c3b9c"/>
+				<reportElement x="46" y="63" width="100" height="17" uuid="9f6919f7-7631-44fb-93d0-ed52b65c3b9c"/>
 				<textElement verticalAlignment="Bottom">
 					<font size="12"/>
 				</textElement>
@@ -59,7 +59,7 @@ $P{idCaixaDiario}=caixaDiario.idCaixaDiario]]>
 				<textFieldExpression><![CDATA[$F{fechado}.booleanValue() == true ? "Fechado às" : "Em Aberto"]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="174" y="63" width="44" height="17" uuid="088ff814-f91b-4db1-a52e-2f5e117674ab"/>
+				<reportElement x="171" y="63" width="47" height="17" uuid="088ff814-f91b-4db1-a52e-2f5e117674ab"/>
 				<textElement verticalAlignment="Bottom">
 					<font fontName="SansSerif" size="12" isBold="false"/>
 				</textElement>
@@ -162,7 +162,7 @@ $P{idCaixaDiario}=caixaDiario.idCaixaDiario]]>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<returnValue subreportVariable="SUM_valor" toVariable="SUM_credito"/>
-				<subreportExpression><![CDATA[getClass().getResource( $P{SUBREPORT_DIR} + "Subrelatorio_Caixa_Credito.jasper" )]]></subreportExpression>
+				<subreportExpression><![CDATA[getClass().getResource($P{SUBREPORT_DIR} + "Subrelatorio_Caixa_Credito.jasper")]]></subreportExpression>
 			</subreport>
 		</band>
 		<band height="13" splitType="Stretch">
@@ -173,7 +173,7 @@ $P{idCaixaDiario}=caixaDiario.idCaixaDiario]]>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<returnValue subreportVariable="SUM_valor" toVariable="SUM_debito"/>
-				<subreportExpression><![CDATA[getClass().getResource( $P{SUBREPORT_DIR} + "Subrelatorio_Caixa_Debito.jasper" )]]></subreportExpression>
+				<subreportExpression><![CDATA[getClass().getResource($P{SUBREPORT_DIR} + "Subrelatorio_Caixa_Debito.jasper")]]></subreportExpression>
 			</subreport>
 		</band>
 	</detail>

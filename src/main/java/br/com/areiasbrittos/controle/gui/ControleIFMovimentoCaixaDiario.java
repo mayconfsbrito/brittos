@@ -267,11 +267,11 @@ public class ControleIFMovimentoCaixaDiario {
 
             //Verifica se o caixa diário desta data existe
             List<Caixadiario> list = AbstractDAO.consultar(
-                        "from Caixadiario c LEFT JOIN FETCH "
-                        + "c.caixadiarioHasContaspagars cp LEFT JOIN FETCH "
-                        + "c.caixadiarioHasContasrecebers cr LEFT JOIN FETCH "
-                        + "cp.contaspagar cpp LEFT JOIN FETCH "
-                        + "cr.contasreceber crr "
+                        "from Caixadiario c "
+                                + "LEFT JOIN FETCH c.caixadiarioHasContaspagars cp "
+                                + "LEFT JOIN FETCH c.caixadiarioHasContasrecebers cr "
+                                + "LEFT JOIN FETCH cp.contaspagar cpp "
+                                + "LEFT JOIN FETCH cr.contasreceber crr "
                         + "WHERE c.data='" + data.toString() + "'");
             if (list.size() > 0) {
 

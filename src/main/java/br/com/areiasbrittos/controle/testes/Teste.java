@@ -4,13 +4,19 @@
  */
 package br.com.areiasbrittos.controle.testes;
 
+import br.com.areiasbrittos.controle.gui.ControleFPreferencias;
+import static br.com.areiasbrittos.controle.gui.ControleFPreferencias.conf;
 import br.com.areiasbrittos.controle.interfaces.Constantes;
 import br.com.areiasbrittos.controle.utils.Dates;
+import br.com.areiasbrittos.controle.utils.ReportUtils;
 import br.com.areiasbrittos.gui.utils.ConsertaBugsGUI;
-import java.awt.Image;
-import java.io.File;
+import br.com.areiasbrittos.persistencia.ConnectionFactory_brittos_bd;
+import java.io.FileInputStream;
 import java.io.IOException;
-import java.net.URL;
+import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,21 +24,29 @@ import java.net.URL;
  */
 public class Teste {
 
-    
-    
+    InputStream inputStream = null;
+
     public static void main(String[] args) throws IOException {
 
-        Image img;
-        
         try {
 
-            String path = "/backgrounds/Metal 1.png";
-            System.out.println("bkgs=" + Teste.class.getResource("/icons/barra/Entidades.png"));
-            System.out.println("bkgs=" + Teste.class.getResource(path));
-            File fl = new File(Teste.class.getResource(path).getPath());
-            URL url = Teste.class.getResource(path);
-            img = javax.imageio.ImageIO.read(url);
-            System.out.println("Caminho background=" + fl.toString());
+            Map parametros = new HashMap();
+
+            parametros.put("idCompra", 2);
+            FileInputStream imagem = new FileInputStream(new java.io.File("logo.png"));
+            parametros.put("imagem", "");
+
+            parametros.put("nome", "a");
+            parametros.put("logradouro", "a");
+            parametros.put("bairro", "a");
+            parametros.put("numero", "a");
+            parametros.put("cidade", "a");
+            parametros.put("cep", "a");
+            parametros.put("cnpj", "a");
+            parametros.put("telefone", "a");
+
+            ReportUtils.openReport("Compra", Teste.class.getResourceAsStream("/relatorios/Compra.jasper"), parametros, ConnectionFactory_brittos_bd.getConnection());
+
             System.exit(0);
 
             Process processRuntime1;

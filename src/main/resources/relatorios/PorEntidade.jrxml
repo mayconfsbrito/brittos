@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PorEntidade" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5e2ce66e-f51e-4e87-822f-20cfb6de7a9b">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PorEntidade" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5e2ce66e-f51e-4e87-822f-20cfb6de7a9b">
 	<property name="ireport.zoom" value="1.8150000000000006"/>
-	<property name="ireport.x" value="436"/>
+	<property name="ireport.x" value="435"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="imagem" class="java.io.InputStream"/>
 	<parameter name="periodo" class="java.lang.String"/>
@@ -9,7 +9,7 @@
 	<parameter name="periodoInicial" class="java.util.Date"/>
 	<parameter name="periodoFinal" class="java.util.Date"/>
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["/relatorios/"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="tipo" class="java.lang.String"/>
 	<parameter name="concluida" class="java.lang.String"/>
@@ -248,7 +248,7 @@ ORDER BY e.idEntidade]]>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<returnValue subreportVariable="SUM_valorTotal" toVariable="valorTotal" calculation="Sum"/>
-				<subreportExpression><![CDATA[getClass().getResource( $P{SUBREPORT_DIR} + "Subrelatorio_PorEntidade.jasper" )]]></subreportExpression>
+				<subreportExpression><![CDATA["Subrelatorio_PorEntidade.jasper"]]></subreportExpression>
 			</subreport>
 		</band>
 	</detail>

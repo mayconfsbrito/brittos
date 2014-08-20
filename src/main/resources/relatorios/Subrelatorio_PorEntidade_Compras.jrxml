@@ -21,7 +21,7 @@
 	<parameter name="periodoAlteracaoFinal" class="java.util.Date"/>
 	<parameter name="quitada" class="java.lang.String"/>
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["/relatorios/"]]></defaultValueExpression>
 	</parameter>
 	<queryString>
 		<![CDATA[SELECT *, cp.pesoLiquido, p.idProduto, p.nome, cp.valorUnitario FROM
