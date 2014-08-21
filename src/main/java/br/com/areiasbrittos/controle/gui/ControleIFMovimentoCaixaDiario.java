@@ -289,6 +289,7 @@ public class ControleIFMovimentoCaixaDiario {
         } catch (ParseException er) {
             JOptionPane.showMessageDialog(frame, "Data em formato inválido. Por favor, digite novamente de maneira correta.", "Erro na data!", JOptionPane.INFORMATION_MESSAGE);
             this.limparGUI();
+            er.printStackTrace();
 
         } catch (Exception er) {
             JOptionPane.showMessageDialog(frame, "Erro ao consultar o caixa diário para esta data, digite uma data válida.", "Erro ao consultar!", JOptionPane.INFORMATION_MESSAGE);
