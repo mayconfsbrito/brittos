@@ -40,8 +40,8 @@ public class InternalFrameSobre extends javax.swing.JInternalFrame {
         setClosable(true);
         setTitle("Sobre");
 
-        jTextArea1.setColumns(20);
         jTextArea1.setEditable(false);
+        jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jTextArea1.setText("Desenvolvido por: Maycon F. S. Brito\nE-mail: mayconfsbrito@gmail.com\n");
         jScrollPane1.setViewportView(jTextArea1);
@@ -49,7 +49,7 @@ public class InternalFrameSobre extends javax.swing.JInternalFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel1.setText("Sistema de Automação Comercial para Pesagens de Veículos e Cargas");
 
-        jLabel2.setText("Versão 2.1");
+        jLabel2.setText("Versão 2.1.1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

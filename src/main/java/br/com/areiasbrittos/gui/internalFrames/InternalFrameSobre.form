@@ -58,8 +58,8 @@
       <SubComponents>
         <Component class="javax.swing.JTextArea" name="jTextArea1">
           <Properties>
-            <Property name="columns" type="int" value="20"/>
             <Property name="editable" type="boolean" value="false"/>
+            <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
             <Property name="text" type="java.lang.String" value="Desenvolvido por: Maycon F. S. Brito&#xa;E-mail: mayconfsbrito@gmail.com&#xa;"/>
           </Properties>
@@ -76,7 +76,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Vers&#xe3;o 2.1"/>
+        <Property name="text" type="java.lang.String" value="Vers&#xe3;o 2.1.1"/>
       </Properties>
     </Component>
   </SubComponents>
