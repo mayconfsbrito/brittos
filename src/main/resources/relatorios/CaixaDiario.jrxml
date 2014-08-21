@@ -137,9 +137,9 @@ $P{idCaixaDiario}=idCaixaDiario]]>
 				</textElement>
 				<text><![CDATA[Descrição:]]></text>
 			</staticText>
-			<image>
-				<reportElement x="0" y="1" width="113" height="62" uuid="7ac5cf7e-ce56-49f4-8414-60305c568c77"/>
-				<imageExpression><![CDATA[$P{imagem}]]></imageExpression>
+			<image onErrorType="Blank">
+				<reportElement positionType="Float" x="0" y="1" width="113" height="62" uuid="7ac5cf7e-ce56-49f4-8414-60305c568c77"/>
+				<imageExpression><![CDATA["logo.png"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="409" y="86" width="59" height="17" uuid="79677488-3704-484b-8489-2e39e3cc6f91"/>
