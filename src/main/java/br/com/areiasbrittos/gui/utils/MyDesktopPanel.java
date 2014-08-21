@@ -19,11 +19,12 @@ import javax.swing.JDesktopPane;
 public class MyDesktopPanel extends JDesktopPane {
 
     private static final long serialVersionUID = 1L;
+    public static String diretorio_imagens = "/backgrounds/";
     Image img;
 
     public MyDesktopPanel() {
         String path = ControleFPreferencias.conf.getImagem();
-        this.setImgBackground(File.separator + "backgrounds" + File.separator + path);
+        this.setImgBackground(path);
 
     }
 
@@ -37,7 +38,11 @@ public class MyDesktopPanel extends JDesktopPane {
 
     public void setImgBackground(String path) {
         try {
-
+            if(!path.contains(this.diretorio_imagens)){
+                path = this.diretorio_imagens + path;
+            }
+            
+            System.out.println(path);
             URL url = getClass().getResource(path);
             img = javax.imageio.ImageIO.read(url);
             this.repaint();
@@ -48,6 +53,7 @@ public class MyDesktopPanel extends JDesktopPane {
 
     public void setImgBackground(File file) {
         try {
+            
             img = javax.imageio.ImageIO.read(file);
             this.repaint();
         } catch (Exception e) {

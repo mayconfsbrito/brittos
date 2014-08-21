@@ -171,8 +171,7 @@ public class ControleFPreferencias {
         DAOTransacao.inserir(new Transacao(FramePrincipal.user, "Alterou as configurações do sistema"));
 
         //Carrega o desktopPanel com a imagem padrão
-        ((MyDesktopPanel) FramePrincipal.desktopPanel).setImgBackground(frame.comboImagem.getSelectedItem().toString() + ".png");
-
+        ((MyDesktopPanel) FramePrincipal.desktopPanel).setImgBackground(MyDesktopPanel.diretorio_imagens + frame.comboImagem.getSelectedItem().toString() + ".png");
 
         frame.dispose();
 
