@@ -4,19 +4,8 @@
  */
 package br.com.areiasbrittos.controle.testes;
 
-import br.com.areiasbrittos.controle.gui.ControleFPreferencias;
-import static br.com.areiasbrittos.controle.gui.ControleFPreferencias.conf;
-import br.com.areiasbrittos.controle.interfaces.Constantes;
-import br.com.areiasbrittos.controle.utils.Dates;
-import br.com.areiasbrittos.controle.utils.ReportUtils;
-import br.com.areiasbrittos.gui.utils.ConsertaBugsGUI;
-import br.com.areiasbrittos.persistencia.ConnectionFactory_brittos_bd;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.HashMap;
-import java.util.Map;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -30,44 +19,22 @@ public class Teste {
 
         try {
 
-            Map parametros = new HashMap();
-
-            parametros.put("idCompra", 2);
-            FileInputStream imagem = new FileInputStream(new java.io.File("logo.png"));
-            parametros.put("imagem", "");
-
-            parametros.put("nome", "a");
-            parametros.put("logradouro", "a");
-            parametros.put("bairro", "a");
-            parametros.put("numero", "a");
-            parametros.put("cidade", "a");
-            parametros.put("cep", "a");
-            parametros.put("cnpj", "a");
-            parametros.put("telefone", "a");
-
-            ReportUtils.openReport("Compra", Teste.class.getResourceAsStream("/relatorios/Compra.jasper"), parametros, ConnectionFactory_brittos_bd.getConnection());
-
-            System.exit(0);
-
             Process processRuntime1;
             Process processRuntime2;
 
-            String data = ConsertaBugsGUI.getDataFormatadaNoBd(Dates.getDataHoje(), "dd-MM-yyyy");
-            String nomeBdBrittos = "\"H:/Backup Brittos" + "/Backup__bd_brittos__" + data + ".sql\"";
-            String nomeBdSeguranca = "\"H:/Backup Brittos" + "/Backup__bd_seguranca__" + data + ".sql\"";
+            String comando1 = "cmd.exe /c mysqldump -u root --password=AdminRoot12 --database bd_brittos > \"M:\\Nova pasta\\Backup__bd_brittos__24-08-2014.sql\"";
+            String comando2 = "cmd.exe /c mysqldump -u root --password=AdminRoot12 --database bd_seguranca > \"M:\\Nova pasta\\Backup__bd_seguranca__24-08-2014.sql\"";
+            System.out.println(comando1);
+            System.out.println(comando2);
 
-            processRuntime1 = Runtime.getRuntime().exec("cmd.exe /c mysqldump -u " + Constantes.BD_USER + " --password=" + Constantes.BD_PASSWORD + " --database bd_brittos > " + nomeBdBrittos);
-            processRuntime2 = Runtime.getRuntime().exec("cmd.exe /c mysqldump -u " + Constantes.BD_USER + " --password=" + Constantes.BD_PASSWORD + " --database bd_seguranca > " + nomeBdSeguranca);
+            processRuntime1 = Runtime.getRuntime().exec(comando1);
+            processRuntime2 = Runtime.getRuntime().exec(comando2);
+
             int processComplete1 = processRuntime1.waitFor();
             int processComplete2 = processRuntime2.waitFor();
-
-            if (processComplete1 == 0 && processComplete2 == 0) {
-                System.out.println("OK");
-
-            } else {
-                System.out.println("False " + nomeBdBrittos);
-            }
-
+            System.out.println(processComplete1);
+            System.out.println(processComplete2);
+            
         } catch (Exception ex) {
             ex.printStackTrace();
         }

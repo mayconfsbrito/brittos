@@ -10,6 +10,8 @@ import br.com.areiasbrittos.controle.utils.Dates;
 import br.com.areiasbrittos.gui.frames.frameBackup;
 import br.com.areiasbrittos.gui.utils.ConsertaBugsGUI;
 import br.com.areiasbrittos.persistencia.dao.AbstractDAO;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -18,7 +20,7 @@ import br.com.areiasbrittos.persistencia.dao.AbstractDAO;
 public class ControleFrameBackup {
 
     private frameBackup frame;
-    
+
     //Constantes do Frame
     public static final Integer REALIZANDO_BACKUP = 1;
     public static final Integer BACKUP_OK = 2;
@@ -31,14 +33,15 @@ public class ControleFrameBackup {
     public void inicializa() {
 
         frame.setLocationRelativeTo(null);
-        
+
         new Thread(new Runnable() {
 
             @Override
             public void run() {
                 setEstadoAviso(REALIZANDO_BACKUP);
-            }}).start();
-        
+            }
+        }).start();
+
         Thread thread = new Thread(new Runnable() {
 
             @Override
@@ -56,12 +59,10 @@ public class ControleFrameBackup {
                     System.exit(0);
                 }
 
-
             }
         });
 
         thread.start();
-
 
     }
 
@@ -81,11 +82,19 @@ public class ControleFrameBackup {
                     String data = ConsertaBugsGUI.getDataFormatadaNoBd(Dates.getDataHoje(), "dd-MM-yyyy");
                     String nomeBdBrittos = "\"" + endereco + "\\Backup__bd_brittos__" + data + ".sql" + "\"";
                     String nomeBdSeguranca = "\"" + endereco + "\\Backup__bd_seguranca__" + data + ".sql" + "\"";
-
-                    processRuntime1 = Runtime.getRuntime().exec("cmd.exe /c mysqldump -u " + Constantes.BD_USER + " --password=" + Constantes.BD_PASSWORD + " --database bd_brittos > " + nomeBdBrittos);
-                    processRuntime2 = Runtime.getRuntime().exec("cmd.exe /c mysqldump -u " + Constantes.BD_USER + " --password=" + Constantes.BD_PASSWORD + " --database bd_seguranca > " + nomeBdSeguranca);
+                    String comando1 = "cmd.exe /c mysqldump -u " + Constantes.BD_USER + " --password=" + Constantes.BD_PASSWORD + " --database bd_brittos > " + nomeBdBrittos;
+                    String comando2 = "cmd.exe /c mysqldump -u " + Constantes.BD_USER + " --password=" + Constantes.BD_PASSWORD + " --database bd_seguranca > " + nomeBdSeguranca;
+                    System.out.println(comando1);
+                    System.out.println(comando2);
+                    
+                    processRuntime1 = Runtime.getRuntime().exec(comando1);
+                    processRuntime2 = Runtime.getRuntime().exec(comando2);
+                    
                     int processComplete1 = processRuntime1.waitFor();
                     int processComplete2 = processRuntime2.waitFor();
+                    System.out.println(processComplete1);
+                    System.out.println(processComplete2);
+                    
 
                     if (processComplete1 == 0 && processComplete2 == 0) {
                         return BACKUP_OK;
@@ -93,7 +102,6 @@ public class ControleFrameBackup {
                     } else {
                         return BACKUP_ERRO;
                     }
-
 
                 }
             }
@@ -117,13 +125,18 @@ public class ControleFrameBackup {
             frame.getLabelAviso().setText("Realizando backup...");
             frame.getLabelIcone().setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/panels/Backup.png")));
             frame.setEnabled(false);
-            
+
             return;
         }
 
         frame.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         frame.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         frame.setEnabled(true);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(ControleFrameBackup.class.getName()).log(Level.SEVERE, null, ex);
+        }
         System.exit(0);
 
     }

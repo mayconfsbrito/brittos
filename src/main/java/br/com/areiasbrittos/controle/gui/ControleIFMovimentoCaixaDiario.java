@@ -157,8 +157,14 @@ public class ControleIFMovimentoCaixaDiario {
             ArrayList<CaixadiarioHasContaspagar> listPagar = new ArrayList(caixa.getCaixadiarioHasContaspagars());
             ArrayList<CaixadiarioHasContasreceber> listReceber = new ArrayList(caixa.getCaixadiarioHasContasrecebers());
 
-            Collections.sort(listPagar);
-            Collections.sort(listReceber);
+            try {
+                
+                Collections.sort(listPagar);
+                Collections.sort(listReceber);
+                
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
 
             try {
 
@@ -253,7 +259,6 @@ public class ControleIFMovimentoCaixaDiario {
                     data = ((Caixadiario) list.get(0)).getData();
                     frame.textDataConsulta.setText(ConsertaBugsGUI.getDataFormatadaNoBd(data, "dd/MM/yyyy"));
 
-
                     //Se não existe nenhum caixa aberto, busca o caixa de hoje
                 } else {
                     data = Dates.getDataHoje();
@@ -267,19 +272,18 @@ public class ControleIFMovimentoCaixaDiario {
 
             //Verifica se o caixa diário desta data existe
             List<Caixadiario> list = AbstractDAO.consultar(
-                        "from Caixadiario c "
-                                + "LEFT JOIN FETCH c.caixadiarioHasContaspagars cp "
-                                + "LEFT JOIN FETCH c.caixadiarioHasContasrecebers cr "
-                                + "LEFT JOIN FETCH cp.contaspagar cpp "
-                                + "LEFT JOIN FETCH cr.contasreceber crr "
-                        + "WHERE c.data='" + data.toString() + "'");
+                    "from Caixadiario c "
+                    + "LEFT JOIN FETCH c.caixadiarioHasContaspagars cp "
+                    + "LEFT JOIN FETCH c.caixadiarioHasContasrecebers cr "
+                    + "LEFT JOIN FETCH cp.contaspagar cpp "
+                    + "LEFT JOIN FETCH cr.contasreceber crr "
+                    + "WHERE c.data='" + data.toString() + "'");
             if (list.size() > 0) {
 
                 Caixadiario cx = list.get(0);
 
                 //Preenche a gui
                 this.preencheGui(cx);
-
 
             } else {
                 JOptionPane.showMessageDialog(frame, "Ainda não existe nenhum movimento caixa diário cadastrado para esta data.\n"
@@ -423,9 +427,9 @@ public class ControleIFMovimentoCaixaDiario {
                         Integer idPagar = Integer.parseInt(pagar);
                         Contaspagar conta = (Contaspagar) AbstractDAO.consultar(
                                 "from Contaspagar c LEFT JOIN FETCH "
-                                + "c.caixadiarioHasContaspagars cp " 
+                                + "c.caixadiarioHasContaspagars cp "
                                 + "WHERE c.idConta=" + idPagar).get(0);
-                        
+
                         Caixadiario cx = (Caixadiario) AbstractDAO.consultar(
                                 "from Caixadiario c LEFT JOIN FETCH "
                                 + "c.caixadiarioHasContaspagars cp LEFT JOIN FETCH "
@@ -482,7 +486,7 @@ public class ControleIFMovimentoCaixaDiario {
                                 "from Contasreceber c LEFT JOIN FETCH "
                                 + "c.caixadiarioHasContasrecebers cr "
                                 + "WHERE c.idConta=" + idReceber).get(0);
-                        
+
                         Caixadiario cx = (Caixadiario) AbstractDAO.consultar(
                                 "from Caixadiario c LEFT JOIN FETCH "
                                 + "c.caixadiarioHasContaspagars cp LEFT JOIN FETCH "
@@ -508,7 +512,6 @@ public class ControleIFMovimentoCaixaDiario {
 
                             //Registra a transação do usuário
                             DAOTransacao.inserir(new Transacao(FramePrincipal.user, "Excluiu a Conta a Receber " + conta.getIdConta()));
-
 
                         } else if (conta.getVenda() != null) {
                             //Se for de venda, marca ela como ainda não quitada, altera no bd e exclui a conta

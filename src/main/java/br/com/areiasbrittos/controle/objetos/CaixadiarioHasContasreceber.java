@@ -55,7 +55,9 @@ public class CaixadiarioHasContasreceber implements java.io.Serializable, java.l
 
         if (this.getContasreceber().getHoraPagamento().before(obj.getContasreceber().getHoraPagamento())) {
             return -1;
-        } else {
+        } else if(this.getContasreceber().getHoraPagamento().equals(obj.getContasreceber().getHoraPagamento())){
+            return 0;
+        }else {
             return 1;
         }
     }

@@ -38,11 +38,9 @@ public class MyDesktopPanel extends JDesktopPane {
 
     public void setImgBackground(String path) {
         try {
-            if(!path.contains(this.diretorio_imagens)){
+            if (!path.contains(this.diretorio_imagens)) {
                 path = this.diretorio_imagens + path;
             }
-            
-            System.out.println(path);
             URL url = getClass().getResource(path);
             img = javax.imageio.ImageIO.read(url);
             this.repaint();
@@ -53,7 +51,6 @@ public class MyDesktopPanel extends JDesktopPane {
 
     public void setImgBackground(File file) {
         try {
-            
             img = javax.imageio.ImageIO.read(file);
             this.repaint();
         } catch (Exception e) {
@@ -66,7 +63,7 @@ public class MyDesktopPanel extends JDesktopPane {
 
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g.create();
-        
+
         if (img != null) {
 
             //Dimension dimension = this.getSize();

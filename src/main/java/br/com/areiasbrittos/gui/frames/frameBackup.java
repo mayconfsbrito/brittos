@@ -4,7 +4,6 @@
  */
 package br.com.areiasbrittos.gui.frames;
 
-import br.com.areiasbrittos.controle.gui.ControleFPreferencias;
 import br.com.areiasbrittos.controle.gui.ControleFrameBackup;
 
 /**
