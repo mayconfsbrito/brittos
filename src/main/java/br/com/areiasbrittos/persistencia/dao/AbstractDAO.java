@@ -92,9 +92,7 @@ public class AbstractDAO {
             return false;
 
         } finally {
-
-            sessao.flush();
-            sessao.close();
+            fechaSessao();
         }
     }
 
@@ -123,9 +121,7 @@ public class AbstractDAO {
             return false;
 
         } finally {
-
-            sessao.flush();
-            sessao.close();
+            fechaSessao();
         }
     }
 
@@ -300,9 +296,8 @@ public class AbstractDAO {
             return false;
 
         } finally {
-
-            sessao.flush();
-            sessao.close();
+            fechaSessao();
+               
         }
     }
 
@@ -361,8 +356,7 @@ public class AbstractDAO {
             return null;
 
         } finally {
-            sessao.flush();
-            sessao.close();
+            fechaSessao();
         }
     }
 
@@ -386,9 +380,7 @@ public class AbstractDAO {
             return null;
 
         } finally {
-
-            sessao.flush();
-            sessao.close();
+            fechaSessao();
 
         }
 
@@ -414,9 +406,7 @@ public class AbstractDAO {
             return null;
 
         } finally {
-
-            sessao.flush();
-            sessao.close();
+            fechaSessao();
 
         }
     }
@@ -442,6 +432,8 @@ public class AbstractDAO {
             er.printStackTrace();
             return null;
 
+        } finally {
+            fechaSessao();
         }
     }
 

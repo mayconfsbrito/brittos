@@ -47,6 +47,9 @@ public class DAOTransacao {
         } catch (HibernateException er) {
             transacao.rollback();
             er.printStackTrace();
+        } finally {
+            sessao.flush();
+            sessao.close();
         }
     }
 
@@ -66,6 +69,7 @@ public class DAOTransacao {
 
     /**
      * Lista todos as Transações
+     *
      * @return lista com todos os objetos Transacao
      */
     public static List listar() {
@@ -80,6 +84,9 @@ public class DAOTransacao {
 
         } catch (HibernateException er) {
             return null;
+        } finally {
+            sessao.flush();
+            sessao.close();
         }
     }
 
@@ -89,7 +96,6 @@ public class DAOTransacao {
      */
     public static boolean excluir(Date data) {
         try {
-
 
             List<Transacao> listTran = DAOTransacao.consultar("data<='" + data.toString() + "'");
             for (int index = 0; index < listTran.size(); index++) {
@@ -133,6 +139,10 @@ public class DAOTransacao {
             transacao.rollback();
 
             return false;
+            
+        } finally {
+            sessao.flush();
+            sessao.close();
         }
     }
 }

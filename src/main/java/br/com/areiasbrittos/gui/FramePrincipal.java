@@ -583,7 +583,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         menuAjuda = new javax.swing.JMenu();
         menuItemSobre = new javax.swing.JMenuItem();
 
-        setTitle("Sistema de Automação de Pesagem de Cargas e Veículos - Versão 2.1.1");
+        setTitle("Sistema de Automação de Pesagem de Cargas e Veículos - Versão 2.1.2");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         desktopPanel.setBackground(new java.awt.Color(255, 255, 255));

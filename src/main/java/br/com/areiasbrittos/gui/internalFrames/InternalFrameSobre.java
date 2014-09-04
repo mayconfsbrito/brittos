@@ -49,7 +49,7 @@ public class InternalFrameSobre extends javax.swing.JInternalFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel1.setText("Sistema de Automação Comercial para Pesagens de Veículos e Cargas");
 
-        jLabel2.setText("Versão 2.1.1");
+        jLabel2.setText("Versão 2.1.2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
