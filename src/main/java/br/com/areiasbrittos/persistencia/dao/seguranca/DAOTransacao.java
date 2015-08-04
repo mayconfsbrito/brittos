@@ -133,8 +133,6 @@ public class DAOTransacao {
             return true;
 
         } catch (HibernateException er) {
-
-            JOptionPane.showMessageDialog(null, "Não foi possível excluir a transação dedo-duro " + tran.getIdTransacao() + ".\n", "Erro!", JOptionPane.ERROR_MESSAGE);
             er.printStackTrace();
             transacao.rollback();
 
