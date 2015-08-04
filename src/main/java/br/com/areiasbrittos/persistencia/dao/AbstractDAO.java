@@ -163,7 +163,7 @@ public class AbstractDAO {
                                 venda.setConcluida(true);
 
                                 //Gera uma conta a receber e grava no bd
-                                Contasreceber conta = new Contasreceber(null, venda, "Venda cod." + venda.getIdVenda() + " - " + venda.getEntidade().getNome(), null,
+                                Contasreceber conta = new Contasreceber(null, venda, "Recebimento Venda " + venda.getIdVenda() + " - " + venda.getEntidade().getNome(), null,
                                         venda.getVencimento(), Dates.getDataHoje(), Horas.getHoraAgora(), venda.getValorTotal(), true);
                                 AbstractDAO.inserir(conta);
                                 int idConta = AbstractDAO.max(Contasreceber.class, "idConta");
@@ -185,7 +185,7 @@ public class AbstractDAO {
                                 compra.setConcluida(true);
 
                                 //Gera uma conta a pagar e grava no bd
-                                Contaspagar conta = new Contaspagar(compra, "Compra cod." + compra.getIdCompra() + " - " + compra.getEntidade().getNome(), null,
+                                Contaspagar conta = new Contaspagar(compra, "Pagamento Compra " + compra.getIdCompra() + " - " + compra.getEntidade().getNome(), null,
                                         compra.getVencimento(), Dates.getDataHoje(), Horas.getHoraAgora(), compra.getValorTotal(), true);
                                 AbstractDAO.inserir(conta);
                                 int idConta = AbstractDAO.max(Contaspagar.class, "idConta");
@@ -207,7 +207,7 @@ public class AbstractDAO {
                                 pesagem.setConcluida(true);
 
                                 //Gera uma conta a receber e grava no bd
-                                Contasreceber conta = new Contasreceber(pesagem, null, "Pesagem cod." + pesagem.getIdPesagem() + " - "
+                                Contasreceber conta = new Contasreceber(pesagem, null, "Recebimento Pesagem " + pesagem.getIdPesagem() + " - "
                                         + pesagem.getEntidade().getNome(), null,
                                         pesagem.getVencimento(), Dates.getDataHoje(), Horas.getHoraAgora(), pesagem.getValorPesagem(), true);
                                 AbstractDAO.inserir(conta);
