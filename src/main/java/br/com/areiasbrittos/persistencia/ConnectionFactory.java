@@ -21,7 +21,7 @@ public class ConnectionFactory {
     public static Connection getConnectionBrittos() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            return (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_brittos", "root", "AdminRoot12");
+            return (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_brittos", "root", "sqlmestre");
 
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "Erro ao conectar ao Banco de Dados bd_brittos.\n" + ex, "Erro na conexão!", JOptionPane.ERROR_MESSAGE);

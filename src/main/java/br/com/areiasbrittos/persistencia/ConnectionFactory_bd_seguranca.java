@@ -21,7 +21,7 @@ public class ConnectionFactory_bd_seguranca {
     public static Connection getConnection() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            return (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_seguranca", "root", "AdminRoot12");
+            return (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_seguranca", "root", "sqlmestre");
 
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "Erro ao conectar ao Banco de Dados bd_seguranca.\n" + ex, "Erro na conexão!", JOptionPane.ERROR_MESSAGE);
