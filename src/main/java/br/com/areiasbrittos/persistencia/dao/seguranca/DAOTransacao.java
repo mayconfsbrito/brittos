@@ -14,6 +14,8 @@ import org.hibernate.Transaction;
 import org.hibernate.HibernateException;
 import org.hibernate.exception.ConstraintViolationException;
 import br.com.areiasbrittos.persistencia.dao.hibernateSessionFactory_bd_Seguranca;
+import java.util.ArrayList;
+import org.hibernate.StaleStateException;
 
 /**
  *
@@ -98,9 +100,7 @@ public class DAOTransacao {
         try {
 
             List<Transacao> listTran = DAOTransacao.consultar("data<='" + data.toString() + "'");
-            for (int index = 0; index < listTran.size(); index++) {
-                DAOTransacao.excluir(listTran.get(index));
-            }
+            DAOTransacao.excluir(listTran);
 
             /*Registra o Dedo duro*/
             if (listTran.size() > 0) {
@@ -111,12 +111,15 @@ public class DAOTransacao {
 
             return true;
 
-        } catch (HibernateException er) {
+        } catch (StaleStateException er) {
+            er.printStackTrace();
+            return false;
 
+        } catch (HibernateException er) {
             JOptionPane.showMessageDialog(null, "Não foi possível excluir as transações dedo-duro antes de " + data.toString() + ".\n", "Erro!", JOptionPane.ERROR_MESSAGE);
+            er.printStackTrace();
             return false;
         }
-
     }
 
     /**
@@ -130,17 +133,50 @@ public class DAOTransacao {
             sessao.delete(tran);
             transacao.commit();
 
-            return true;
+        } catch (StaleStateException er) {
+            er.printStackTrace();
+
+            return false;
 
         } catch (HibernateException er) {
             er.printStackTrace();
             transacao.rollback();
 
             return false;
-            
+
         } finally {
             sessao.flush();
             sessao.close();
         }
+
+        return true;
+    }
+
+    public static boolean excluir(List trans) {
+        try {
+            inicializaSessao();
+            transacao = sessao.beginTransaction();
+            for (int index = 0; index < trans.size(); index++) {
+                sessao.delete(trans.get(index));
+            }
+            transacao.commit();
+
+        } catch (StaleStateException er) {
+            er.printStackTrace();
+
+            return false;
+
+        } catch (HibernateException er) {
+            er.printStackTrace();
+            transacao.rollback();
+
+            return false;
+
+        } finally {
+            sessao.flush();
+            sessao.close();
+        }
+
+        return true;
     }
 }
