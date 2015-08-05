@@ -637,7 +637,7 @@ public class ControleIFProdutosCompra {
      */
     public boolean insereProdutoEstoque(Compra compra) {
 
-        HashSet<CompraHasProduto> chp = (HashSet<CompraHasProduto>) compra.getCompraHasProdutos();
+        Set<CompraHasProduto> chp = compra.getCompraHasProdutos();
 
         /*
          * Percorre todos os produtos da compra
@@ -670,7 +670,7 @@ public class ControleIFProdutosCompra {
      */
     public boolean alteraProdutoEstoque(Compra compra) {
 
-        HashSet<CompraHasProduto> chp = (HashSet<CompraHasProduto>) compra.getCompraHasProdutos();
+        Set<CompraHasProduto> chp = compra.getCompraHasProdutos();
 
         /*
          * Percorre todos os produtos da compra
@@ -839,7 +839,7 @@ public class ControleIFProdutosCompra {
                              * Gui com as do bd e adiciona as encontradas em
                              * @idObjetosBdEncontrados
                              */
-                            HashSet<CompraHasProduto> setGui = (HashSet<CompraHasProduto>) c.getCompraHasProdutos();
+                            Set<CompraHasProduto> setGui = c.getCompraHasProdutos();
                             ArrayList<CompraHasProduto> listBd = (ArrayList<CompraHasProduto>) AbstractDAO.consultar("CompraHasProduto", "idCompra=" + c.getIdCompra());
                             ArrayList<Integer> idObjetosBdEncontrados = new ArrayList<Integer>();
 

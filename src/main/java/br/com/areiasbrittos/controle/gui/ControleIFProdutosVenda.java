@@ -633,8 +633,9 @@ public class ControleIFProdutosVenda {
      * @return
      */
     public boolean removeProdutoEstoque(Venda venda) {
-
-        HashSet<VendaHasProduto> vhp = (HashSet<VendaHasProduto>) venda.getVendaHasProdutos();
+        
+        System.out.println("Venda = " + venda.toString());
+        Set<VendaHasProduto> vhp = venda.getVendaHasProdutos();
 
         /*
          * Percorre todos os produtos da venda
@@ -667,7 +668,7 @@ public class ControleIFProdutosVenda {
      */
     public boolean alteraProdutoEstoque(Venda venda) {
 
-        HashSet<VendaHasProduto> vhp = (HashSet<VendaHasProduto>) venda.getVendaHasProdutos();
+        Set<VendaHasProduto> vhp = venda.getVendaHasProdutos();
 
         /*
          * Percorre todos os produtos
@@ -710,7 +711,7 @@ public class ControleIFProdutosVenda {
     public boolean verificaEstoqueProduto(Venda venda) {
 
         //Percorre todos os vhp's
-        HashSet<VendaHasProduto> vhp = (HashSet<VendaHasProduto>) venda.getVendaHasProdutos();
+        Set<VendaHasProduto> vhp = venda.getVendaHasProdutos();
         for (Iterator it = vhp.iterator(); it.hasNext();) {
             VendaHasProduto obj = (VendaHasProduto) it.next();
 
@@ -857,7 +858,7 @@ public class ControleIFProdutosVenda {
                                  * na Gui com as do bd e adiciona as encontradas
                                  * em @idObjetosBdEncontrados
                                  */
-                                HashSet<VendaHasProduto> setGui = (HashSet<VendaHasProduto>) v.getVendaHasProdutos();
+                                Set<VendaHasProduto> setGui = v.getVendaHasProdutos();
                                 ArrayList<VendaHasProduto> listBd = (ArrayList<VendaHasProduto>) AbstractDAO.consultar("VendaHasProduto", "idVenda=" + v.getIdVenda());
                                 ArrayList<Integer> idObjetosBdEncontrados = new ArrayList<Integer>();
 

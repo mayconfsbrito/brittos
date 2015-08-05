@@ -22,6 +22,7 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import br.com.areiasbrittos.persistencia.dao.seguranca.DAOTransacao;
+import java.util.Arrays;
 
 /**
  *
@@ -33,17 +34,17 @@ public class AbstractDAO {
     protected static Session sessao;
     protected static Transaction transacao = null;
 
-    public static synchronized Session getSessao(){
-        if(sessao != null && sessao.isOpen()) {
+    public static synchronized Session getSessao() {
+        if (sessao != null && sessao.isOpen()) {
             fechaSessao();
             sessao = hibernateSessionFactory_brittos_bd.getSession();
-            
+
         } else {
             sessao = hibernateSessionFactory_brittos_bd.getSession();
         }
         return sessao;
     }
-    
+
     /**
      * Inicializa a sessao para efetuar as transacoes no banco de dados
      */
@@ -78,7 +79,7 @@ public class AbstractDAO {
 
             inicializaSessao();
             transacao = sessao.beginTransaction();
-            sessao.merge(obj);
+            sessao.save(obj);
 
             transacao.commit();
 
@@ -148,7 +149,7 @@ public class AbstractDAO {
             if (!listCaixa.isEmpty()) {
 
                 Caixadiario cx = listCaixa.get(0);
-                
+
                 //Verifica se o caixa está aberto
                 if (!cx.isFechado()) {
 
@@ -166,8 +167,6 @@ public class AbstractDAO {
                                 Contasreceber conta = new Contasreceber(null, venda, "Recebimento Venda " + venda.getIdVenda() + " - " + venda.getEntidade().getNome(), null,
                                         venda.getVencimento(), Dates.getDataHoje(), Horas.getHoraAgora(), venda.getValorTotal(), true);
                                 AbstractDAO.inserir(conta);
-                                int idConta = AbstractDAO.max(Contasreceber.class, "idConta");
-                                conta.setIdConta(idConta);
 
                                 alterar(venda);
                                 DAOTransacao.inserir(new Transacao(FramePrincipal.user, "Quitou a Venda " + venda.getIdVenda()));
@@ -188,8 +187,6 @@ public class AbstractDAO {
                                 Contaspagar conta = new Contaspagar(compra, "Pagamento Compra " + compra.getIdCompra() + " - " + compra.getEntidade().getNome(), null,
                                         compra.getVencimento(), Dates.getDataHoje(), Horas.getHoraAgora(), compra.getValorTotal(), true);
                                 AbstractDAO.inserir(conta);
-                                int idConta = AbstractDAO.max(Contaspagar.class, "idConta");
-                                conta.setIdConta(idConta);
 
                                 alterar(compra);
                                 DAOTransacao.inserir(new Transacao(FramePrincipal.user, "Quitou a Compra " + compra.getIdCompra()));
@@ -211,8 +208,6 @@ public class AbstractDAO {
                                         + pesagem.getEntidade().getNome(), null,
                                         pesagem.getVencimento(), Dates.getDataHoje(), Horas.getHoraAgora(), pesagem.getValorPesagem(), true);
                                 AbstractDAO.inserir(conta);
-                                int idConta = AbstractDAO.max(Contasreceber.class, "idConta");
-                                conta.setIdConta(idConta);
 
                                 alterar(pesagem);
                                 DAOTransacao.inserir(new Transacao(FramePrincipal.user, "Quitou a pesagem " + pesagem.getIdPesagem()));
@@ -248,16 +243,16 @@ public class AbstractDAO {
                     JOptionPane.showMessageDialog(null, "O caixa de hoje encontra-se fechado, por isso não é possível quitar novas contas hoje.",
                             "Atenção", JOptionPane.WARNING_MESSAGE);
                 }
-                
+
                 //Caso não tenha sido encontrado o caixa de hoje
             } else {
-                
+
                 //Busca o último caixa aberto no bd
                 listCaixa = AbstractDAO.consultar("Caixadiario", "fechado=false order by data desc");
                 String str2 = "Não é possível quitar esta conta pois o caixa de hoje ainda não foi criado pelo sistema.\n";
-                
-                if(!listCaixa.isEmpty()){
-                    str2 +=  "Feche o caixa do dia " + ConsertaBugsGUI.getDataFormatadaNoBd(listCaixa.get(0).getData(), "dd/MM/yyyy")  + " para que o sistema possa gerar o caixa de hoje.";
+
+                if (!listCaixa.isEmpty()) {
+                    str2 += "Feche o caixa do dia " + ConsertaBugsGUI.getDataFormatadaNoBd(listCaixa.get(0).getData(), "dd/MM/yyyy") + " para que o sistema possa gerar o caixa de hoje.";
                 }
                 //Notifica o usuário
                 JOptionPane.showMessageDialog(null, str2, "Atenção!", JOptionPane.WARNING_MESSAGE);
@@ -297,7 +292,7 @@ public class AbstractDAO {
 
         } finally {
             fechaSessao();
-               
+
         }
     }
 
@@ -467,6 +462,7 @@ public class AbstractDAO {
 
         }
     }
+
     /**
      * Realiza uma consulta puramente através do HQL
      *
@@ -502,14 +498,14 @@ public class AbstractDAO {
             inicializaSessao();
             Criteria criteria = sessao.createCriteria(classe);
             criteria.setProjection(Projections.rowCount());
-            
+
             Object resultado = criteria.list().get(0);
-            
-            if(resultado instanceof Long){
+
+            if (resultado instanceof Long) {
                 Long longResult = new Long(resultado.toString());
                 return longResult.intValue();
             }
-            
+
             return ((Integer) criteria.list().get(0)).intValue();
 
         } catch (Exception er) {
@@ -536,6 +532,8 @@ public class AbstractDAO {
             inicializaSessao();
             Criteria criteria = sessao.createCriteria(classe);
             criteria.setProjection(Projections.max(atributo));
+
+            System.out.println("MAX " + classe.getName() + " = " + ((Integer) criteria.list().get(0)).intValue());
 
             return ((Integer) criteria.list().get(0)).intValue();
 
@@ -654,7 +652,6 @@ public class AbstractDAO {
             } else {
                 return null;
             }
-
 
         } catch (HibernateException er) {
 

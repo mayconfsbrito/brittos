@@ -347,11 +347,10 @@ public class ControleIFContasPagar {
                 //Verifica o peso da tara e o bruto
                 if (AbstractDAO.inserir(c)) {
                     //Preenche o campo com o código da nova transação no banco de dados
-                    List<Contaspagar> list = AbstractDAO.listar("Contaspagar");
-                    frame.textCodigo.setText(Integer.toString(AbstractDAO.max(Contaspagar.class, "idConta") + 1));
+                    frame.textCodigo.setText(Integer.toString(c.getIdConta()));
 
                     //Registra a transação do usuário
-                    DAOTransacao.inserir(new Transacao(FramePrincipal.user, "Cadastrou a Conta a Pagar " + AbstractDAO.max(Contaspagar.class, "idConta")));
+                    DAOTransacao.inserir(new Transacao(FramePrincipal.user, "Cadastrou a Conta a Pagar " + c.getIdConta()));
 
                     limparGUI();
                 }

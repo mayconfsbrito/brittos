@@ -357,10 +357,10 @@ public class ControleIFContasReceber {
                 if (AbstractDAO.inserir(c)) {
 
                     //Preenche o campo com o código da nova transação no banco de dados
-                    frame.textCodigo.setText(Integer.toString(AbstractDAO.max(Contasreceber.class, "idConta") + 1));
+                    frame.textCodigo.setText(Integer.toString(c.getIdConta()));
 
                     //Registra a transação do usuário
-                    DAOTransacao.inserir(new Transacao(FramePrincipal.user, "Cadastrou a Conta a Receber " + AbstractDAO.max(Contasreceber.class, "idConta")));
+                    DAOTransacao.inserir(new Transacao(FramePrincipal.user, "Cadastrou a Conta a Receber " + c.getIdConta()));
 
                     limparGUI();
                 }

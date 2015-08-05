@@ -536,9 +536,6 @@ public class ControleIFMovimentoCaixaDiario {
                             AbstractDAO.alterar(conta);
                         }
 
-                        //Altera o caixa diário
-                        AbstractDAO.alterar(cx);
-
                         //Registra a transação do usuário
                         DAOTransacao.inserir(new Transacao(FramePrincipal.user, "Alterou o Caixa Diário " + cx.getIdCaixaDiario()));
 
