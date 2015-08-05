@@ -62,7 +62,12 @@ public class Contaspagar implements java.io.Serializable, java.lang.Comparable{
        this.quitada = quitada;
        this.caixadiarioHasContaspagars = caixadiarioHasContaspagars;
     }
-   
+
+    @Override
+    public String toString() {
+        return "Contaspagar{" + "idConta=" + idConta + ", compra=" + compra + ", descricao=" + descricao + ", observacao=" + observacao + ", dataVencimento=" + dataVencimento + ", dataPagamento=" + dataPagamento + ", horaPagamento=" + horaPagamento + ", valor=" + valor + ", quitada=" + quitada + ", caixadiarioHasContaspagars=" + caixadiarioHasContaspagars + '}';
+    }
+    
     public Integer getIdConta() {
         return this.idConta;
     }
