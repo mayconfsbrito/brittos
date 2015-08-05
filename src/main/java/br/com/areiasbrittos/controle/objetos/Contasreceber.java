@@ -64,6 +64,11 @@ public class Contasreceber implements java.io.Serializable, java.lang.Comparable
         this.caixadiarioHasContasrecebers = caixadiarioHasContasrecebers;
     }
 
+    @Override
+    public String toString() {
+        return "Contasreceber{" + "idConta=" + idConta + ", pesagem=" + pesagem + ", venda=" + venda + ", descricao=" + descricao + ", observacao=" + observacao + ", dataVencimento=" + dataVencimento + ", dataPagamento=" + dataPagamento + ", horaPagamento=" + horaPagamento + ", valor=" + valor + ", quitada=" + quitada + ", caixadiarioHasContasrecebers=" + caixadiarioHasContasrecebers + '}';
+    }
+    
     public Integer getIdConta() {
         return this.idConta;
     }

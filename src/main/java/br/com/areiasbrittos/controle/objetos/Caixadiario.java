@@ -2,16 +2,13 @@ package br.com.areiasbrittos.controle.objetos;
 // Generated 01/03/2012 13:32:49 by Hibernate Tools 3.2.1.GA
 
 import br.com.areiasbrittos.controle.utils.Dates;
-import br.com.areiasbrittos.controle.utils.Horas;
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.sql.Time;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
-import javax.swing.JOptionPane;
 import br.com.areiasbrittos.persistencia.dao.AbstractDAO;
 
 /**
@@ -55,6 +52,11 @@ public class Caixadiario implements java.io.Serializable {
         this.horaFechamento = horaFechamento;
         this.caixadiarioHasContaspagars = caixadiarioHasContaspagars;
         this.caixadiarioHasContasrecebers = caixadiarioHasContasrecebers;
+    }
+
+    @Override
+    public String toString() {
+        return "Caixadiario{" + "idCaixaDiario=" + idCaixaDiario + ", data=" + data + ", fechado=" + fechado + ", horaFechamento=" + horaFechamento + ", caixadiarioHasContaspagars=" + caixadiarioHasContaspagars + ", caixadiarioHasContasrecebers=" + caixadiarioHasContasrecebers + '}';
     }
 
     public int getIdCaixaDiario() {

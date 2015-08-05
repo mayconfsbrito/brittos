@@ -24,6 +24,11 @@ public class CaixadiarioHasContasreceber implements java.io.Serializable, java.l
         this.contasreceber = contasreceber;
     }
 
+    @Override
+    public String toString() {
+        return "CHCReceber{" + idCaixaDiarioHasContasReceber + '}';
+    }
+    
     public int getIdCaixaDiarioHasContasReceber() {
         return this.idCaixaDiarioHasContasReceber;
     }

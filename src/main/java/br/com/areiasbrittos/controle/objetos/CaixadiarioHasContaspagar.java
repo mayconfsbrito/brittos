@@ -24,6 +24,11 @@ public class CaixadiarioHasContaspagar implements java.io.Serializable, java.lan
         this.contaspagar = contaspagar;
     }
 
+    @Override
+    public String toString() {
+        return "CHCPagar{" + idCaixaDiarioHasContasPagar + '}';
+    }
+    
     public int getIdCaixaDiarioHasContasPagar() {
         return this.idCaixaDiarioHasContasPagar;
     }

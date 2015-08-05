@@ -75,6 +75,11 @@ public class Venda implements java.io.Serializable {
         this.vendaHasProdutos = compraHasProdutos;
     }
 
+    @Override
+    public String toString() {
+        return "Venda{" + "idVenda=" + idVenda + ", entidade=" + entidade + ", dataCriacao=" + dataCriacao + ", horaCriacao=" + horaCriacao + ", dataAlteracao=" + dataAlteracao + ", horaAlteracao=" + horaAlteracao + ", placa=" + placa + ", valorTotal=" + valorTotal + ", vencimento=" + vencimento + ", quitada=" + quitada + ", motorista=" + motorista + ", pagamento=" + pagamento + ", concluida=" + concluida + ", vendaHasProdutos=" + vendaHasProdutos + '}';
+    }
+
     public Integer getIdVenda() {
         return this.idVenda;
     }
