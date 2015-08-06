@@ -4,8 +4,11 @@
  */
 package br.com.areiasbrittos.controle.testes;
 
+import br.com.areiasbrittos.controle.objetos.Produto;
+import br.com.areiasbrittos.persistencia.dao.AbstractDAO;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 
 /**
  *
@@ -16,7 +19,21 @@ public class Teste {
     InputStream inputStream = null;
 
     public static void main(String[] args) throws IOException {
-
+        hibernateListener();
+    }
+    
+    public static void hibernateListener(){
+        ArrayList<Produto> list = (ArrayList<Produto>) AbstractDAO.consultar("Produto", "idProduto=2");
+        System.out.println(list.toString());
+        
+        list.get(0).setEstoque(list.get(0).getEstoque() + 1);
+        
+        AbstractDAO.alterar(list.get(0));
+        
+        System.exit(0);
+    }
+            
+    public static void backup() {
         try {
 
             Process processRuntime1;
@@ -34,7 +51,7 @@ public class Teste {
             int processComplete2 = processRuntime2.waitFor();
             System.out.println(processComplete1);
             System.out.println(processComplete2);
-            
+
         } catch (Exception ex) {
             ex.printStackTrace();
         }

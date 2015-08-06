@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-  <session-factory>
-    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/bd_brittos</property>
-    <property name="hibernate.connection.username">root</property>
-    <property name="hibernate.connection.password">AdminRoot12</property>
-    <property name="hibernate.show_sql">true</property>
-    <mapping resource="hibernate/mapeamento/Compra.hbm.xml"/>
-    <mapping resource="hibernate/mapeamento/CompraHasProduto.hbm.xml"/>
-    <mapping resource="hibernate/mapeamento/Entidade.hbm.xml"/>
-    <mapping resource="hibernate/mapeamento/Pesagem.hbm.xml"/>
-    <mapping resource="hibernate/mapeamento/Produto.hbm.xml"/>
-    <mapping resource="hibernate/mapeamento/Tabelapesagem.hbm.xml"/>
-    <mapping resource="hibernate/mapeamento/Venda.hbm.xml"/>
-    <mapping resource="hibernate/mapeamento/VendaHasProduto.hbm.xml"/>
-    <mapping resource="hibernate/mapeamento/Contasreceber.hbm.xml"/>
-    <mapping resource="hibernate/mapeamento/CaixadiarioHasContaspagar.hbm.xml"/>
-    <mapping resource="hibernate/mapeamento/Contaspagar.hbm.xml"/>
-    <mapping resource="hibernate/mapeamento/Caixadiario.hbm.xml"/>
-    <mapping resource="hibernate/mapeamento/CaixadiarioHasContasreceber.hbm.xml"/>
-    <mapping resource="hibernate/mapeamento/Conf.hbm.xml"/>
-  </session-factory>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/bd_brittos</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">AdminRoot12</property>
+        <property name="hibernate.show_sql">true</property>
+        <mapping resource="hibernate/mapeamento/Compra.hbm.xml"/>
+        <mapping resource="hibernate/mapeamento/CompraHasProduto.hbm.xml"/>
+        <mapping resource="hibernate/mapeamento/Entidade.hbm.xml"/>
+        <mapping resource="hibernate/mapeamento/Pesagem.hbm.xml"/>
+        <mapping resource="hibernate/mapeamento/Produto.hbm.xml"/>
+        <mapping resource="hibernate/mapeamento/Tabelapesagem.hbm.xml"/>
+        <mapping resource="hibernate/mapeamento/Venda.hbm.xml"/>
+        <mapping resource="hibernate/mapeamento/VendaHasProduto.hbm.xml"/>
+        <mapping resource="hibernate/mapeamento/Contasreceber.hbm.xml"/>
+        <mapping resource="hibernate/mapeamento/CaixadiarioHasContaspagar.hbm.xml"/>
+        <mapping resource="hibernate/mapeamento/Contaspagar.hbm.xml"/>
+        <mapping resource="hibernate/mapeamento/Caixadiario.hbm.xml"/>
+        <mapping resource="hibernate/mapeamento/CaixadiarioHasContasreceber.hbm.xml"/>
+        <mapping resource="hibernate/mapeamento/Conf.hbm.xml"/>
+<!--        <event type="pre-update">
+            <listener class="br.com.areiasbrittos.persistencia.MyHibernateEventListener" />
+        </event>    -->
+    </session-factory>
 </hibernate-configuration>
