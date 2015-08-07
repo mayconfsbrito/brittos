@@ -1263,7 +1263,7 @@ public class ControleIFProdutosCompra {
             }
 
             if (!query.equals("")) {
-                list = AbstractDAO.consultar("from Compra c INNER JOIN FETCH c.entidade e LEFT JOIN FETCH c.compraHasProdutos h WHERE " + query);
+                list = AbstractDAO.consultar("from Compra c INNER JOIN FETCH c.entidade e LEFT JOIN FETCH c.compraHasProdutos h WHERE " + query + " ORDER BY c.idCompra desc");
             }
 
             //Lista os objetos encontrados na tabela

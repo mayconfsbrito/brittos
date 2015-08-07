@@ -598,7 +598,7 @@ public class ControleIFContasPagar {
 
             if (!query.equals("")) {
                 //System.out.println(query);
-                list = AbstractDAO.consultar("Contaspagar", query);
+                list = AbstractDAO.consultar("Contaspagar", query, "idConta desc");
             }
 
             //Lista os objetos encontrados na tabela

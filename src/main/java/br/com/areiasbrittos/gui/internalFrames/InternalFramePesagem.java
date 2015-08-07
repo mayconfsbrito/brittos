@@ -626,7 +626,7 @@ public class InternalFramePesagem extends br.com.areiasbrittos.gui.superclass.In
 
             if (!query.equals("")) {
                 //System.out.println(query);
-                list = AbstractDAO.consultar("from Pesagem p LEFT JOIN FETCH p.entidade e WHERE " + query);
+                list = AbstractDAO.consultar("from Pesagem p LEFT JOIN FETCH p.entidade e WHERE " + query  + " ORDER BY idPesagem desc");
             }
 
             //Lista os objetos encontrados na tabela

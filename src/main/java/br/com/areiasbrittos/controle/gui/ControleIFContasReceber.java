@@ -604,10 +604,10 @@ public class ControleIFContasReceber {
                 }
                 query += " quitada=FALSE";
             }
-
+            
             if (!query.equals("")) {
                 //System.out.println(query);
-                list = AbstractDAO.consultar("Contasreceber", query);
+                list = AbstractDAO.consultar("Contasreceber", query, "idConta desc");
             }
 
             //Lista os objetos encontrados na tabela

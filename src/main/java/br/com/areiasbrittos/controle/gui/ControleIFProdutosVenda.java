@@ -1285,7 +1285,7 @@ public class ControleIFProdutosVenda {
 
             if (!query.equals("")) {
                 //System.out.println(query);
-                list = AbstractDAO.consultar("from Venda v INNER JOIN FETCH v.entidade e LEFT JOIN FETCH v.vendaHasProdutos h WHERE " + query);
+                list = AbstractDAO.consultar("from Venda v INNER JOIN FETCH v.entidade e LEFT JOIN FETCH v.vendaHasProdutos h WHERE " + query + " ORDER BY v.idVenda DESC");
             }
 
             //Lista os objetos encontrados na tabela
