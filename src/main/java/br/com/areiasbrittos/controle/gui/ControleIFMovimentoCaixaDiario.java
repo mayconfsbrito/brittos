@@ -532,7 +532,7 @@ public class ControleIFMovimentoCaixaDiario {
                             conta.setQuitada(false);
                             conta.setHoraPagamento(null);
                             conta.setDataPagamento(null);
-                            AbstractDAO.excluir(chp);
+                            
                             AbstractDAO.alterar(conta);
                         }
 
