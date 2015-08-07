@@ -442,11 +442,14 @@ public class AbstractDAO {
      * @return - Lista preenchida com os objetos que satisfazem a condicao
      */
     public static List consultar(String nomeObjeto, String condicao) {
+        return consultar(nomeObjeto, condicao, null);
+    }
+    public static List consultar(String nomeObjeto, String condicao, String orderBy) {
 
         try {
             inicializaSessao();
             transacao = sessao.beginTransaction();
-            List list = sessao.createQuery("from " + nomeObjeto + " where " + condicao).list();
+            List list = sessao.createQuery("from " + nomeObjeto + " where " + condicao + (orderBy != null && orderBy.length() > 0 ? " order by " + orderBy : "")).list();
 
             return list;
 
